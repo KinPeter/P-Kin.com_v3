@@ -11,7 +11,7 @@ import { TranslateService } from '@ngx-translate/core';
   styles: [
     `
       p {
-        color: var(--color-red);
+        color: var(--text-color);
       }
     `,
   ],

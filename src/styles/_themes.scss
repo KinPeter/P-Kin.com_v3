@@ -1,3 +1,13 @@
-:root {
-  --color-red: red;
+/**
+ * LIGHT THEME COLORS
+ */
+pk-root.theme-light {
+  --text-color: red;
+}
+
+/**
+ * DARK THEME COLORS
+ */
+pk-root.theme-dark {
+  --text-color: blue;
 }
