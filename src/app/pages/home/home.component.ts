@@ -8,7 +8,13 @@ import { TranslateService } from '@ngx-translate/core';
     <button (click)="translate.use('en')">EN</button>
     <button (click)="translate.use('hu')">HU</button>
   `,
-  styles: [],
+  styles: [
+    `
+      p {
+        color: var(--color-red);
+      }
+    `,
+  ],
 })
 export class HomeComponent implements OnInit {
   constructor(public translate: TranslateService) {}
