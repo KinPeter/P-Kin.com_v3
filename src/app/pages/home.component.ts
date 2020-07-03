@@ -8,6 +8,7 @@ import { TranslateService } from '@ngx-translate/core';
     <button (click)="translate.use('en')">EN</button>
     <button (click)="translate.use('hu')">HU</button>
     <div [innerHTML]="mdText | marked" class="markdown-text"></div>
+    <a routerLink="/admin">admin</a>
   `,
   styles: [
     `

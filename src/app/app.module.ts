@@ -6,7 +6,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { AppRoutingModule } from '~/app/app-routing.module';
 import { AppComponent } from '~/app/app.component';
 import { HttpLoaderFactory } from '~/app/lib/translate/http-loader.factory';
-import { HomeComponent } from '~/app/pages/home/home.component';
+import { HomeComponent } from '~/app/pages/home.component';
 import { MarkedPipe } from '~/app/pipes/marked.pipe';
 
 @NgModule({
