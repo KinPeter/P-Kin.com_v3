@@ -1,13 +1,21 @@
 /**
  * LIGHT THEME COLORS
  */
-pk-root.theme-light {
-  --text-color: red;
+body {
+  --background-color: #fff;
+  --background-color-secondary: #eceff1;
+  --text-color: #343942;
+  --text-color-light: #627180;
+  --color-accent: #00b8d4;
 }
 
 /**
  * DARK THEME COLORS
  */
-pk-root.theme-dark {
-  --text-color: blue;
+body.dark {
+  --background-color: #1d2025;
+  --background-color-secondary: #3a434c;
+  --text-color: #e3eaf8;
+  --text-color-light: #c4ced9;
+  --color-accent: #00e5ff;
 }

@@ -2,24 +2,32 @@ import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
-  selector: 'pk-home',
+  selector: 'pk-about',
   template: `
     <p>{{ 'hello' | translate }}</p>
-    <button (click)="translate.use('en')">EN</button>
-    <button (click)="translate.use('hu')">HU</button>
     <div [innerHTML]="mdText | marked" class="markdown-text"></div>
     <a routerLink="/admin">admin</a>
+    <div class="accent"></div>
+    <div [innerHTML]="mdText | marked" class="markdown-text"></div>
   `,
   styles: [
     `
       p {
-        color: var(--text-color);
+        color: var(--text-color-light);
+      }
+      .markdown-text {
+        background: var(--background-color-secondary);
+      }
+      .accent {
+        width: 300px;
+        height: 30px;
+        border-bottom: 2px solid var(--color-accent);
       }
     `,
   ],
 })
-export class HomeComponent implements OnInit {
-  constructor(public translate: TranslateService) {}
+export class AboutComponent implements OnInit {
+  constructor() {}
 
   ngOnInit(): void {}
 

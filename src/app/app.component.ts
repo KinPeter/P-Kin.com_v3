@@ -1,37 +1,29 @@
-import { Component, HostBinding } from '@angular/core';
+import { Component, Renderer2 } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'pk-root',
   template: `
-    <button (click)="onDark()">dark</button>
-    <button (click)="onLight()">light</button>
+    <pk-app-bar></pk-app-bar>
     <router-outlet></router-outlet>
   `,
   styles: [],
 })
 export class AppComponent {
-  private theme = 'theme-dark';
-
-  @HostBinding('class') get themeClass() {
-    return this.theme;
-  }
-
   constructor(public translate: TranslateService) {
     // init the translate service here
     translate.use('en');
 
     // logic to add when the language changes
-    translate.onLangChange.subscribe(() => {
-      console.log('Language changed!');
+    translate.onLangChange.subscribe((event: { lang: string; translations: {} }) => {
+      console.log('Language changed to:', event.lang);
+      if (event.lang === 'kr') {
+        document.body.style.setProperty('--font-serif', 'Noto Serif KR');
+        document.body.style.setProperty('--font-sans-serif', 'Noto Sans KR');
+      } else {
+        document.body.style.setProperty('--font-serif', 'Martel');
+        document.body.style.setProperty('--font-sans-serif', 'Montserrat');
+      }
     });
-  }
-
-  onLight() {
-    this.theme = 'theme-light';
-  }
-
-  onDark() {
-    this.theme = 'theme-dark';
   }
 }

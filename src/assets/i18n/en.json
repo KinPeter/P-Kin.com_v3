@@ -1,3 +1,14 @@
 {
-  "hello": "hi"
+  "hello": "Hi, have a nice day!",
+  "menu": {
+    "about": "About me",
+    "webDev": "Web Dev",
+    "pens": "Pens",
+    "gameAnd3d": "Game Dev & 3D"
+  },
+  "languages": {
+    "en": "EN",
+    "hu": "HU",
+    "kr": "KR"
+  }
 }

@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  --font-serif: 'Martel';
+  --font-sans-serif: 'Montserrat';
+
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  background: var(--background-color);
+  color: var(--text-color);
+
+  @media (min-width: 500px) {
+    padding-top: 84px;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-sans-serif), sans-serif;
+  font-weight: normal;
+}
+
+p,
+span,
+li {
+  font-family: var(--font-serif), serif;
+}
+
+strong {
+  font-weight: 800;
+}

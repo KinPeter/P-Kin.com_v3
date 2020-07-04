@@ -1,3 +1,14 @@
 {
-  "hello": "szia"
+  "hello": "Szia, szép napot!",
+  "menu": {
+    "about": "Rólam",
+    "webDev": "Web Dev",
+    "pens": "Pen-ek",
+    "gameAnd3d": "Játék és 3D"
+  },
+  "languages": {
+    "en": "EN",
+    "hu": "HU",
+    "kr": "KR"
+  }
 }

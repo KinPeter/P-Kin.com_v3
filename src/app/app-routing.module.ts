@@ -1,12 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from '~/app/pages/home.component';
+import { AboutComponent } from '~/app/pages/about.component';
 
 const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    component: HomeComponent,
+    redirectTo: '/about',
+  },
+  {
+    path: 'about',
+    component: AboutComponent,
   },
   {
     path: 'admin',
