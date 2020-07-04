@@ -1,4 +1,4 @@
-import { Component, OnInit, Renderer2 } from '@angular/core';
+import { Component, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'pk-theme-switch',
@@ -24,15 +24,15 @@ import { Component, OnInit, Renderer2 } from '@angular/core';
 export class ThemeSwitchComponent {
   constructor(private renderer: Renderer2) {}
 
-  onLight() {
+  onLight(): void {
     this.renderer.removeClass(document.body, 'dark');
   }
 
-  onDark() {
+  onDark(): void {
     this.renderer.addClass(document.body, 'dark');
   }
 
-  onThemeSwitch() {
+  onThemeSwitch(): void {
     console.log('onThemeSwitch');
     document.body.classList.contains('dark') ? this.onLight() : this.onDark();
   }

@@ -1,4 +1,4 @@
-import { Component, Renderer2 } from '@angular/core';
+import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -15,7 +15,7 @@ export class AppComponent {
     translate.use('en');
 
     // logic to add when the language changes
-    translate.onLangChange.subscribe((event: { lang: string; translations: {} }) => {
+    translate.onLangChange.subscribe((event: { lang: string; translations: Record<string, unknown> }) => {
       console.log('Language changed to:', event.lang);
       if (event.lang === 'kr') {
         document.body.style.setProperty('--font-serif', 'Noto Serif KR');

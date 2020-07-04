@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit, Renderer2 } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 
 @Component({
   selector: 'pk-app-bar',
@@ -61,7 +61,7 @@ export class AppBarComponent implements OnInit {
   ngOnInit(): void {}
 
   @HostListener('window:scroll')
-  onWindowScroll() {
+  onWindowScroll(): void {
     this.scrolled = window.scrollY !== 0;
   }
 }
