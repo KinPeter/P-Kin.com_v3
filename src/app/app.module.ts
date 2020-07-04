@@ -16,12 +16,14 @@ import { WebDevComponent } from '~/app/pages/web-dev.component';
 import { PensComponent } from '~/app/pages/pens.component';
 import { GameAnd3dComponent } from '~/app/pages/game-and-3d.component';
 import { SideDrawerComponent } from '~/app/components/shared/side-drawer.component';
+import { FooterComponent } from '~/app/components/shared/footer.component';
 
 @NgModule({
   declarations: [
+    AppComponent,
     AppBarComponent,
     SideDrawerComponent,
-    AppComponent,
+    FooterComponent,
     AboutComponent,
     WebDevComponent,
     PensComponent,

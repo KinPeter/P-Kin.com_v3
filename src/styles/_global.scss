@@ -13,7 +13,7 @@ body {
   color: var(--text-color);
 
   @media (min-width: 912px) {
-    padding: 84px calc(84px + 0.8rem) 0;
+    padding: 84px calc(84px + 0.8rem) 52px;
   }
 }
 

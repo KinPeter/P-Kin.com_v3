@@ -7,6 +7,7 @@ import { TranslateService } from '@ngx-translate/core';
     <pk-app-bar></pk-app-bar>
     <pk-side-drawer></pk-side-drawer>
     <router-outlet></router-outlet>
+    <pk-footer></pk-footer>
   `,
   styles: [],
 })
