@@ -15,10 +15,12 @@ import { LanguageSwitchComponent } from '~/app/components/shared/language-switch
 import { WebDevComponent } from '~/app/pages/web-dev.component';
 import { PensComponent } from '~/app/pages/pens.component';
 import { GameAnd3dComponent } from '~/app/pages/game-and-3d.component';
+import { SideDrawerComponent } from '~/app/components/shared/side-drawer.component';
 
 @NgModule({
   declarations: [
     AppBarComponent,
+    SideDrawerComponent,
     AppComponent,
     AboutComponent,
     WebDevComponent,

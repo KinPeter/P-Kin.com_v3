@@ -5,6 +5,7 @@ import { TranslateService } from '@ngx-translate/core';
   selector: 'pk-root',
   template: `
     <pk-app-bar></pk-app-bar>
+    <pk-side-drawer></pk-side-drawer>
     <router-outlet></router-outlet>
   `,
   styles: [],

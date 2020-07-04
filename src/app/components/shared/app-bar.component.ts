@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -90,13 +90,9 @@ import { Router } from '@angular/router';
     `,
   ],
 })
-export class AppBarComponent implements OnInit {
+export class AppBarComponent {
   public scrolled: boolean = window.scrollY !== 0;
   constructor(private router: Router) {}
-
-  ngOnInit(): void {
-    // this.route.
-  }
 
   @HostListener('window:scroll')
   onWindowScroll(): void {
