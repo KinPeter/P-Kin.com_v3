@@ -4,10 +4,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod",
     "test": "ng test",
     "lint": "eslint . --ext .js,.ts",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "deploy": "node pk-deploy.js"
   },
   "private": true,
   "dependencies": {
@@ -21,6 +22,7 @@
     "@angular/router": "~10.0.2",
     "@ngx-translate/core": "^13.0.0",
     "@ngx-translate/http-loader": "^6.0.0",
+    "basic-ftp": "^4.6.2",
     "marked": "^1.1.0",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
