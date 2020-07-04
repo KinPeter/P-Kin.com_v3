@@ -41,13 +41,18 @@ import { Router } from '@angular/router';
         left: 0;
         width: 100vw;
         height: 84px;
-        display: flex;
+        display: none;
         justify-content: space-between;
         align-items: center;
         padding: 0 84px;
         background: var(--background-color);
         color: var(--text-color-light);
         transition: all 0.3s ease;
+      }
+      @media (min-width: 912px) {
+        .app-bar {
+          display: flex;
+        }
       }
       .app-bar:hover {
         background: var(--background-color-secondary);

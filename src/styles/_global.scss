@@ -8,12 +8,12 @@ body {
 
   line-height: 1.5;
   margin: 0;
-  padding: 0;
+  padding: 52px 0 0;
   background: var(--background-color);
   color: var(--text-color);
 
-  @media (min-width: 500px) {
-    padding-top: 84px;
+  @media (min-width: 912px) {
+    padding: 84px calc(84px + 0.8rem) 0;
   }
 }
 

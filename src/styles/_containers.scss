@@ -1,0 +1,14 @@
+.pk-default-container {
+  max-width: calc(100vw - 1rem);
+  margin: 1rem 0.5rem;
+
+  @media (min-width: 500px) {
+    max-width: calc(100vw - 4rem);
+    margin: 2rem;
+  }
+
+  @media (min-width: 912px) {
+    max-width: 1300px;
+    margin: 2rem auto;
+  }
+}

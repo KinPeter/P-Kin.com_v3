@@ -3,11 +3,13 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'pk-about',
   template: `
-    <p>{{ 'hello' | translate }}</p>
-    <div [innerHTML]="mdText | marked" class="markdown-text"></div>
-    <a routerLink="/admin">admin</a>
-    <div class="accent"></div>
-    <div [innerHTML]="mdText | marked" class="markdown-text"></div>
+    <div class="pk-default-container">
+      <p>{{ 'hello' | translate }}</p>
+      <div [innerHTML]="mdText | marked" class="markdown-text"></div>
+      <a routerLink="/admin">admin</a>
+      <div class="accent"></div>
+      <div [innerHTML]="mdText | marked" class="markdown-text"></div>
+    </div>
   `,
   styles: [
     `
