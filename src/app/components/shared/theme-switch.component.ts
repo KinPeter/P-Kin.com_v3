@@ -3,18 +3,20 @@ import { Component, Renderer2 } from '@angular/core';
 @Component({
   selector: 'pk-theme-switch',
   template: `
-    <div class="theme-switch" (click)="onThemeSwitch()">
+    <div class="theme-switch button-vertical-animated" (click)="onThemeSwitch()">
       <pk-icon-themes></pk-icon-themes>
     </div>
   `,
   styles: [
     `
       .theme-switch {
+        width: 28px;
+        height: 28px;
         display: flex;
         align-items: center;
         justify-content: center;
-        cursor: pointer;
       }
+
       pk-icon-themes {
         height: 24px;
       }
@@ -33,7 +35,6 @@ export class ThemeSwitchComponent {
   }
 
   onThemeSwitch(): void {
-    console.log('onThemeSwitch');
     document.body.classList.contains('dark') ? this.onLight() : this.onDark();
   }
 }

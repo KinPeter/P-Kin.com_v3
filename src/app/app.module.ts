@@ -12,12 +12,18 @@ import { AppBarComponent } from '~/app/components/shared/app-bar.component';
 import { IconsModule } from '~/app/components/shared/icons/icons.module';
 import { ThemeSwitchComponent } from '~/app/components/shared/theme-switch.component';
 import { LanguageSwitchComponent } from '~/app/components/shared/language-switch.component';
+import { WebDevComponent } from '~/app/pages/web-dev.component';
+import { PensComponent } from '~/app/pages/pens.component';
+import { GameAnd3dComponent } from '~/app/pages/game-and-3d.component';
 
 @NgModule({
   declarations: [
     AppBarComponent,
     AppComponent,
     AboutComponent,
+    WebDevComponent,
+    PensComponent,
+    GameAnd3dComponent,
     ThemeSwitchComponent,
     LanguageSwitchComponent,
     MarkedPipe,

@@ -1,0 +1,63 @@
+.button-vertical-animated {
+  cursor: pointer;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    width: 50%;
+    height: 0;
+    background: var(--background-color);
+  }
+
+  &::before {
+    top: -2px;
+    left: 0;
+    transition: all 0.2s ease;
+  }
+
+  &::after {
+    bottom: 0;
+    right: 0;
+    transition: all 0.2s 0.1s ease;
+  }
+
+  &:hover::before,
+  &:hover::after {
+    height: 100%;
+  }
+}
+
+.button-horizontal-animated {
+  cursor: pointer;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    width: 0;
+    height: 50%;
+    background: var(--background-color);
+  }
+
+  &::before {
+    left: 2px;
+    top: 0;
+    transition: all 0.2s ease;
+  }
+
+  &::after {
+    right: 2px;
+    bottom: 0;
+    transition: all 0.2s 0.1s ease;
+  }
+
+  &:hover::before,
+  &:hover::after {
+    width: 100%;
+  }
+}
