@@ -57,6 +57,9 @@ import { Router } from '@angular/router';
           <pk-theme-switch></pk-theme-switch>
           <pk-language-switch></pk-language-switch>
         </div>
+        <div class="drawer__footer">
+          <pk-contacts></pk-contacts>
+        </div>
       </div>
     </div>
   `,
@@ -159,11 +162,20 @@ import { Router } from '@angular/router';
         width: calc(100% - 1.6rem);
         border-bottom: 1px solid var(--color-accent);
       }
+      .drawer__footer,
       .drawer__theme-and-language {
         display: flex;
         justify-content: center;
         align-items: center;
         margin-top: 2rem;
+      }
+      .drawer__footer {
+        width: 100%;
+        position: absolute;
+        bottom: 2rem;
+      }
+      pk-theme-switch {
+        margin-right: 1rem;
       }
     `,
   ],

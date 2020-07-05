@@ -87,6 +87,9 @@ import { Router } from '@angular/router';
         width: calc(100% - 1.6rem);
         border-bottom: 1px solid var(--color-accent);
       }
+      pk-theme-switch {
+        margin-right: 1rem;
+      }
     `,
   ],
 })

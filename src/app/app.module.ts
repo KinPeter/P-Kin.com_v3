@@ -17,6 +17,7 @@ import { PensComponent } from '~/app/pages/pens.component';
 import { GameAnd3dComponent } from '~/app/pages/game-and-3d.component';
 import { SideDrawerComponent } from '~/app/components/shared/side-drawer.component';
 import { FooterComponent } from '~/app/components/shared/footer.component';
+import { ContactsComponent } from '~/app/components/contacts.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { FooterComponent } from '~/app/components/shared/footer.component';
     AppBarComponent,
     SideDrawerComponent,
     FooterComponent,
+    ContactsComponent,
     AboutComponent,
     WebDevComponent,
     PensComponent,

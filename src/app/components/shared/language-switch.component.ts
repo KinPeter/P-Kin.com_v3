@@ -35,7 +35,6 @@ import { TranslateService } from '@ngx-translate/core';
     `
       .language-switch {
         display: flex;
-        padding: 0 1rem;
       }
       .language-switch__button {
         font-family: var(--font-sans-serif), sans-serif;

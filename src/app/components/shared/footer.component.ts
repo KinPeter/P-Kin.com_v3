@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'pk-footer',
   template: `
-    <footer>
+    <footer (mouseover)="hovered = true" (mouseleave)="hovered = false">
       <div class="footer-left">
         <small>
           With
@@ -12,24 +12,7 @@ import { Component } from '@angular/core';
         </small>
       </div>
       <div class="footer-right">
-        <div class="contact-button button-vertical-animated">
-          <pk-icon-email class="contact-button__icon"></pk-icon-email>
-        </div>
-        <div class="contact-button button-vertical-animated">
-          <pk-icon-linkedin class="contact-button__icon"></pk-icon-linkedin>
-        </div>
-        <div class="contact-button button-vertical-animated">
-          <pk-icon-github class="contact-button__icon"></pk-icon-github>
-        </div>
-        <div class="contact-button button-vertical-animated">
-          <pk-icon-codepen class="contact-button__icon"></pk-icon-codepen>
-        </div>
-        <div class="contact-button button-vertical-animated">
-          <pk-icon-skype class="contact-button__icon"></pk-icon-skype>
-        </div>
-        <div class="contact-button button-vertical-animated">
-          <pk-icon-facebook class="contact-button__icon"></pk-icon-facebook>
-        </div>
+        <pk-contacts [hovered]="hovered"></pk-contacts>
       </div>
     </footer>
   `,
@@ -44,7 +27,7 @@ import { Component } from '@angular/core';
         height: 52px;
         justify-content: space-between;
         align-items: center;
-        padding: 0 100px;
+        padding: 0 90px;
         background: var(--background-color);
         color: var(--text-color-light);
         transition: all 0.3s ease;
@@ -58,28 +41,15 @@ import { Component } from '@angular/core';
         background: var(--background-color-secondary);
         color: var(--text-color);
       }
-      .footer-right {
-        display: flex;
-      }
-      .contact-button {
-        width: 28px;
-        height: 28px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .contact-button__icon {
-        height: 24px;
-      }
-      pk-icon-heart svg {
-        height: 10px;
-        width: 10px;
+      footer:hover pk-contacts {
+        color: var(--text-color) !important;
       }
     `,
   ],
 })
 export class FooterComponent {
   public currentYear = new Date().getFullYear();
+  public hovered = false;
 
   constructor() {}
 }
