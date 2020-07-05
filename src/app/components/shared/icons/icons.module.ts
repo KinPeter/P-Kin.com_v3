@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { IconThemesComponent } from './icon-themes.component';
+import { IconThemesComponent } from '~/app/components/shared/icons/icon-themes.component';
 import { IconLinkedinComponent } from '~/app/components/shared/icons/icon-linkedin.component';
 import { IconFacebookComponent } from '~/app/components/shared/icons/icon-facebook.component';
 import { IconSkypeComponent } from '~/app/components/shared/icons/icon-skype.component';
