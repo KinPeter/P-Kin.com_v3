@@ -33,6 +33,16 @@ import { Component, OnInit } from '@angular/core';
         width: 100vw;
         height: 100vh;
         background: var(--background-color);
+        opacity: 0;
+        animation: fadeIn 0.2s forwards;
+      }
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
       }
       .loading-element {
         margin-left: 1rem;
@@ -46,6 +56,7 @@ import { Component, OnInit } from '@angular/core';
         animation: loading-gradient 2.5s ease infinite;
         background-size: 400% 400%;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        filter: blur(2px);
       }
       @keyframes loading-gradient {
         0% {

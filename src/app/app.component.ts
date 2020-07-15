@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { LoadingService } from '~/app/services/ui/loading.service';
 
 @Component({
   selector: 'pk-root',
@@ -8,12 +9,12 @@ import { TranslateService } from '@ngx-translate/core';
     <pk-side-drawer></pk-side-drawer>
     <router-outlet></router-outlet>
     <pk-footer></pk-footer>
-    <pk-loading *ngIf="false"></pk-loading>
+    <pk-loading *ngIf="loading.getStatus() | async"></pk-loading>
   `,
   styles: [],
 })
 export class AppComponent {
-  constructor(public translate: TranslateService) {
+  constructor(public translate: TranslateService, public loading: LoadingService) {
     // init the translate service here
     translate.use('en');
 

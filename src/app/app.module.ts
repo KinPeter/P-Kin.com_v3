@@ -19,6 +19,7 @@ import { SideDrawerComponent } from '~/app/components/shared/side-drawer.compone
 import { FooterComponent } from '~/app/components/shared/footer.component';
 import { ContactsComponent } from '~/app/components/contacts.component';
 import { LoadingComponent } from '~/app/components/shared/loading.component';
+import { LoadingService } from '~/app/services/ui/loading.service';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,7 @@ import { LoadingComponent } from '~/app/components/shared/loading.component';
     }),
     IconsModule,
   ],
-  providers: [],
+  providers: [LoadingService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
