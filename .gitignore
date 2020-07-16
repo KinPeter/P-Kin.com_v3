@@ -2,6 +2,7 @@
 
 # project files
 pk-deploy.config.js
+keys.ts
 
 # compiled output
 /dist

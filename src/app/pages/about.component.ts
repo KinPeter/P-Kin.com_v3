@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoadingService } from '~/app/services/ui/loading.service';
+import { AboutService } from '~/app/services/api/about.service';
 
 @Component({
   selector: 'pk-about',
@@ -7,10 +8,7 @@ import { LoadingService } from '~/app/services/ui/loading.service';
     <div class="pk-default-container">
       <p>{{ 'hello' | translate }}</p>
       <button (click)="startLoading()">start loading</button>
-      <div [innerHTML]="mdText | marked" class="markdown-text"></div>
-      <a routerLink="/admin">admin</a>
-      <div class="accent"></div>
-      <div [innerHTML]="mdText | marked" class="markdown-text"></div>
+      <div *ngIf="aboutService.isContentLoaded" [innerHTML]="aboutService.getIntroduction() | async | marked"></div>
     </div>
   `,
   styles: [
@@ -30,20 +28,11 @@ import { LoadingService } from '~/app/services/ui/loading.service';
   ],
 })
 export class AboutComponent implements OnInit {
-  constructor(private loading: LoadingService) {}
+  constructor(private loading: LoadingService, public aboutService: AboutService) {}
 
-  ngOnInit(): void {}
-
-  mdText = `
-## This is markdown
-* A list
-* With elements
-* **This is bold**
-
-Let's see a linked gif image
-
-![Startpage feature](https://stuff.p-kin.com/screentogif/startpage-links-full.gif)
-  `;
+  ngOnInit(): void {
+    this.aboutService.fetchIfNeeded();
+  }
 
   public startLoading(): void {
     this.loading.start();
