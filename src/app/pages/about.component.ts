@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoadingService } from '~/app/services/ui/loading.service';
-import { AboutService } from '~/app/services/api/about.service';
+import { AboutService } from '~/app/services/content/about.service';
 
 @Component({
   selector: 'pk-about',
@@ -8,7 +8,7 @@ import { AboutService } from '~/app/services/api/about.service';
     <div class="pk-default-container">
       <p>{{ 'hello' | translate }}</p>
       <button (click)="startLoading()">start loading</button>
-      <div *ngIf="aboutService.isContentLoaded" [innerHTML]="aboutService.getIntroduction() | async | marked"></div>
+      <!--      <div *ngIf="aboutService.isContentLoaded" [innerHTML]="aboutService.getIntroduction() | async | marked"></div>-->
     </div>
   `,
   styles: [

@@ -20,7 +20,8 @@ import { FooterComponent } from '~/app/components/shared/footer.component';
 import { ContactsComponent } from '~/app/components/contacts.component';
 import { LoadingComponent } from '~/app/components/shared/loading.component';
 import { LoadingService } from '~/app/services/ui/loading.service';
-import { AboutService } from '~/app/services/api/about.service';
+import { AboutService } from '~/app/services/content/about.service';
+import { ApiService } from '~/app/services/api/api.service';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,7 @@ import { AboutService } from '~/app/services/api/about.service';
     }),
     IconsModule,
   ],
-  providers: [LoadingService, AboutService],
+  providers: [LoadingService, ApiService, AboutService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
