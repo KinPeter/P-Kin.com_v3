@@ -3,7 +3,9 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'pk-home',
   template: `
-    <p>This is the admin page</p>
+    <div class="pk-default-container">
+      <pk-md-editor></pk-md-editor>
+    </div>
   `,
   styles: [],
 })

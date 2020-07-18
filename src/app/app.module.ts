@@ -22,6 +22,7 @@ import { LoadingComponent } from '~/app/components/shared/loading.component';
 import { LoadingService } from '~/app/services/ui/loading.service';
 import { AboutService } from '~/app/services/content/about.service';
 import { ApiService } from '~/app/services/api/api.service';
+import { SharedModule } from '~/app/shared.module';
 
 @NgModule({
   declarations: [
@@ -37,9 +38,9 @@ import { ApiService } from '~/app/services/api/api.service';
     GameAnd3dComponent,
     ThemeSwitchComponent,
     LanguageSwitchComponent,
-    MarkedPipe,
   ],
   imports: [
+    SharedModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
