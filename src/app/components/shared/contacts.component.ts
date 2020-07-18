@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'pk-contacts',
@@ -57,14 +58,14 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ContactsComponent implements OnInit {
   @Input() hovered = false;
 
-  constructor() {}
+  constructor(private sanitizer: DomSanitizer) {}
 
   public ctc = {
     email: 'mailto:kinpeter85@gmail.com',
     linkedIn: 'https://www.linkedin.com/in/peter-kin-6b7794172/',
     github: 'https://github.com/KinPeter',
     codePen: 'https://codepen.io/kinpeter',
-    skype: 'skype:kinpeter?chat',
+    skype: this.sanitizer.bypassSecurityTrustUrl('skype:kinpeter?chat'),
     facebook: 'https://www.facebook.com/peter.kin',
   };
 

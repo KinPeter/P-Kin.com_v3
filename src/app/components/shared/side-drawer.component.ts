@@ -71,7 +71,7 @@ import { Router } from '@angular/router';
         align-items: center;
         padding: 0 84px;
 
-        color: var(--text-color-light);
+        color: var(--text-color);
         transition: all 0.3s ease;
       }
       @media (min-width: 912px) {

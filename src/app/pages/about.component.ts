@@ -2,29 +2,59 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { LoadingService } from '~/app/services/ui/loading.service';
 import { AboutService } from '~/app/services/content/about.service';
 import { Subscription } from 'rxjs';
-import { delay } from 'rxjs/operators';
 
 @Component({
   selector: 'pk-about',
   template: `
-    <div class="pk-default-container">
-      <p>{{ 'hello' | translate }}</p>
-      <button (click)="startLoading()">start loading</button>
-      <div *ngIf="aboutService.isContentLoaded" [innerHTML]="introduction | marked"></div>
+    <div *ngIf="aboutService.isContentLoaded" class="pk-default-container about-wrapper">
+      <!--      <p>{{ 'hello' | translate }}</p>-->
+      <!--      <button (click)="startLoading()">start loading</button>-->
+      <div class="about-introduction markdown-text" [innerHTML]="introduction | marked"></div>
+      <div class="about-skills">
+        <h2>{{ 'p.about.tech-stack' | translate }}</h2>
+        <pk-tech-stack [skills]="skills"></pk-tech-stack>
+        <h3>{{ 'p.about.other-tech' | translate }}</h3>
+        <pk-tech-cloud [techCloud]="techCloud"></pk-tech-cloud>
+      </div>
     </div>
   `,
   styles: [
     `
-      p {
-        color: var(--text-color-light);
+      .about-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
       }
-      .markdown-text {
-        background: var(--background-color-secondary);
+      .about-introduction,
+      .about-skills {
+        padding: 0.3rem 0.6rem;
+        border-left: 2px solid var(--color-accent-light);
       }
-      .accent {
-        width: 300px;
-        height: 30px;
-        border-bottom: 2px solid var(--color-accent);
+      .about-introduction {
+        width: 100%;
+      }
+      .about-skills {
+        width: 100%;
+        margin-top: 2rem;
+      }
+
+      @media (min-width: 500px) {
+        .about-introduction,
+        .about-skills {
+          padding: 1rem 1.5rem;
+        }
+      }
+
+      @media (min-width: 1100px) {
+        .about-wrapper {
+          flex-direction: row;
+        }
+        .about-introduction {
+          width: 70%;
+        }
+        .about-skills {
+          width: 30%;
+        }
       }
     `,
   ],
@@ -33,6 +63,8 @@ export class AboutComponent implements OnInit, OnDestroy {
   private subscriptions: Subscription[] = [];
 
   introduction = '';
+  skills: Record<string, number> = {};
+  techCloud: string[] = [];
 
   constructor(private loading: LoadingService, public aboutService: AboutService) {
     this.aboutService.fetchIfNeeded();
@@ -40,8 +72,14 @@ export class AboutComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.subscriptions.push(
-      this.aboutService.introduction$.pipe(delay(0)).subscribe(value => {
+      this.aboutService.introduction$.subscribe(value => {
         this.introduction = value;
+      }),
+      this.aboutService.skills$.subscribe(value => {
+        this.skills = value;
+      }),
+      this.aboutService.techCloud$.subscribe(value => {
+        this.techCloud = value;
       })
     );
   }

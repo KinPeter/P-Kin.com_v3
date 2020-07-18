@@ -10,5 +10,11 @@
     "en": "EN",
     "hu": "HU",
     "kr": "KR"
+  },
+  "p": {
+    "about": {
+      "tech-stack": "Amiket használok",
+      "other-tech": "Egyéb technológiák, amiket ismerek, vagy van némi tapasztalatom"
+    }
   }
 }

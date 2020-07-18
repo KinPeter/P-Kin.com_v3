@@ -10,5 +10,11 @@
     "en": "EN",
     "hu": "HU",
     "kr": "KR"
+  },
+  "p": {
+    "about": {
+      "tech-stack": "Tech stack",
+      "other-tech": "Other related technologies I'm familiar with, or have some experience"
+    }
   }
 }

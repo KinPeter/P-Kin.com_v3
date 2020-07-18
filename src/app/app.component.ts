@@ -22,11 +22,11 @@ export class AppComponent {
     translate.onLangChange.subscribe((event: { lang: string; translations: Record<string, unknown> }) => {
       console.log('Language changed to:', event.lang);
       if (event.lang === 'kr') {
-        document.body.style.setProperty('--font-serif', 'Noto Serif KR');
         document.body.style.setProperty('--font-sans-serif', 'Noto Sans KR');
+        // document.body.style.setProperty('--font-serif', 'Noto Serif KR');
       } else {
-        document.body.style.setProperty('--font-serif', 'Martel');
         document.body.style.setProperty('--font-sans-serif', 'Montserrat');
+        // document.body.style.setProperty('--font-serif', 'Martel');
       }
     });
   }

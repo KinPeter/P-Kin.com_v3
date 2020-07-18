@@ -17,12 +17,14 @@ import { PensComponent } from '~/app/pages/pens.component';
 import { GameAnd3dComponent } from '~/app/pages/game-and-3d.component';
 import { SideDrawerComponent } from '~/app/components/shared/side-drawer.component';
 import { FooterComponent } from '~/app/components/shared/footer.component';
-import { ContactsComponent } from '~/app/components/contacts.component';
+import { ContactsComponent } from '~/app/components/shared/contacts.component';
 import { LoadingComponent } from '~/app/components/shared/loading.component';
 import { LoadingService } from '~/app/services/ui/loading.service';
 import { AboutService } from '~/app/services/content/about.service';
 import { ApiService } from '~/app/services/api/api.service';
 import { SharedModule } from '~/app/shared.module';
+import { TechStackComponent } from '~/app/components/about/tech-stack.component';
+import { TechCloudComponent } from '~/app/components/about/tech-cloud.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,8 @@ import { SharedModule } from '~/app/shared.module';
     GameAnd3dComponent,
     ThemeSwitchComponent,
     LanguageSwitchComponent,
+    TechStackComponent,
+    TechCloudComponent,
   ],
   imports: [
     SharedModule,

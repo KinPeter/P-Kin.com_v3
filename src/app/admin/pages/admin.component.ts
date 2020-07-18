@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'pk-home',
+  selector: 'pk-admin',
   template: `
     <div class="pk-default-container">
       <pk-md-editor></pk-md-editor>

@@ -3,8 +3,8 @@
 }
 
 body {
-  --font-serif: 'Martel';
   --font-sans-serif: 'Montserrat';
+  // --font-serif: 'Martel';
 
   line-height: 1.5;
   margin: 0;
@@ -25,14 +25,19 @@ h5,
 h6 {
   font-family: var(--font-sans-serif), sans-serif;
   font-weight: normal;
+  color: var(--text-color-light);
+  margin-top: 0;
 }
 
 p,
 span,
-li {
-  font-family: var(--font-serif), serif;
+li,
+ul,
+ol {
+  font-family: var(--font-sans-serif), sans-serif;
+  margin-top: 0;
 }
 
 strong {
-  font-weight: 800;
+  font-weight: 700;
 }
