@@ -5,9 +5,10 @@ import { AdminComponent } from '~/app/admin/pages/admin.component';
 import { AdminRoutingModule } from '~/app/admin/admin-routing.module';
 import { MdEditorComponent } from '~/app/admin/components/md-editor.component';
 import { SharedModule } from '~/app/shared.module';
+import { IconsModule } from '../components/shared/icons/icons.module';
 
 @NgModule({
   declarations: [AdminComponent, MdEditorComponent],
-  imports: [CommonModule, SharedModule, FormsModule, AdminRoutingModule],
+  imports: [CommonModule, SharedModule, IconsModule, FormsModule, AdminRoutingModule],
 })
 export class AdminModule {}

@@ -6,15 +6,33 @@ import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
     <div class="editor">
       <div class="editor-left">
         <div class="editor-left__toolbar">
-          <button (click)="onMakeBold()">bold</button>
-          <button (click)="onMakeItalic()">italic</button>
-          <button (click)="onStrikeThrough()">strike through</button>
-          <button (click)="onMakeCode()">code</button>
-          <button (click)="onAddHeading1()">H1</button>
-          <button (click)="onAddHeading2()">H2</button>
-          <button (click)="onAddHeading3()">H3</button>
-          <button (click)="onInsertLink()">link</button>
-          <button (click)="onInsertImage()">image</button>
+          <div class="toolbar-button" (click)="onMakeBold()">
+            <pk-icon-md-bold></pk-icon-md-bold>
+          </div>
+          <div class="toolbar-button" (click)="onMakeItalic()">
+            <pk-icon-md-italic></pk-icon-md-italic>
+          </div>
+          <div class="toolbar-button" (click)="onStrikeThrough()">
+            <pk-icon-md-strike-through></pk-icon-md-strike-through>
+          </div>
+          <div class="toolbar-button toolbar-button_spacer" (click)="onMakeCode()">
+            <pk-icon-md-code></pk-icon-md-code>
+          </div>
+          <div class="toolbar-button" (click)="onAddHeading1()">
+            H1
+          </div>
+          <div class="toolbar-button" (click)="onAddHeading2()">
+            H2
+          </div>
+          <div class="toolbar-button toolbar-button_spacer" (click)="onAddHeading3()">
+            H3
+          </div>
+          <div class="toolbar-button" (click)="onInsertLink()">
+            <pk-icon-md-link></pk-icon-md-link>
+          </div>
+          <div class="toolbar-button" (click)="onInsertImage()">
+            <pk-icon-md-image></pk-icon-md-image>
+          </div>
         </div>
         <textarea #textarea [(ngModel)]="value"></textarea>
       </div>
@@ -45,15 +63,40 @@ import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
         height: 100%;
       }
       .editor-right p {
-        height: 50px;
+        height: 38px;
         margin: 0;
+        display: flex;
+        align-items: center;
+        font-family: var(--font-sans-serif), sans-serif;
+        font-weight: bold;
       }
       .editor-left__toolbar {
-        height: 50px;
+        height: 38px;
+        display: flex;
+      }
+      .toolbar-button {
+        height: 36px;
+        width: 36px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: var(--font-sans-serif), sans-serif;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      .toolbar-button > * {
+        height: 24px;
+      }
+      .toolbar-button:hover {
+        background: var(--background-color-secondary);
+      }
+      .toolbar-button_spacer {
+        margin-right: 12px;
       }
       .editor-right__preview {
         height: calc(100% - 50px);
         overflow: auto;
+        padding-right: 12px;
       }
       textarea {
         width: 100%;
