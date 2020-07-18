@@ -35,14 +35,7 @@ import { Component, OnInit } from '@angular/core';
         background: var(--background-color);
         opacity: 0;
         animation: fadeIn 0.2s forwards;
-      }
-      @keyframes fadeIn {
-        0% {
-          opacity: 0;
-        }
-        100% {
-          opacity: 1;
-        }
+        z-index: 2;
       }
       .loading-element {
         margin-left: 1rem;

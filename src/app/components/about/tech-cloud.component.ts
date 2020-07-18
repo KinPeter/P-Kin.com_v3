@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'pk-tech-cloud',
@@ -21,10 +21,8 @@ import { Component, Input, OnInit } from '@angular/core';
     `,
   ],
 })
-export class TechCloudComponent implements OnInit {
+export class TechCloudComponent {
   @Input() techCloud: string[] = [];
 
   constructor() {}
-
-  ngOnInit(): void {}
 }

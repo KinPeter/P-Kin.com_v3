@@ -32,10 +32,14 @@ import { Subscription } from 'rxjs';
       }
       .about-introduction {
         width: 100%;
+        opacity: 0;
+        animation: blurUpAndFade 0.5s ease forwards;
       }
       .about-skills {
         width: 100%;
         margin-top: 2rem;
+        opacity: 0;
+        animation: blurUpAndFade 0.5s 0.2s ease forwards;
       }
 
       @media (min-width: 500px) {
