@@ -25,6 +25,7 @@ import { ApiService } from '~/app/services/api/api.service';
 import { SharedModule } from '~/app/shared.module';
 import { TechStackComponent } from '~/app/components/about/tech-stack.component';
 import { TechCloudComponent } from '~/app/components/about/tech-cloud.component';
+import { WebDevService } from '~/app/services/content/web-dev.service';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,7 @@ import { TechCloudComponent } from '~/app/components/about/tech-cloud.component'
     }),
     IconsModule,
   ],
-  providers: [LoadingService, ApiService, AboutService],
+  providers: [LoadingService, ApiService, AboutService, WebDevService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

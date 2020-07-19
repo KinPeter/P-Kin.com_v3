@@ -48,7 +48,6 @@ import { Router } from '@angular/router';
         background: var(--background-color);
         color: var(--text-color-light);
         transition: all 0.3s ease;
-        z-index: 1;
       }
       @media (min-width: 912px) {
         .app-bar {

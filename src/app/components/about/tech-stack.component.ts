@@ -83,56 +83,46 @@ interface Skill {
         width: 4px;
         margin-right: 6px;
         background: var(--color-accent);
-        z-index: -1;
+        transform: scaleX(0);
       }
       .skill-bar__stick_0 {
         opacity: 1;
-        transform: scaleX(0);
         animation: stretchIn 0.1s 0.3s ease forwards;
       }
       .skill-bar__stick_1 {
         opacity: 0.92;
-        transform: scaleX(0);
         animation: stretchIn 0.1s 0.4s ease forwards;
       }
       .skill-bar__stick_2 {
         opacity: 0.84;
-        transform: scaleX(0);
         animation: stretchIn 0.1s 0.5s ease forwards;
       }
       .skill-bar__stick_3 {
         opacity: 0.76;
-        transform: scaleX(0);
         animation: stretchIn 0.1s 0.6s ease forwards;
       }
       .skill-bar__stick_4 {
         opacity: 0.68;
-        transform: scaleX(0);
         animation: stretchIn 0.1s 0.7s ease forwards;
       }
       .skill-bar__stick_5 {
         opacity: 0.6;
-        transform: scaleX(0);
         animation: stretchIn 0.1s 0.8s ease forwards;
       }
       .skill-bar__stick_6 {
         opacity: 0.52;
-        transform: scaleX(0);
         animation: stretchIn 0.1s 0.9s ease forwards;
       }
       .skill-bar__stick_7 {
         opacity: 0.44;
-        transform: scaleX(0);
         animation: stretchIn 0.1s 1s ease forwards;
       }
       .skill-bar__stick_8 {
         opacity: 0.36;
-        transform: scaleX(0);
         animation: stretchIn 0.1s 1.1s ease forwards;
       }
       .skill-bar__stick_9 {
         opacity: 0.28;
-        transform: scaleX(0);
         animation: stretchIn 0.1s 1.2s ease forwards;
       }
     `,

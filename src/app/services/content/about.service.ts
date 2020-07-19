@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { LoadingService } from '~/app/services/ui/loading.service';
 import { ApiService } from '~/app/services/api/api.service';
 import { TranslateService } from '@ngx-translate/core';
 import { Lang } from '~/app/types/i18n/Lang';
@@ -19,12 +18,12 @@ export class AboutService {
   public skills$ = this.skills.asObservable();
   public techCloud$ = this.techCloud.asObservable();
 
-  constructor(private api: ApiService, private loading: LoadingService, private translate: TranslateService) {
+  constructor(private api: ApiService, private translate: TranslateService) {
     this.translate.onLangChange.subscribe(() => this.updateState());
   }
 
   public async fetchIfNeeded(): Promise<void> {
-    if (!this.introduction.value) {
+    if (!this.isContentLoaded) {
       this.content = await this.api.get<AboutResource>('/about.json');
       this.isContentLoaded = true;
       this.updateState();
