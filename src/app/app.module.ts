@@ -26,6 +26,7 @@ import { SharedModule } from '~/app/shared.module';
 import { TechStackComponent } from '~/app/components/about/tech-stack.component';
 import { TechCloudComponent } from '~/app/components/about/tech-cloud.component';
 import { WebDevService } from '~/app/services/content/web-dev.service';
+import { PortfolioCardComponent } from '~/app/components/portfolio/portfolio-card.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { WebDevService } from '~/app/services/content/web-dev.service';
     LanguageSwitchComponent,
     TechStackComponent,
     TechCloudComponent,
+    PortfolioCardComponent,
   ],
   imports: [
     SharedModule,

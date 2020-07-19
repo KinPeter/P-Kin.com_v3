@@ -3,6 +3,8 @@
  */
 body {
   --background-color: #fff;
+  --background-color-transparent: #ffffffbe;
+  --background-color-transparenas: rgba(255, 255, 255, 0.75);
   --background-color-secondary: #eceff1;
   --text-color: #3e4450;
   --text-color-light: #627180;
@@ -15,6 +17,7 @@ body {
  */
 body.dark {
   --background-color: #1d2025;
+  --background-color-transparent: #1d2025da;
   --background-color-secondary: #3a434c;
   --text-color: #abb4bd;
   --text-color-light: #767c82;

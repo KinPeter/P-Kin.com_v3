@@ -6,6 +6,7 @@ import { Lang } from '~/app/types/i18n/Lang';
 import { WebDevResource } from '../../types/content/WebDevResource';
 import { PortfolioItem } from '~/app/types/content/PortfolioItem';
 import { LoadedItem } from '~/app/types/content/LoadedItem';
+import { UUID } from '~/app/types/UUID';
 
 @Injectable({ providedIn: 'root' })
 export class WebDevService {
@@ -40,10 +41,11 @@ export class WebDevService {
     }
   }
 
-  public loadItem(index: number): void {
+  public loadItem(id: UUID): void {
     const currentLang: Lang = this.translate.currentLang as Lang;
     if (this.content) {
-      const item = this.content.portfolio[index];
+      const item = this.content.portfolio.find(i => i.id === id);
+      if (!item) throw new Error('Item not found: ' + id);
       this.loadedItem.next({
         name: item.name,
         badges: item.badges,

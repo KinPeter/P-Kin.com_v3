@@ -22,10 +22,12 @@
     "@angular/router": "~10.0.2",
     "@ngx-translate/core": "^13.0.0",
     "@ngx-translate/http-loader": "^6.0.0",
+    "@types/uuid": "^8.0.0",
     "basic-ftp": "^4.6.2",
     "marked": "^1.1.0",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
+    "uuid": "^8.2.0",
     "zone.js": "~0.10.3"
   },
   "devDependencies": {
