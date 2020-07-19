@@ -1,5 +1,4 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { LoadingService } from '~/app/services/ui/loading.service';
 import { AboutService } from '~/app/services/content/about.service';
 import { Subscription } from 'rxjs';
 
@@ -7,8 +6,6 @@ import { Subscription } from 'rxjs';
   selector: 'pk-about',
   template: `
     <div *ngIf="aboutService.isContentLoaded" class="pk-default-container about-wrapper">
-      <!--      <p>{{ 'hello' | translate }}</p>-->
-      <!--      <button (click)="startLoading()">start loading</button>-->
       <div class="about-introduction markdown-text" [innerHTML]="introduction | marked"></div>
       <div class="about-skills">
         <h2>{{ 'p.about.tech-stack' | translate }}</h2>
@@ -70,7 +67,7 @@ export class AboutComponent implements OnInit, OnDestroy {
   skills: Record<string, number> = {};
   techCloud: string[] = [];
 
-  constructor(private loading: LoadingService, public aboutService: AboutService) {
+  constructor(public aboutService: AboutService) {
     this.aboutService.fetchIfNeeded();
   }
 
@@ -92,12 +89,5 @@ export class AboutComponent implements OnInit, OnDestroy {
     this.subscriptions.forEach(sub => {
       sub.unsubscribe();
     });
-  }
-
-  public startLoading(): void {
-    this.loading.start();
-    setTimeout(() => {
-      this.loading.stop();
-    }, 3000);
   }
 }
