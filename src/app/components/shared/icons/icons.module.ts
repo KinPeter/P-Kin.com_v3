@@ -13,6 +13,8 @@ import { IconMdStrikeThroughComponent } from '~/app/components/shared/icons/md-e
 import { IconMdCodeComponent } from '~/app/components/shared/icons/md-editor/icon-md-code.component';
 import { IconMdLinkComponent } from '~/app/components/shared/icons/md-editor/icon-md-link.component';
 import { IconMdImageComponent } from '~/app/components/shared/icons/md-editor/icon-md-image.component';
+import { IconFilterComponent } from '~/app/components/shared/icons/icon-filter.component';
+import { IconCaretRightComponent } from '~/app/components/shared/icons/icon-caret-right.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { IconMdImageComponent } from '~/app/components/shared/icons/md-editor/ic
     IconMdCodeComponent,
     IconMdLinkComponent,
     IconMdImageComponent,
+    IconFilterComponent,
+    IconCaretRightComponent,
   ],
   exports: [
     IconThemesComponent,
@@ -46,6 +50,8 @@ import { IconMdImageComponent } from '~/app/components/shared/icons/md-editor/ic
     IconMdCodeComponent,
     IconMdLinkComponent,
     IconMdImageComponent,
+    IconFilterComponent,
+    IconCaretRightComponent,
   ],
 })
 export class IconsModule {}

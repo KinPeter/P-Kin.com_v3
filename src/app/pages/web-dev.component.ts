@@ -8,19 +8,33 @@ import { LoadedItem } from '~/app/types/content/LoadedItem';
 @Component({
   selector: 'pk-web-dev',
   template: `
-    <div class="cards">
-      <pk-portfolio-card
-        *ngFor="let item of items; let i = index"
-        [item]="item"
-        [ngStyle]="getCardStyle(i)"
-        (openItem)="onOpenItem($event)"
-      ></pk-portfolio-card>
+    <pk-filters-desktop [filters]="filters" (applyFilter)="onApplyFilter($event)"></pk-filters-desktop>
+    <div class="web-dev">
+      <div class="web-dev__cards">
+        <pk-portfolio-card
+          *ngFor="let item of items; let i = index"
+          [item]="item"
+          [ngStyle]="getCardStyle(i)"
+          (openItem)="onOpenItem($event)"
+        ></pk-portfolio-card>
+      </div>
     </div>
     <pk-portfolio-modal *ngIf="isModalOpen" [item]="loadedItem" (closeModal)="onCloseModal()"></pk-portfolio-modal>
   `,
   styles: [
     `
-      .cards {
+      .web-dev {
+        padding-left: 170px;
+      }
+
+      pk-filters-desktop {
+        display: none;
+        position: fixed;
+        opacity: 0;
+        animation: blurUpAndFade 0.3s 0.5s ease forwards;
+      }
+
+      .web-dev__cards {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
@@ -31,13 +45,34 @@ import { LoadedItem } from '~/app/types/content/LoadedItem';
         opacity: 0;
         animation: blurUpAndFade 0.3s ease forwards;
       }
+
+      @media (min-width: 912px) {
+        pk-filters-desktop {
+          display: block;
+        }
+        /*pk-filters-mobile {*/
+        /*  display: none;*/
+        /*}*/
+      }
     `,
   ],
 })
 export class WebDevComponent implements OnInit, OnDestroy {
   private subscriptions: Subscription[] = [];
 
-  filters: string[] = [];
+  filters: string[] = [
+    'All',
+    'Angular',
+    'Vue',
+    'React',
+    'Svelte',
+    'TypeScript',
+    'Material',
+    'Full Stack',
+    'Firebase',
+    'NestJS',
+    'Node.js',
+  ];
   items: PortfolioItem[] = [];
   loadedItem: LoadedItem = { name: '', badges: [], description: '' };
   isModalOpen = false;
@@ -61,7 +96,7 @@ export class WebDevComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.subscriptions.push(
       this.webDevService.filters$.subscribe(value => {
-        this.filters = value;
+        // this.filters = value;
       }),
       this.webDevService.filteredItems$.subscribe(value => {
         this.items = value;
@@ -85,6 +120,12 @@ export class WebDevComponent implements OnInit, OnDestroy {
     });
   }
 
+  getCardStyle(i: number): Record<string, string | number> {
+    return {
+      animationDelay: `${i * 0.1}s`,
+    };
+  }
+
   onOpenItem(id: UUID): void {
     console.log('open item: ', id);
     this.isModalOpen = true;
@@ -97,13 +138,11 @@ export class WebDevComponent implements OnInit, OnDestroy {
     };
   }
 
-  getCardStyle(i: number): Record<string, string | number> {
-    return {
-      animationDelay: `${i * 0.1}s`,
-    };
-  }
-
   onCloseModal(): void {
     this.isModalOpen = false;
+  }
+
+  onApplyFilter(filter: string): void {
+    this.webDevService.applyFilter(filter);
   }
 }
