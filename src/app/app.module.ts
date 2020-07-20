@@ -26,6 +26,7 @@ import { TechStackComponent } from '~/app/components/about/tech-stack.component'
 import { TechCloudComponent } from '~/app/components/about/tech-cloud.component';
 import { WebDevService } from '~/app/services/content/web-dev.service';
 import { PortfolioCardComponent } from '~/app/components/portfolio/portfolio-card.component';
+import { PortfolioModalComponent } from '~/app/components/portfolio/portfolio-modal.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { PortfolioCardComponent } from '~/app/components/portfolio/portfolio-car
     TechStackComponent,
     TechCloudComponent,
     PortfolioCardComponent,
+    PortfolioModalComponent,
   ],
   imports: [
     SharedModule,

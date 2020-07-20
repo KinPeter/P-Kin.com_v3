@@ -3,6 +3,7 @@ import { Subscription } from 'rxjs';
 import { WebDevService } from '~/app/services/content/web-dev.service';
 import { PortfolioItem } from '~/app/types/content/PortfolioItem';
 import { UUID } from '~/app/types/UUID';
+import { LoadedItem } from '~/app/types/content/LoadedItem';
 
 @Component({
   selector: 'pk-web-dev',
@@ -15,6 +16,7 @@ import { UUID } from '~/app/types/UUID';
         (openItem)="onOpenItem($event)"
       ></pk-portfolio-card>
     </div>
+    <pk-portfolio-modal *ngIf="isModalOpen" [item]="loadedItem" (closeModal)="onCloseModal()"></pk-portfolio-modal>
   `,
   styles: [
     `
@@ -37,6 +39,8 @@ export class WebDevComponent implements OnInit, OnDestroy {
 
   filters: string[] = [];
   items: PortfolioItem[] = [];
+  loadedItem: LoadedItem = { name: '', badges: [], description: '' };
+  isModalOpen = false;
 
   dummyItem: PortfolioItem = {
     id: 'aa1',
@@ -61,6 +65,11 @@ export class WebDevComponent implements OnInit, OnDestroy {
       }),
       this.webDevService.filteredItems$.subscribe(value => {
         this.items = value;
+      }),
+      this.webDevService.loadedItem$.subscribe(value => {
+        if (value) {
+          this.loadedItem = value;
+        }
       })
     );
     if (this.items.length === 0) {
@@ -78,12 +87,23 @@ export class WebDevComponent implements OnInit, OnDestroy {
 
   onOpenItem(id: UUID): void {
     console.log('open item: ', id);
+    this.isModalOpen = true;
     // this.webDevService.loadItem(id);
+    this.loadedItem = {
+      name: 'Project name',
+      badges: ['something', 'another one', 'and more', 'a thing', 'just', 'one more'],
+      description:
+        "## Some markdown\nLorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam assumenda, cupiditate distinctio eaque eius et eum ex excepturi, fugiat incidunt labore laudantium libero officiis pariatur placeat quae quasi quod sunt, temporibus voluptate. Debitis enim eos incidunt laboriosam maiores quo ullam voluptatem! Aliquam dicta, distinctio impedit iste libero molestias nam neque nisi nobis quia sequi similique, sint velit veniam voluptatibus, voluptatum.\n\nThis is the **description** of this item\nLet's see a list again:\n- one\n- two\n- three\n\n## Some markdown\nThis is the **description** of this item\nLet's see a list again:\n- one\n- two\n- three\n\n## Some markdown\nThis is the **description** of this item\nLet's see a list again:\n- one\n- two\n- three",
+    };
   }
 
   getCardStyle(i: number): Record<string, string | number> {
     return {
       animationDelay: `${i * 0.1}s`,
     };
+  }
+
+  onCloseModal(): void {
+    this.isModalOpen = false;
   }
 }
