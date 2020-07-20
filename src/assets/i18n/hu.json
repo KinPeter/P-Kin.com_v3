@@ -16,5 +16,11 @@
       "tech-stack": "Amiket használok",
       "other-tech": "Egyéb technológiák, amiket ismerek, vagy van némi tapasztalatom"
     }
+  },
+  "c": {
+    "portfolio-card": {
+      "show-more": "Mutass többet",
+      "in-progress": "Folyamatban"
+    }
   }
 }

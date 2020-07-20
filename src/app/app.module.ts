@@ -7,7 +7,6 @@ import { AppRoutingModule } from '~/app/app-routing.module';
 import { AppComponent } from '~/app/app.component';
 import { HttpLoaderFactory } from '~/app/lib/translate/http-loader.factory';
 import { AboutComponent } from '~/app/pages/about.component';
-import { MarkedPipe } from '~/app/pipes/marked.pipe';
 import { AppBarComponent } from '~/app/components/shared/app-bar.component';
 import { IconsModule } from '~/app/components/shared/icons/icons.module';
 import { ThemeSwitchComponent } from '~/app/components/shared/theme-switch.component';

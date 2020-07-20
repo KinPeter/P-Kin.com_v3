@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { PortfolioItem } from '~/app/types/content/PortfolioItem';
 import { UUID } from '~/app/types/UUID';
 
@@ -12,6 +12,12 @@ import { UUID } from '~/app/types/UUID';
         <div class="portfolio-card-overlay__badges">
           <div *ngFor="let badge of item?.badges" class="portfolio-badge">{{ badge }}</div>
         </div>
+        <button class="portfolio-card-overlay__button" (click)="onOpen()">
+          {{ 'c.portfolio-card.show-more' | translate }}
+        </button>
+      </div>
+      <div class="portfolio-card-ribbon" *ngIf="item?.badges?.includes('In Progress')">
+        <span>{{ 'c.portfolio-card.in-progress' | translate }}</span>
       </div>
     </div>
   `,
@@ -78,6 +84,46 @@ import { UUID } from '~/app/types/UUID';
         opacity: 0;
       }
 
+      .portfolio-card-overlay__button {
+        display: none;
+        opacity: 0;
+        outline: none;
+        background: transparent;
+        text-transform: uppercase;
+        padding: 0.7rem 1.2rem;
+        margin-top: 1rem;
+        border: 2px solid var(--color-accent-light);
+        color: var(--color-accent);
+        cursor: pointer;
+        position: relative;
+      }
+
+      .portfolio-card-overlay__button::before,
+      .portfolio-card-overlay__button::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: 50%;
+        height: 0;
+        background: var(--color-accent);
+        opacity: 0.1;
+      }
+
+      .portfolio-card-overlay__button::before {
+        left: 0;
+        transition: all 0.2s ease;
+      }
+
+      .portfolio-card-overlay__button::after {
+        right: 0;
+        transition: all 0.2s 0.1s ease;
+      }
+
+      .portfolio-card-overlay__button:hover.portfolio-card-overlay__button::before,
+      .portfolio-card-overlay__button:hover.portfolio-card-overlay__button::after {
+        height: 100%;
+      }
+
       .portfolio-card:hover .portfolio-card-overlay {
         height: 100%;
       }
@@ -87,16 +133,40 @@ import { UUID } from '~/app/types/UUID';
       }
 
       .portfolio-card:hover .portfolio-badge {
-        animation: blurUpAndFade 0.2s 0.2s forwards;
+        animation: blurUpAndFade 0.2s 0.2s ease forwards;
+      }
+
+      .portfolio-card:hover .portfolio-card-overlay__button {
+        display: block;
+        animation: blurUpAndFade 0.2s 0.4s ease forwards;
       }
 
       .portfolio-card:hover .portfolio-card-background {
         transform: scale(1.1);
       }
+
+      .portfolio-card-ribbon {
+        position: absolute;
+        top: 38px;
+        right: -95px;
+        width: 300px;
+        height: 35px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: rotate(45deg);
+        background: yellow;
+        color: black;
+        font-weight: bold;
+        border: 2px solid black;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+        text-transform: uppercase;
+        user-select: none;
+      }
     `,
   ],
 })
-export class PortfolioCardComponent implements OnInit {
+export class PortfolioCardComponent {
   @Input() item: PortfolioItem | undefined;
 
   @Output() openItem: EventEmitter<UUID> = new EventEmitter<UUID>();
@@ -106,6 +176,4 @@ export class PortfolioCardComponent implements OnInit {
   onOpen(): void {
     this.openItem.emit(this.item?.id);
   }
-
-  ngOnInit(): void {}
 }

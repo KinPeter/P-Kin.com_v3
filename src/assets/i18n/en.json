@@ -16,5 +16,11 @@
       "tech-stack": "Tech stack",
       "other-tech": "Other related technologies I'm familiar with, or have some experience"
     }
+  },
+  "c": {
+    "portfolio-card": {
+      "show-more": "Show more",
+      "in-progress": "In progress"
+    }
   }
 }
