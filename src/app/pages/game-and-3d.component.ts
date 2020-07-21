@@ -51,6 +51,7 @@ export class GameAnd3dComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    this.gameAnd3dService.resetState();
     this.subscriptions.forEach(sub => {
       sub.unsubscribe();
     });

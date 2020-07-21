@@ -58,6 +58,14 @@ export class GameAnd3dService {
     }
   }
 
+  public resetState(): void {
+    if (this.content) {
+      this.currentFilter.next(this.content.filters[0]);
+      this.filteredItems.next(this.content.portfolio);
+      this.loadedItem.next(undefined);
+    }
+  }
+
   private updateState(): void {
     if (this.content) {
       this.filters.next(this.content.filters);

@@ -51,6 +51,7 @@ export class WebDevComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    this.webDevService.resetState();
     this.subscriptions.forEach(sub => {
       sub.unsubscribe();
     });
