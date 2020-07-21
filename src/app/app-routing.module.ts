@@ -4,6 +4,7 @@ import { AboutComponent } from '~/app/pages/about.component';
 import { WebDevComponent } from '~/app/pages/web-dev.component';
 import { PensComponent } from '~/app/pages/pens.component';
 import { GameAnd3dComponent } from '~/app/pages/game-and-3d.component';
+import { ErrorComponent } from '~/app/pages/error.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: 'game-and-3d',
     component: GameAnd3dComponent,
+  },
+  {
+    path: 'error',
+    component: ErrorComponent,
   },
   {
     path: 'admin',

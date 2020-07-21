@@ -27,5 +27,8 @@
       "filter-results": "Találatok szűrése",
       "not-found": "Sajnos nincs találat erre a szűrésre..."
     }
+  },
+  "error": {
+    "cannot-get": "Nem sikerült elérni a szervert, kérlek próbáld újra később."
   }
 }

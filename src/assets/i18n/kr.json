@@ -13,8 +13,8 @@
   },
   "p": {
     "about": {
-      "tech-stack": "Tech stack",
-      "other-tech": "Other related technologies I'm familiar with, or have some experience"
+      "tech-stack": "보유 기술",
+      "other-tech": "익숙하거나 경험이있는 기타 관련 기술"
     }
   },
   "c": {
@@ -27,5 +27,8 @@
       "filter-results": "결과 필터링",
       "not-found": "검색 결과가 없습니다..."
     }
+  },
+  "error": {
+    "cannot-get": "서버에 연결할 수 없습니다. 나중에 다시 시도하십시오."
   }
 }

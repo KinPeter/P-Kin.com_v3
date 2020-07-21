@@ -27,5 +27,8 @@
       "filter-results": "Filter results",
       "not-found": "Sorry, no match found..."
     }
+  },
+  "error": {
+    "cannot-get": "Could not reach the server, please try again later."
   }
 }

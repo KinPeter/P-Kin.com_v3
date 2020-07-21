@@ -34,6 +34,8 @@ import { GameAnd3dService } from '~/app/services/content/game-and-3d.service';
 import { EmbeddedPenComponent } from '~/app/components/pens/embedded-pen.component';
 import { PensService } from '~/app/services/content/pens.service';
 import { NotFoundComponent } from '~/app/components/portfolio/not-found.component';
+import { ErrorComponent } from '~/app/pages/error.component';
+import { ErrorService } from '~/app/services/ui/error.service';
 
 @NgModule({
   declarations: [
@@ -58,6 +60,7 @@ import { NotFoundComponent } from '~/app/components/portfolio/not-found.componen
     FiltersMobileComponent,
     EmbeddedPenComponent,
     NotFoundComponent,
+    ErrorComponent,
   ],
   imports: [
     SharedModule,
@@ -71,7 +74,7 @@ import { NotFoundComponent } from '~/app/components/portfolio/not-found.componen
     }),
     IconsModule,
   ],
-  providers: [LoadingService, ApiService, AboutService, WebDevService, GameAnd3dService, PensService],
+  providers: [LoadingService, ErrorService, ApiService, AboutService, WebDevService, GameAnd3dService, PensService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
