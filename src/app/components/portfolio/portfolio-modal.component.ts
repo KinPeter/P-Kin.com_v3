@@ -10,7 +10,11 @@ import { LoadedItem } from '~/app/types/content/LoadedItem';
         <div class="portfolio-modal__badges">
           <div *ngFor="let badge of item?.badges" class="portfolio-modal-badge">{{ badge }}</div>
         </div>
-        <div class="portfolio-modal-content markdown-text" [innerHTML]="item.description | marked"></div>
+        <div
+          class="portfolio-modal-content markdown-text"
+          linksTargetBlank
+          [innerHTML]="item.description | marked"
+        ></div>
       </div>
       <div
         class="portfolio-modal__close-button"

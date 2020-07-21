@@ -38,13 +38,13 @@ import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
       </div>
       <div class="editor-right">
         <p>Preview:</p>
-        <div class="editor-right__preview markdown-text" [innerHTML]="value | marked"></div>
+        <div class="editor-right__preview markdown-text" linksTargetBlank [innerHTML]="value | marked"></div>
       </div>
     </div>
 
     <button (click)="onUpdate()">Update</button>
     {{ jsonString }}
-    <div class="markdown-text" [innerHTML]="parsed | marked"></div>
+    <div class="markdown-text" linksTargetBlank [innerHTML]="parsed | marked"></div>
   `,
   styles: [
     `
