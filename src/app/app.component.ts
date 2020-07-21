@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 import { TranslateService } from '@ngx-translate/core';
 import { LoadingService } from '~/app/services/ui/loading.service';
 
@@ -14,7 +16,12 @@ import { LoadingService } from '~/app/services/ui/loading.service';
   styles: [],
 })
 export class AppComponent {
-  constructor(public translate: TranslateService, public loading: LoadingService) {
+  constructor(
+    public translate: TranslateService,
+    public loading: LoadingService,
+    private title: Title,
+    private router: Router
+  ) {
     // init the translate service here
     translate.use('en');
 
@@ -29,5 +36,40 @@ export class AppComponent {
         // document.body.style.setProperty('--font-serif', 'Martel');
       }
     });
+
+    this.router.events.subscribe(async event => {
+      if (event instanceof NavigationEnd) {
+        let newTitle: string;
+        switch (event.url) {
+          case '/about':
+            newTitle = await this.getTitleFor('menu.about');
+            break;
+          case '/web-dev':
+            newTitle = await this.getTitleFor('menu.webDev');
+            break;
+          case '/pens':
+            newTitle = await this.getTitleFor('menu.pens');
+            break;
+          case '/game-and-3d':
+            newTitle = await this.getTitleFor('menu.gameAnd3d');
+            break;
+          case '/admin':
+            newTitle = 'Admin - P-Kin.com';
+            break;
+          case '/error':
+            newTitle = 'Ooops! - P-kin.com';
+            break;
+          default:
+            newTitle = 'P-Kin.com';
+            break;
+        }
+        this.title.setTitle(newTitle);
+      }
+    });
+  }
+
+  private async getTitleFor(translateKey: string): Promise<string> {
+    const route = await this.translate.get(translateKey).toPromise();
+    return route + ' - P-Kin.com';
   }
 }

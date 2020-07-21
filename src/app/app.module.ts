@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
@@ -74,7 +74,16 @@ import { ErrorService } from '~/app/services/ui/error.service';
     }),
     IconsModule,
   ],
-  providers: [LoadingService, ErrorService, ApiService, AboutService, WebDevService, GameAnd3dService, PensService],
+  providers: [
+    LoadingService,
+    ErrorService,
+    ApiService,
+    AboutService,
+    WebDevService,
+    GameAnd3dService,
+    PensService,
+    Title,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
