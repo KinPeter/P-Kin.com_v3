@@ -9,7 +9,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
         class="filters-desktop__button button-horizontal-animated"
         (click)="onClickFilter(filter)"
       >
-        {{ filter }}
+        {{ filter === 'All' ? ('c.filters.all' | translate) : filter }}
         <pk-icon-caret-right [size]="20" *ngIf="isActive(filter)"></pk-icon-caret-right>
       </span>
     </div>
@@ -49,20 +49,17 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class FiltersDesktopComponent {
   @Input() filters: string[] = [];
-  @Input() currentFilter = 'All';
+  @Input() currentFilter = '';
 
   @Output() applyFilter: EventEmitter<string> = new EventEmitter<string>();
 
-  constructor() {
-    console.log(this.filters);
-  }
+  constructor() {}
 
   isActive(filter: string): boolean {
     return filter === this.currentFilter;
   }
 
   onClickFilter(filter: string): void {
-    this.currentFilter = filter;
     this.applyFilter.emit(filter);
   }
 }

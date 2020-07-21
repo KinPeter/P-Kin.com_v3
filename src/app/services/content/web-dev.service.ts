@@ -14,10 +14,12 @@ export class WebDevService {
   private content: WebDevResource | undefined;
 
   private filters = new BehaviorSubject<string[]>([]);
+  private currentFilter = new BehaviorSubject<string>('');
   private filteredItems = new BehaviorSubject<PortfolioItem[]>([]);
   private loadedItem = new BehaviorSubject<LoadedItem | undefined>(undefined);
 
   public filters$ = this.filters.asObservable();
+  public currentFilter$ = this.currentFilter.asObservable();
   public filteredItems$ = this.filteredItems.asObservable();
   public loadedItem$ = this.loadedItem.asObservable();
 
@@ -38,6 +40,7 @@ export class WebDevService {
       const items =
         filter === 'All' ? this.content.portfolio : this.content.portfolio.filter(item => item.badges.includes(filter));
       this.filteredItems.next(items);
+      this.currentFilter.next(filter);
     }
   }
 
@@ -57,6 +60,7 @@ export class WebDevService {
   private updateState(): void {
     if (this.content) {
       this.filters.next(this.content.filters);
+      this.currentFilter.next(this.content.filters[0]);
       this.filteredItems.next(this.content.portfolio);
     }
   }

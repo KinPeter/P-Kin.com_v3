@@ -28,6 +28,7 @@ import { WebDevService } from '~/app/services/content/web-dev.service';
 import { PortfolioCardComponent } from '~/app/components/portfolio/portfolio-card.component';
 import { PortfolioModalComponent } from '~/app/components/portfolio/portfolio-modal.component';
 import { FiltersDesktopComponent } from '~/app/components/portfolio/filters-desktop.component';
+import { FiltersMobileComponent } from '~/app/components/portfolio/filters-mobile.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { FiltersDesktopComponent } from '~/app/components/portfolio/filters-desk
     PortfolioCardComponent,
     PortfolioModalComponent,
     FiltersDesktopComponent,
+    FiltersMobileComponent,
   ],
   imports: [
     SharedModule,

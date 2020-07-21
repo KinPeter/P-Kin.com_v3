@@ -21,6 +21,10 @@
     "portfolio-card": {
       "show-more": "Show more",
       "in-progress": "In progress"
+    },
+    "filters": {
+      "all": "All",
+      "filter-results": "Filter results"
     }
   }
 }

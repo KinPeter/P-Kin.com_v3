@@ -21,6 +21,10 @@
     "portfolio-card": {
       "show-more": "더 보기",
       "in-progress": "개발중인"
+    },
+    "filters": {
+      "all": "모두",
+      "filter-results": "결과 필터링"
     }
   }
 }

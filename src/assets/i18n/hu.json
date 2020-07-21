@@ -21,6 +21,10 @@
     "portfolio-card": {
       "show-more": "Mutass többet",
       "in-progress": "Folyamatban"
+    },
+    "filters": {
+      "all": "Mind",
+      "filter-results": "Találatok szűrése"
     }
   }
 }

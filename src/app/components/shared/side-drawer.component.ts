@@ -70,7 +70,6 @@ import { Router } from '@angular/router';
         justify-content: space-between;
         align-items: center;
         padding: 0 84px;
-
         color: var(--text-color);
         transition: all 0.3s ease;
       }
@@ -87,6 +86,7 @@ import { Router } from '@angular/router';
         height: 100vh;
         background: rgba(0, 0, 0, 0.7);
         display: none;
+        z-index: 4;
       }
       .side-drawer_open .side-drawer__overlay {
         display: block;
@@ -101,6 +101,7 @@ import { Router } from '@angular/router';
         border-right: 1px solid var(--color-accent);
         transition: all 0.3s ease;
         transform: translateX(-100%);
+        z-index: 5;
       }
       .side-drawer_open .drawer {
         transform: translateX(0);

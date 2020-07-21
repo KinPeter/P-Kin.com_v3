@@ -8,7 +8,16 @@ import { LoadedItem } from '~/app/types/content/LoadedItem';
 @Component({
   selector: 'pk-web-dev',
   template: `
-    <pk-filters-desktop [filters]="filters" (applyFilter)="onApplyFilter($event)"></pk-filters-desktop>
+    <pk-filters-desktop
+      [filters]="filters"
+      [currentFilter]="currentFilter"
+      (applyFilter)="onApplyFilter($event)"
+    ></pk-filters-desktop>
+    <pk-filters-mobile
+      [filters]="filters"
+      [currentFilter]="currentFilter"
+      (applyFilter)="onApplyFilter($event)"
+    ></pk-filters-mobile>
     <div class="web-dev">
       <div class="web-dev__cards">
         <pk-portfolio-card
@@ -24,7 +33,7 @@ import { LoadedItem } from '~/app/types/content/LoadedItem';
   styles: [
     `
       .web-dev {
-        padding-left: 170px;
+        padding-left: 0;
       }
 
       pk-filters-desktop {
@@ -32,6 +41,10 @@ import { LoadedItem } from '~/app/types/content/LoadedItem';
         position: fixed;
         opacity: 0;
         animation: blurUpAndFade 0.3s 0.5s ease forwards;
+      }
+
+      pk-filters-mobile {
+        display: block;
       }
 
       .web-dev__cards {
@@ -47,12 +60,17 @@ import { LoadedItem } from '~/app/types/content/LoadedItem';
       }
 
       @media (min-width: 912px) {
+        .web-dev {
+          padding-left: 170px;
+        }
+
         pk-filters-desktop {
           display: block;
         }
-        /*pk-filters-mobile {*/
-        /*  display: none;*/
-        /*}*/
+
+        pk-filters-mobile {
+          display: none;
+        }
       }
     `,
   ],
@@ -73,6 +91,7 @@ export class WebDevComponent implements OnInit, OnDestroy {
     'NestJS',
     'Node.js',
   ];
+  currentFilter = '';
   items: PortfolioItem[] = [];
   loadedItem: LoadedItem = { name: '', badges: [], description: '' };
   isModalOpen = false;
@@ -97,6 +116,9 @@ export class WebDevComponent implements OnInit, OnDestroy {
     this.subscriptions.push(
       this.webDevService.filters$.subscribe(value => {
         // this.filters = value;
+      }),
+      this.webDevService.currentFilter$.subscribe(value => {
+        this.currentFilter = value;
       }),
       this.webDevService.filteredItems$.subscribe(value => {
         this.items = value;
