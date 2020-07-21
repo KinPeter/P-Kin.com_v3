@@ -9,7 +9,7 @@ import { LoadedItem } from '~/app/types/content/LoadedItem';
 import { UUID } from '~/app/types/UUID';
 
 @Injectable({ providedIn: 'root' })
-export class WebDevService {
+export class GameAnd3dService {
   public isContentLoaded = false;
   private content: PortfolioResource | undefined;
 
@@ -29,7 +29,7 @@ export class WebDevService {
 
   public async fetchIfNeeded(): Promise<void> {
     if (!this.isContentLoaded) {
-      this.content = await this.api.get<PortfolioResource>('/webdev.json');
+      this.content = await this.api.get<PortfolioResource>('/gamedev.json');
       this.isContentLoaded = true;
       this.updateState();
     }

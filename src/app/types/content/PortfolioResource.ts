@@ -1,6 +1,6 @@
 import { PortfolioItem } from './PortfolioItem';
 
-export interface WebDevResource {
+export interface PortfolioResource {
   filters: string[];
   portfolio: PortfolioItem[];
 }

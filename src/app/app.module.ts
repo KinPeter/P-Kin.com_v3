@@ -27,8 +27,10 @@ import { TechCloudComponent } from '~/app/components/about/tech-cloud.component'
 import { WebDevService } from '~/app/services/content/web-dev.service';
 import { PortfolioCardComponent } from '~/app/components/portfolio/portfolio-card.component';
 import { PortfolioModalComponent } from '~/app/components/portfolio/portfolio-modal.component';
+import { PortfolioWrapperComponent } from '~/app/components/portfolio/portfolio-wrapper.component';
 import { FiltersDesktopComponent } from '~/app/components/portfolio/filters-desktop.component';
 import { FiltersMobileComponent } from '~/app/components/portfolio/filters-mobile.component';
+import { GameAnd3dService } from '~/app/services/content/game-and-3d.service';
 
 @NgModule({
   declarations: [
@@ -48,6 +50,7 @@ import { FiltersMobileComponent } from '~/app/components/portfolio/filters-mobil
     TechCloudComponent,
     PortfolioCardComponent,
     PortfolioModalComponent,
+    PortfolioWrapperComponent,
     FiltersDesktopComponent,
     FiltersMobileComponent,
   ],
@@ -63,7 +66,7 @@ import { FiltersMobileComponent } from '~/app/components/portfolio/filters-mobil
     }),
     IconsModule,
   ],
-  providers: [LoadingService, ApiService, AboutService, WebDevService],
+  providers: [LoadingService, ApiService, AboutService, WebDevService, GameAnd3dService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
