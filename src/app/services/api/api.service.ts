@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { LoadingService } from '~/app/services/ui/loading.service';
-import { apiBaseUrl } from '../../../../keys';
-import { ErrorService } from '~/app/services/ui/error.service';
 import { TranslateService } from '@ngx-translate/core';
+import { LoadingService } from '~/app/services/ui/loading.service';
+import { ErrorService } from '~/app/services/ui/error.service';
+import { apiBaseUrl } from '../../../../keys';
 
 @Injectable({ providedIn: 'root' })
 export class ApiService {
