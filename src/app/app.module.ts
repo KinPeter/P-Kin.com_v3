@@ -33,6 +33,7 @@ import { FiltersMobileComponent } from '~/app/components/portfolio/filters-mobil
 import { GameAnd3dService } from '~/app/services/content/game-and-3d.service';
 import { EmbeddedPenComponent } from '~/app/components/pens/embedded-pen.component';
 import { PensService } from '~/app/services/content/pens.service';
+import { NotFoundComponent } from '~/app/components/portfolio/not-found.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { PensService } from '~/app/services/content/pens.service';
     FiltersDesktopComponent,
     FiltersMobileComponent,
     EmbeddedPenComponent,
+    NotFoundComponent,
   ],
   imports: [
     SharedModule,

@@ -60,7 +60,7 @@ export class WebDevService {
 
   private updateState(): void {
     if (this.content) {
-      this.filters.next(this.content.filters);
+      this.filters.next([...this.content.filters, 'ASD']);
       this.currentFilter.next(this.content.filters[0]);
       this.filteredItems.next(this.content.portfolio);
     }

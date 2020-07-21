@@ -18,6 +18,7 @@ import { LoadedItem } from '~/app/types/content/LoadedItem';
     ></pk-filters-mobile>
     <div class="portfolio">
       <div class="portfolio__cards">
+        <pk-not-found *ngIf="!items.length"></pk-not-found>
         <pk-portfolio-card
           *ngFor="let item of items; let i = index"
           [item]="item"
@@ -43,6 +44,11 @@ import { LoadedItem } from '~/app/types/content/LoadedItem';
 
       pk-filters-mobile {
         display: block;
+      }
+
+      pk-not-found {
+        opacity: 0;
+        animation: blurUpAndFade 0.3s 0.5s ease forwards;
       }
 
       .portfolio__cards {

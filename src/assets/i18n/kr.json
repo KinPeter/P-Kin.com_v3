@@ -24,7 +24,8 @@
     },
     "filters": {
       "all": "모두",
-      "filter-results": "결과 필터링"
+      "filter-results": "결과 필터링",
+      "not-found": "검색 결과가 없습니다..."
     }
   }
 }

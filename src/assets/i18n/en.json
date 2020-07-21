@@ -24,7 +24,8 @@
     },
     "filters": {
       "all": "All",
-      "filter-results": "Filter results"
+      "filter-results": "Filter results",
+      "not-found": "Sorry, no match found..."
     }
   }
 }

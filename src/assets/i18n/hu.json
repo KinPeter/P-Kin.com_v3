@@ -24,7 +24,8 @@
     },
     "filters": {
       "all": "Mind",
-      "filter-results": "Találatok szűrése"
+      "filter-results": "Találatok szűrése",
+      "not-found": "Sajnos nincs találat erre a szűrésre..."
     }
   }
 }
