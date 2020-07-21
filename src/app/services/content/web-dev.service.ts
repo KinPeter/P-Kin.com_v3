@@ -36,6 +36,7 @@ export class WebDevService {
   }
 
   public applyFilter(filter: string): void {
+    this.filteredItems.next([]);
     if (this.content) {
       const items =
         filter === 'All' ? this.content.portfolio : this.content.portfolio.filter(item => item.badges.includes(filter));

@@ -96,26 +96,14 @@ export class WebDevComponent implements OnInit, OnDestroy {
   loadedItem: LoadedItem = { name: '', badges: [], description: '' };
   isModalOpen = false;
 
-  dummyItem: PortfolioItem = {
-    id: 'aa1',
-    name: 'Project name',
-    badges: ['something', 'another one', 'and more', 'a thing', 'just', 'one more'],
-    image: 'https://stuff.p-kin.com/portfolio-images/pkincom.jpg',
-    description: {
-      en: '',
-      hu: '',
-      kr: '',
-    },
-  };
-
   constructor(public webDevService: WebDevService) {
-    // this.webDevService.fetchIfNeeded()
+    this.webDevService.fetchIfNeeded();
   }
 
   ngOnInit(): void {
     this.subscriptions.push(
       this.webDevService.filters$.subscribe(value => {
-        // this.filters = value;
+        this.filters = value;
       }),
       this.webDevService.currentFilter$.subscribe(value => {
         this.currentFilter = value;
@@ -129,11 +117,6 @@ export class WebDevComponent implements OnInit, OnDestroy {
         }
       })
     );
-    if (this.items.length === 0) {
-      for (let i = 0; i < 8; i++) {
-        this.items.push(this.dummyItem);
-      }
-    }
   }
 
   ngOnDestroy(): void {
@@ -151,13 +134,7 @@ export class WebDevComponent implements OnInit, OnDestroy {
   onOpenItem(id: UUID): void {
     console.log('open item: ', id);
     this.isModalOpen = true;
-    // this.webDevService.loadItem(id);
-    this.loadedItem = {
-      name: 'Project name',
-      badges: ['something', 'another one', 'and more', 'a thing', 'just', 'one more'],
-      description:
-        "## Some markdown\nLorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam assumenda, cupiditate distinctio eaque eius et eum ex excepturi, fugiat incidunt labore laudantium libero officiis pariatur placeat quae quasi quod sunt, temporibus voluptate. Debitis enim eos incidunt laboriosam maiores quo ullam voluptatem! Aliquam dicta, distinctio impedit iste libero molestias nam neque nisi nobis quia sequi similique, sint velit veniam voluptatibus, voluptatum.\n\nThis is the **description** of this item\nLet's see a list again:\n- one\n- two\n- three\n\n## Some markdown\nThis is the **description** of this item\nLet's see a list again:\n- one\n- two\n- three\n\n## Some markdown\nThis is the **description** of this item\nLet's see a list again:\n- one\n- two\n- three",
-    };
+    this.webDevService.loadItem(id);
   }
 
   onCloseModal(): void {
@@ -166,5 +143,6 @@ export class WebDevComponent implements OnInit, OnDestroy {
 
   onApplyFilter(filter: string): void {
     this.webDevService.applyFilter(filter);
+    window.scrollTo({ top: 0 });
   }
 }

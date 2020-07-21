@@ -65,6 +65,7 @@ import { UUID } from '~/app/types/UUID';
         margin: 0 0 0.5rem;
         font-size: 1.5rem;
         color: var(--text-color);
+        text-align: center;
       }
 
       .portfolio-card-overlay__badges {
