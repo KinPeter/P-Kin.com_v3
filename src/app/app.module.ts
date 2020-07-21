@@ -31,6 +31,8 @@ import { PortfolioWrapperComponent } from '~/app/components/portfolio/portfolio-
 import { FiltersDesktopComponent } from '~/app/components/portfolio/filters-desktop.component';
 import { FiltersMobileComponent } from '~/app/components/portfolio/filters-mobile.component';
 import { GameAnd3dService } from '~/app/services/content/game-and-3d.service';
+import { EmbeddedPenComponent } from '~/app/components/pens/embedded-pen.component';
+import { PensService } from '~/app/services/content/pens.service';
 
 @NgModule({
   declarations: [
@@ -53,6 +55,7 @@ import { GameAnd3dService } from '~/app/services/content/game-and-3d.service';
     PortfolioWrapperComponent,
     FiltersDesktopComponent,
     FiltersMobileComponent,
+    EmbeddedPenComponent,
   ],
   imports: [
     SharedModule,
@@ -66,7 +69,7 @@ import { GameAnd3dService } from '~/app/services/content/game-and-3d.service';
     }),
     IconsModule,
   ],
-  providers: [LoadingService, ApiService, AboutService, WebDevService, GameAnd3dService],
+  providers: [LoadingService, ApiService, AboutService, WebDevService, GameAnd3dService, PensService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
