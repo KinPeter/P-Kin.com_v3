@@ -73,11 +73,13 @@ import { Router } from '@angular/router';
         color: var(--text-color);
         transition: all 0.3s ease;
       }
+
       @media (min-width: 912px) {
         .side-drawer {
           display: none;
         }
       }
+
       .side-drawer__overlay {
         position: fixed;
         top: 0;
@@ -88,9 +90,11 @@ import { Router } from '@angular/router';
         display: none;
         z-index: 4;
       }
+
       .side-drawer_open .side-drawer__overlay {
         display: block;
       }
+
       .drawer {
         position: fixed;
         top: 0;
@@ -103,9 +107,11 @@ import { Router } from '@angular/router';
         transform: translateX(-100%);
         z-index: 5;
       }
+
       .side-drawer_open .drawer {
         transform: translateX(0);
       }
+
       .side-drawer__toggle-header {
         position: fixed;
         top: 0;
@@ -116,9 +122,11 @@ import { Router } from '@angular/router';
         display: flex;
         align-items: center;
       }
+
       .side-drawer__toggle-header_scrolled {
         box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
       }
+
       .hamburger-button {
         padding: 1rem 1.5rem;
         display: flex;
@@ -126,11 +134,13 @@ import { Router } from '@angular/router';
         align-items: center;
         justify-content: center;
       }
+
       .hamburger-button div {
         width: 30px;
         border-bottom: 1px solid var(--text-color-light);
         margin: 4px 0;
       }
+
       .drawer__close {
         height: 52px;
         display: flex;
@@ -138,6 +148,7 @@ import { Router } from '@angular/router';
         justify-content: flex-end;
         padding-right: 0.6rem;
       }
+
       .drawer__close div {
         height: 22px;
         width: 22px;
@@ -145,6 +156,7 @@ import { Router } from '@angular/router';
         border-bottom: 1px solid var(--text-color-light);
         transform: rotate(45deg);
       }
+
       .drawer__button {
         display: block;
         font-weight: 300;
@@ -156,6 +168,7 @@ import { Router } from '@angular/router';
         padding: 0.2rem 0.8rem;
         position: relative;
       }
+
       .drawer-button__active {
         position: absolute;
         bottom: 4px;
@@ -163,6 +176,7 @@ import { Router } from '@angular/router';
         width: calc(100% - 1.6rem);
         border-bottom: 1px solid var(--color-accent);
       }
+
       .drawer__footer,
       .drawer__theme-and-language {
         display: flex;
@@ -170,11 +184,13 @@ import { Router } from '@angular/router';
         align-items: center;
         margin-top: 2rem;
       }
+
       .drawer__footer {
         width: 100%;
         position: absolute;
         bottom: 2rem;
       }
+
       pk-theme-switch {
         margin-right: 1rem;
       }

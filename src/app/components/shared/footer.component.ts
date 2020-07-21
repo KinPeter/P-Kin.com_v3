@@ -32,15 +32,18 @@ import { Component } from '@angular/core';
         color: var(--text-color-light);
         transition: all 0.3s ease;
       }
+
       @media (min-width: 912px) {
         footer {
           display: flex;
         }
       }
+
       footer:hover {
         background: var(--background-color-secondary);
         color: var(--text-color);
       }
+
       footer:hover pk-contacts {
         color: var(--text-color) !important;
       }

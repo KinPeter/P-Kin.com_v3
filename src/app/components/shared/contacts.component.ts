@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
@@ -36,6 +36,7 @@ import { DomSanitizer } from '@angular/platform-browser';
       .contacts {
         display: flex;
       }
+
       .contact-button {
         width: 28px;
         height: 28px;
@@ -43,19 +44,21 @@ import { DomSanitizer } from '@angular/platform-browser';
         align-items: center;
         justify-content: center;
       }
+
       .contact-button__icon {
         height: 24px;
         text-decoration: none;
         color: var(--text-color-light);
         transition: all 0.3s ease;
       }
+
       .contact-button__icon_hovered {
         color: var(--text-color);
       }
     `,
   ],
 })
-export class ContactsComponent implements OnInit {
+export class ContactsComponent {
   @Input() hovered = false;
 
   constructor(private sanitizer: DomSanitizer) {}
@@ -68,6 +71,4 @@ export class ContactsComponent implements OnInit {
     skype: this.sanitizer.bypassSecurityTrustUrl('skype:kinpeter?chat'),
     facebook: 'https://www.facebook.com/peter.kin',
   };
-
-  ngOnInit(): void {}
 }

@@ -14,6 +14,7 @@ import { Component, Input } from '@angular/core';
       .tech-cloud {
         text-align: justify;
       }
+
       .tech-cloud__tech {
         text-transform: uppercase;
         font-weight: 300;

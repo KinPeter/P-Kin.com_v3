@@ -22,16 +22,19 @@ import { Subscription } from 'rxjs';
         flex-direction: column;
         align-items: flex-start;
       }
+
       .about-introduction,
       .about-skills {
         padding: 0.3rem 0.6rem;
         border-left: 2px solid var(--color-accent-light);
       }
+
       .about-introduction {
         width: 100%;
         opacity: 0;
         animation: blurUpAndFade 0.5s ease forwards;
       }
+
       .about-skills {
         width: 100%;
         margin-top: 2rem;
@@ -50,9 +53,11 @@ import { Subscription } from 'rxjs';
         .about-wrapper {
           flex-direction: row;
         }
+
         .about-introduction {
           width: 70%;
         }
+
         .about-skills {
           width: 30%;
         }

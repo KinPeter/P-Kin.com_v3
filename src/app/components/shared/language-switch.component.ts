@@ -36,15 +36,18 @@ import { TranslateService } from '@ngx-translate/core';
       .language-switch {
         display: flex;
       }
+
       .language-switch__button {
         font-family: var(--font-sans-serif), sans-serif;
         font-weight: 300;
         padding: 2px 5px;
         position: relative;
       }
+
       .language-switch__button:not(:first-child) {
         border-left: 1px solid var(--text-color-light);
       }
+
       .language-switch__active {
         position: absolute;
         bottom: 4px;

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'pk-loading',
@@ -36,6 +36,7 @@ import { Component, OnInit } from '@angular/core';
         opacity: 0;
         animation: fadeIn 0.2s forwards;
       }
+
       .loading-element {
         margin-left: 1rem;
         background: linear-gradient(
@@ -50,6 +51,7 @@ import { Component, OnInit } from '@angular/core';
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         filter: blur(2px);
       }
+
       @keyframes loading-gradient {
         0% {
           background-position: 0 50%;
@@ -61,41 +63,49 @@ import { Component, OnInit } from '@angular/core';
           background-position: 0 50%;
         }
       }
+
       .loading-element_header {
         width: 30vw;
         height: 2rem;
         margin-top: 1rem;
       }
+
       .loading-element_block {
         width: calc(100vw - 2rem);
         height: 33vh;
         margin-top: 2rem;
       }
+
       .loading-element_line {
         width: 55vw;
         height: 1.5rem;
         margin-top: 1rem;
       }
+
       @media (min-width: 912px) {
         .loading-block {
           display: flex;
           justify-content: center;
           align-items: flex-start;
         }
+
         .loading-block__lines {
           margin-top: 3rem;
         }
+
         .loading-element_header {
           width: 30vw;
           height: 2rem;
           margin-left: 90px;
           margin-top: 2rem;
         }
+
         .loading-element_block {
           width: 35vw;
           height: 33vh;
           margin-top: 5rem;
         }
+
         .loading-element_line {
           width: 30vw;
           height: 1.5rem;
@@ -105,8 +115,6 @@ import { Component, OnInit } from '@angular/core';
     `,
   ],
 })
-export class LoadingComponent implements OnInit {
+export class LoadingComponent {
   constructor() {}
-
-  ngOnInit(): void {}
 }

@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'pk-md-editor',
@@ -53,15 +53,18 @@ import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
         flex-wrap: wrap;
         height: 450px;
       }
+
       .editor-left,
       .editor-right {
         width: 50%;
         min-width: 400px;
       }
+
       .editor-right {
         padding-left: 12px;
         height: 100%;
       }
+
       .editor-right p {
         height: 38px;
         margin: 0;
@@ -70,10 +73,12 @@ import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
         font-family: var(--font-sans-serif), sans-serif;
         font-weight: bold;
       }
+
       .editor-left__toolbar {
         height: 38px;
         display: flex;
       }
+
       .toolbar-button {
         height: 36px;
         width: 36px;
@@ -84,20 +89,25 @@ import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
         font-weight: bold;
         cursor: pointer;
       }
+
       .toolbar-button > * {
         height: 24px;
       }
+
       .toolbar-button:hover {
         background: var(--background-color-secondary);
       }
+
       .toolbar-button_spacer {
         margin-right: 12px;
       }
+
       .editor-right__preview {
         height: calc(100% - 50px);
         overflow: auto;
         padding-right: 12px;
       }
+
       textarea {
         width: 100%;
         min-height: 400px;
@@ -105,13 +115,14 @@ import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
         color: var(--text-color);
         resize: none;
       }
+
       textarea:focus {
         border-radius: 0;
       }
     `,
   ],
 })
-export class MdEditorComponent implements OnInit {
+export class MdEditorComponent {
   @Input() value =
     'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto dolor doloremque fugit itaque neque omnis quidem sapiente. Amet aspernatur atque blanditiis corporis cum delectus deleniti dicta doloremque dolores ea et eveniet exercitationem expedita hic in incidunt ipsam ipsum, iste itaque iure labore laudantium magnam molestiae nam nisi nobis numquam odit officia omnis qui quibusdam quod repellat similique tempore tenetur ullam voluptate? Amet aperiam beatae consectetur, consequatur debitis eaque iure minus nostrum odit placeat qui quibusdam quisquam totam ullam ut velit voluptatem! Earum est maiores minus nemo nesciunt quaerat sed, velit voluptas. Blanditiis cum itaque nam neque nihil numquam perferendis sequi.';
   jsonString = '';
@@ -120,8 +131,6 @@ export class MdEditorComponent implements OnInit {
   @ViewChild('textarea') textarea: ElementRef<HTMLTextAreaElement> | undefined;
 
   constructor() {}
-
-  ngOnInit(): void {}
 
   onUpdate(): void {
     this.jsonString = JSON.stringify(this.value);

@@ -28,16 +28,19 @@ interface Skill {
       .tech-stack {
         margin-bottom: 2rem;
       }
+
       .skill {
         display: flex;
         align-items: center;
         margin-bottom: 0.5rem;
       }
+
       .skill-tech {
         flex-basis: 50%;
         text-align: right;
         padding-right: 1rem;
       }
+
       .skill-bar {
         flex-basis: 50%;
         display: flex;
@@ -47,6 +50,7 @@ interface Skill {
         .skill-tech {
           flex-basis: 30%;
         }
+
         .skill-bar {
           flex-basis: 70%;
         }
@@ -56,6 +60,7 @@ interface Skill {
         .skill-tech {
           flex-basis: 20%;
         }
+
         .skill-bar {
           flex-basis: 80%;
         }
@@ -65,6 +70,7 @@ interface Skill {
         .skill-tech {
           flex-basis: 50%;
         }
+
         .skill-bar {
           flex-basis: 50%;
         }
@@ -74,6 +80,7 @@ interface Skill {
         .skill-tech {
           flex-basis: 40%;
         }
+
         .skill-bar {
           flex-basis: 60%;
         }

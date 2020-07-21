@@ -49,23 +49,28 @@ import { Router } from '@angular/router';
         color: var(--text-color-light);
         transition: all 0.3s ease;
       }
+
       @media (min-width: 912px) {
         .app-bar {
           display: flex;
         }
       }
+
       .app-bar:hover {
         background: var(--background-color-secondary);
         color: var(--text-color);
       }
+
       .app-bar_scrolled {
         box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
       }
+
       .app-bar__left,
       .app-bar__right {
         display: flex;
         align-items: center;
       }
+
       .app-bar-button {
         display: inline-block;
         font-weight: 300;
@@ -77,9 +82,11 @@ import { Router } from '@angular/router';
         margin-right: 0.5rem;
         position: relative;
       }
+
       .app-bar-button:not(.button-horizontal-animated) {
         cursor: text;
       }
+
       .app-bar-button__active {
         position: absolute;
         bottom: 4px;
@@ -87,6 +94,7 @@ import { Router } from '@angular/router';
         width: calc(100% - 1.6rem);
         border-bottom: 1px solid var(--color-accent);
       }
+
       pk-theme-switch {
         margin-right: 1rem;
       }
