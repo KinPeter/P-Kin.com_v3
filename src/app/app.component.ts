@@ -40,7 +40,7 @@ export class AppComponent {
     this.router.events.subscribe(async event => {
       if (event instanceof NavigationEnd) {
         let newTitle: string;
-        switch (event.url) {
+        switch (event.urlAfterRedirects) {
           case '/about':
             newTitle = await this.getTitleFor('menu.about');
             break;
@@ -60,7 +60,7 @@ export class AppComponent {
             newTitle = 'Ooops! | P-kin.com';
             break;
           default:
-            newTitle = 'P-Kin.com';
+            newTitle = event.urlAfterRedirects.startsWith('/admin') ? 'Admin | P-Kin.com' : 'P-Kin.com';
             break;
         }
         this.title.setTitle(newTitle);
