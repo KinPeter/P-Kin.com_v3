@@ -54,10 +54,10 @@ export class AppComponent {
             newTitle = await this.getTitleFor('menu.gameAnd3d');
             break;
           case '/admin':
-            newTitle = 'Admin - P-Kin.com';
+            newTitle = 'Admin | P-Kin.com';
             break;
           case '/error':
-            newTitle = 'Ooops! - P-kin.com';
+            newTitle = 'Ooops! | P-kin.com';
             break;
           default:
             newTitle = 'P-Kin.com';
@@ -70,6 +70,6 @@ export class AppComponent {
 
   private async getTitleFor(translateKey: string): Promise<string> {
     const route = await this.translate.get(translateKey).toPromise();
-    return route + ' - P-Kin.com';
+    return route + ' | P-Kin.com';
   }
 }

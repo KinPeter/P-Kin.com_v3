@@ -21,7 +21,7 @@ import { LoadedItem } from '~/app/types/content/LoadedItem';
         [class.portfolio-modal__close-button_scrolled]="scrolled"
         (click)="onClose()"
       >
-        <span>&times;</span>
+        <pk-icon-close [size]="45"></pk-icon-close>
       </div>
     </div>
   `,
@@ -88,10 +88,9 @@ import { LoadedItem } from '~/app/types/content/LoadedItem';
         z-index: 11;
       }
 
-      .portfolio-modal__close-button span {
+      .portfolio-modal__close-button pk-icon-close {
+        height: 45px;
         color: var(--text-color-light);
-        font-weight: 300;
-        font-size: 5rem;
         opacity: 0.8;
       }
 

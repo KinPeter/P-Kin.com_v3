@@ -16,6 +16,7 @@ import { IconMdImageComponent } from '~/app/components/shared/icons/md-editor/ic
 import { IconFilterComponent } from '~/app/components/shared/icons/icon-filter.component';
 import { IconCaretRightComponent } from '~/app/components/shared/icons/icon-caret-right.component';
 import { IconSadFaceComponent } from '~/app/components/shared/icons/icon-sad-face.component';
+import { IconCloseComponent } from '~/app/components/shared/icons/icon-close.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { IconSadFaceComponent } from '~/app/components/shared/icons/icon-sad-fac
     IconFilterComponent,
     IconCaretRightComponent,
     IconSadFaceComponent,
+    IconCloseComponent,
   ],
   exports: [
     IconThemesComponent,
@@ -55,6 +57,7 @@ import { IconSadFaceComponent } from '~/app/components/shared/icons/icon-sad-fac
     IconFilterComponent,
     IconCaretRightComponent,
     IconSadFaceComponent,
+    IconCloseComponent,
   ],
 })
 export class IconsModule {}
