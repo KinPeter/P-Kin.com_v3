@@ -5,12 +5,26 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'pk-admin-login',
   template: `
-    <h1>LOGIN</h1>
-    <input type="text" [(ngModel)]="email" />
-    <input type="password" [(ngModel)]="password" />
-    <button (click)="onLogin()">login</button>
+    <div class="login">
+      <h1>ADMIN LOGIN</h1>
+      <input class="pk-input" type="email" placeholder="Email" [(ngModel)]="email" />
+      <input class="pk-input" type="password" placeholder="Password" [(ngModel)]="password" />
+      <button (click)="onLogin()">login</button>
+    </div>
   `,
-  styles: [``],
+  styles: [
+    `
+      .login {
+        width: 350px;
+        margin: 0 auto;
+      }
+      .login input {
+        display: block;
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+    `,
+  ],
 })
 export class LoginComponent implements OnInit {
   email = '';

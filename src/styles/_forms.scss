@@ -1,0 +1,10 @@
+.pk-input {
+  background: var(--background-color-secondary);
+  color: var(--text-color);
+  border: none;
+  padding: 10px;
+
+  &:focus {
+    outline: var(--color-accent) groove 1px;
+  }
+}
