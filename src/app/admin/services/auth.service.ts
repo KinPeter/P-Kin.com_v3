@@ -4,19 +4,23 @@ import { BehaviorSubject } from 'rxjs';
 import { AuthData } from '~/app/admin/types/AuthData';
 import { LoginResponse } from '~/app/admin/types/LoginResponse';
 import { LoadingService } from '~/app/services/ui/loading.service';
-import { apiKey } from '../../../../keys';
+import { apiKey, loginBaseUrl } from '../../../../keys';
 
-const loginUrl = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${apiKey}`;
+const loginUrl = `${loginBaseUrl}${apiKey}`;
+const now = (): number => {
+  return new Date().getTime();
+};
 
 @Injectable()
 export class AuthService {
-  private timer: number | undefined;
+  private logoutTimer: number | undefined;
+  private warningTimer: number | undefined;
   private authData: BehaviorSubject<AuthData | null> = new BehaviorSubject<AuthData | null>(null);
 
   constructor(private http: HttpClient, private loading: LoadingService) {}
 
   public get isLoggedIn(): boolean {
-    return !!this.authData.value?.idToken && this.authData.value?.expires > new Date().getTime();
+    return !!this.authData.value?.idToken && this.authData.value?.expires > now();
   }
 
   public get idToken(): string | undefined {
@@ -41,42 +45,59 @@ export class AuthService {
     }
   }
 
-  public autoLogin(): void {
+  public tryAutoLogin(): void {
     const rawData: string | null = sessionStorage.getItem('pk-adminauth');
     if (rawData) {
       const data = JSON.parse(rawData) as AuthData;
-      if (data.expires > new Date().getTime()) {
+      if (data.expires > now()) {
         this.authData.next({
           idToken: data.idToken,
           expires: data.expires,
         });
-        this.timer = setTimeout(() => {
-          this.logout();
-        }, data.expires - new Date().getTime());
+        this.setLogoutTimer(data.expires - now());
+        this.setWarningTimer(data.expires - now());
         console.log('Login expires at ' + new Date(data.expires));
+      } else {
+        this.logout();
       }
     }
   }
 
   private handleLogin(res: LoginResponse): void {
-    console.log(res);
     this.authData.next({
       idToken: res.idToken,
-      expires: new Date().getTime() + +res.expiresIn * 1000,
+      expires: now() + +res.expiresIn * 1000,
     });
     sessionStorage.setItem('pk-adminauth', JSON.stringify(this.authData.value));
-    clearTimeout(this.timer);
-    this.timer = setTimeout(() => {
-      this.logout();
-    }, +res.expiresIn * 1000);
+    this.setLogoutTimer(+res.expiresIn * 1000);
+    this.setWarningTimer(+res.expiresIn * 1000);
     if (this.authData.value) {
       console.log('Login expires at ' + new Date(this.authData.value.expires));
+    }
+  }
+
+  private setLogoutTimer(expiresIn: number): void {
+    clearTimeout(this.logoutTimer);
+    this.logoutTimer = setTimeout(() => {
+      this.logout();
+    }, expiresIn);
+  }
+
+  private setWarningTimer(expiresIn: number): void {
+    const warningIn = expiresIn - 5 * 60 * 1000;
+    if (warningIn > now()) {
+      console.warn('Login expires SOON!'); // TODO: Use snackbar
+    } else {
+      clearTimeout(this.warningTimer);
+      this.warningTimer = setTimeout(() => {
+        console.warn('Login expires in 5 minutes!');
+      }, warningIn);
     }
   }
 
   public logout(): void {
     this.authData.next(null);
     sessionStorage.removeItem('pk-adminauth');
-    clearTimeout(this.timer);
+    clearTimeout(this.logoutTimer);
   }
 }
