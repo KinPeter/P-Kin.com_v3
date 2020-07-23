@@ -8,10 +8,11 @@ import { IconsModule } from '../components/shared/icons/icons.module';
 import { LoginComponent } from './pages/login.component';
 import { AboutAdminComponent } from './pages/about-admin.component';
 import { AuthService } from './services/auth.service';
+import { AdminApiService } from './services/admin-api.service';
 
 @NgModule({
   declarations: [MdEditorComponent, LoginComponent, AboutAdminComponent],
   imports: [CommonModule, SharedModule, IconsModule, FormsModule, AdminRoutingModule],
-  providers: [AuthService],
+  providers: [AuthService, AdminApiService],
 })
 export class AdminModule {}
