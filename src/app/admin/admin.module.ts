@@ -9,9 +9,27 @@ import { LoginComponent } from './pages/login.component';
 import { AboutAdminComponent } from './pages/about-admin.component';
 import { AuthService } from './services/auth.service';
 import { AdminApiService } from './services/admin-api.service';
+import { AdminComponent } from './components/admin.component';
+import { AdminMenuBarComponent } from './components/admin-menu-bar.component';
+import { WebdevFiltersAdminComponent } from './pages/webdev-filters-admin.component';
+import { WebdevPortfolioAdminComponent } from './pages/webdev-portfolio-admin.component';
+import { PensAdminComponent } from './pages/pens-admin.component';
+import { GameAnd3dFiltersAdminComponent } from './pages/game-and-3d-filters-admin.component';
+import { GameAnd3dPortfolioAdminComponent } from './pages/game-and-3d-portfolio-admin.component';
 
 @NgModule({
-  declarations: [MdEditorComponent, LoginComponent, AboutAdminComponent],
+  declarations: [
+    AdminComponent,
+    MdEditorComponent,
+    LoginComponent,
+    AboutAdminComponent,
+    AdminMenuBarComponent,
+    WebdevFiltersAdminComponent,
+    WebdevPortfolioAdminComponent,
+    PensAdminComponent,
+    GameAnd3dFiltersAdminComponent,
+    GameAnd3dPortfolioAdminComponent,
+  ],
   imports: [CommonModule, SharedModule, IconsModule, FormsModule, AdminRoutingModule],
   providers: [AuthService, AdminApiService],
 })

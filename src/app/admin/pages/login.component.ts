@@ -7,9 +7,11 @@ import { Router } from '@angular/router';
   template: `
     <div class="login">
       <h1>ADMIN LOGIN</h1>
-      <input class="pk-input" type="email" placeholder="Email" [(ngModel)]="email" />
-      <input class="pk-input" type="password" placeholder="Password" [(ngModel)]="password" />
-      <button (click)="onLogin()">login</button>
+      <form (ngSubmit)="onLogin()" #form="ngForm">
+        <input class="pk-input" type="email" name="email" placeholder="Email" [(ngModel)]="email" />
+        <input class="pk-input" type="password" name="password" placeholder="Password" [(ngModel)]="password" />
+        <button class="pk-button pk-button_accent" type="submit">login</button>
+      </form>
     </div>
   `,
   styles: [
@@ -18,10 +20,16 @@ import { Router } from '@angular/router';
         width: 350px;
         margin: 0 auto;
       }
+
       .login input {
         display: block;
         width: 100%;
         margin-bottom: 1rem;
+      }
+
+      .login button {
+        margin-top: 1rem;
+        float: right;
       }
     `,
   ],

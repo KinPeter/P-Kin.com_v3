@@ -1,22 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { AuthService } from '~/app/admin/services/auth.service';
 
 @Component({
   selector: 'pk-admin-about',
   template: `
     <h1>ABOUT ADMIN</h1>
-    <button (click)="onLogout()">logout</button>
+    <pk-md-editor></pk-md-editor>
   `,
   styles: [``],
 })
 export class AboutAdminComponent implements OnInit {
-  constructor(private auth: AuthService, private router: Router) {}
+  constructor() {}
 
   ngOnInit(): void {}
-
-  onLogout(): void {
-    this.auth.logout();
-    this.router.navigate(['/admin/login']);
-  }
 }
