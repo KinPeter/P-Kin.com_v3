@@ -2,6 +2,7 @@
   * {
     color: var(--text-color);
   }
+
   h1,
   h2,
   h3,
@@ -10,11 +11,37 @@
   h6 {
     color: var(--text-color-light);
   }
+
   img {
     max-width: 100%;
   }
+
   a {
     text-decoration: none;
     color: var(--color-accent);
+  }
+
+  hr {
+    border-color: var(--text-color-light);
+    margin: 1.5rem 0.5rem;
+  }
+
+  blockquote {
+    border-left: 4px solid var(--text-color-light);
+    margin: 1rem;
+    padding: 0.5rem 1rem;
+
+    p,
+    p > em,
+    p > strong {
+      color: var(--text-color-light);
+      margin: 0;
+    }
+  }
+
+  code {
+    font-family: monospace;
+    font-size: 130%;
+    color: var(--color-accent-light);
   }
 }

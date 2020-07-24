@@ -7,6 +7,17 @@ import { apiBaseUrl } from '../../../../keys';
 export class AdminApiService {
   constructor(private http: HttpClient, private loading: LoadingService) {}
 
+  public async get<T>(path: string): Promise<T> {
+    this.loading.start();
+    try {
+      return await this.http.get<T>(apiBaseUrl + path).toPromise();
+    } catch (e) {
+      throw new Error(`${e} \n Unable to get from ${path}`);
+    } finally {
+      this.loading.stop();
+    }
+  }
+
   public async post<Q, R>(path: string, payload: Q, options: Record<string, unknown> = {}): Promise<R> {
     this.loading.start();
     try {

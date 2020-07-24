@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnChanges, Output, SimpleChanges, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'pk-md-editor',
@@ -6,45 +6,46 @@ import { Component, ElementRef, Input, ViewChild } from '@angular/core';
     <div class="editor">
       <div class="editor-left">
         <div class="editor-left__toolbar">
-          <div class="toolbar-button" (click)="onMakeBold()">
+          <div class="toolbar__button" (click)="onMakeBold()">
             <pk-icon-md-bold></pk-icon-md-bold>
           </div>
-          <div class="toolbar-button" (click)="onMakeItalic()">
+          <div class="toolbar__button" (click)="onMakeItalic()">
             <pk-icon-md-italic></pk-icon-md-italic>
           </div>
-          <div class="toolbar-button" (click)="onStrikeThrough()">
+          <div class="toolbar__button" (click)="onStrikeThrough()">
             <pk-icon-md-strike-through></pk-icon-md-strike-through>
           </div>
-          <div class="toolbar-button toolbar-button_spacer" (click)="onMakeCode()">
+          <div class="toolbar__button toolbar__button_spacer" (click)="onMakeCode()">
             <pk-icon-md-code></pk-icon-md-code>
           </div>
-          <div class="toolbar-button" (click)="onAddHeading1()">
+          <div class="toolbar__button" (click)="onAddHeading1()">
             H1
           </div>
-          <div class="toolbar-button" (click)="onAddHeading2()">
+          <div class="toolbar__button" (click)="onAddHeading2()">
             H2
           </div>
-          <div class="toolbar-button toolbar-button_spacer" (click)="onAddHeading3()">
+          <div class="toolbar__button toolbar__button_spacer" (click)="onAddHeading3()">
             H3
           </div>
-          <div class="toolbar-button" (click)="onInsertLink()">
+          <div class="toolbar__button" (click)="onInsertLink()">
             <pk-icon-md-link></pk-icon-md-link>
           </div>
-          <div class="toolbar-button" (click)="onInsertImage()">
+          <div class="toolbar__button" (click)="onInsertImage()">
             <pk-icon-md-image></pk-icon-md-image>
           </div>
+
+          <div class="toolbar__spacer"></div>
+
+          <span class="toolbar__unsaved-indicator" *ngIf="valueChanged">Unsaved changes!</span>
+          <button [disabled]="!valueChanged" class="pk-button pk-button_accent" (click)="onUpdate()">save</button>
         </div>
-        <textarea #textarea [(ngModel)]="value"></textarea>
+        <textarea class="pk-input" #textarea [(ngModel)]="localValue"></textarea>
       </div>
       <div class="editor-right">
         <p>Preview:</p>
-        <div class="editor-right__preview markdown-text" linksTargetBlank [innerHTML]="value | marked"></div>
+        <div class="editor-right__preview markdown-text" linksTargetBlank [innerHTML]="localValue | marked"></div>
       </div>
     </div>
-
-    <button (click)="onUpdate()">Update</button>
-    {{ jsonString }}
-    <div class="markdown-text" linksTargetBlank [innerHTML]="parsed | marked"></div>
   `,
   styles: [
     `
@@ -79,7 +80,7 @@ import { Component, ElementRef, Input, ViewChild } from '@angular/core';
         display: flex;
       }
 
-      .toolbar-button {
+      .toolbar__button {
         height: 36px;
         width: 36px;
         display: flex;
@@ -90,15 +91,26 @@ import { Component, ElementRef, Input, ViewChild } from '@angular/core';
         cursor: pointer;
       }
 
-      .toolbar-button > * {
+      .toolbar__spacer {
+        flex-grow: 1;
+      }
+
+      .toolbar__unsaved-indicator {
+        color: var(--color-danger);
+        height: 36px;
+        font-size: 0.9rem;
+        padding: 7px 12px;
+      }
+
+      .toolbar__button > * {
         height: 24px;
       }
 
-      .toolbar-button:hover {
+      .toolbar__button:hover {
         background: var(--background-color-secondary);
       }
 
-      .toolbar-button_spacer {
+      .toolbar__button_spacer {
         margin-right: 12px;
       }
 
@@ -111,51 +123,54 @@ import { Component, ElementRef, Input, ViewChild } from '@angular/core';
       textarea {
         width: 100%;
         min-height: 400px;
-        background: var(--background-color-secondary);
-        color: var(--text-color);
         resize: none;
-      }
-
-      textarea:focus {
-        border-radius: 0;
       }
     `,
   ],
 })
-export class MdEditorComponent {
-  @Input() value =
-    'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto dolor doloremque fugit itaque neque omnis quidem sapiente. Amet aspernatur atque blanditiis corporis cum delectus deleniti dicta doloremque dolores ea et eveniet exercitationem expedita hic in incidunt ipsam ipsum, iste itaque iure labore laudantium magnam molestiae nam nisi nobis numquam odit officia omnis qui quibusdam quod repellat similique tempore tenetur ullam voluptate? Amet aperiam beatae consectetur, consequatur debitis eaque iure minus nostrum odit placeat qui quibusdam quisquam totam ullam ut velit voluptatem! Earum est maiores minus nemo nesciunt quaerat sed, velit voluptas. Blanditiis cum itaque nam neque nihil numquam perferendis sequi.';
-  jsonString = '';
-  parsed = '';
+export class MdEditorComponent implements OnChanges {
+  @Input() value = '';
+  localValue = '';
+
+  @Output() updateMd: EventEmitter<string> = new EventEmitter<string>();
 
   @ViewChild('textarea') textarea: ElementRef<HTMLTextAreaElement> | undefined;
 
   constructor() {}
 
+  ngOnChanges(changes: SimpleChanges): void {
+    if ('value' in changes) {
+      this.localValue = this.value;
+    }
+  }
+
+  public get valueChanged(): boolean {
+    return this.value !== this.localValue;
+  }
+
   onUpdate(): void {
-    this.jsonString = JSON.stringify(this.value);
-    this.parsed = JSON.parse(this.jsonString);
+    this.updateMd.emit(this.localValue);
   }
 
   onMakeBold(): void {
     const { textBefore, textAfter, selection } = this.splitAndGetSelection();
     const newText = '**' + selection + '**';
-    this.value = textBefore + newText + textAfter;
+    this.localValue = textBefore + newText + textAfter;
   }
   onMakeItalic(): void {
     const { textBefore, textAfter, selection } = this.splitAndGetSelection();
     const newText = '*' + selection + '*';
-    this.value = textBefore + newText + textAfter;
+    this.localValue = textBefore + newText + textAfter;
   }
   onStrikeThrough(): void {
     const { textBefore, textAfter, selection } = this.splitAndGetSelection();
     const newText = '~~' + selection + '~~';
-    this.value = textBefore + newText + textAfter;
+    this.localValue = textBefore + newText + textAfter;
   }
   onMakeCode(): void {
     const { textBefore, textAfter, selection } = this.splitAndGetSelection();
     const newText = '`' + selection + '`';
-    this.value = textBefore + newText + textAfter;
+    this.localValue = textBefore + newText + textAfter;
   }
 
   onAddHeading1(): void {
@@ -180,14 +195,14 @@ export class MdEditorComponent {
 
   private insertToCursor(newText: string): void {
     const { textBefore, textAfter } = this.splitTextAtCursor();
-    this.value = textBefore + newText + textAfter;
+    this.localValue = textBefore + newText + textAfter;
   }
 
   private splitTextAtCursor(): { textBefore: string; textAfter: string } {
     if (!this.textarea) throw new Error('No textarea');
     const cursorPos = this.textarea.nativeElement.selectionStart;
-    const textBefore = this.value.substring(0, cursorPos);
-    const textAfter = this.value.substring(cursorPos, this.value.length);
+    const textBefore = this.localValue.substring(0, cursorPos);
+    const textAfter = this.localValue.substring(cursorPos, this.localValue.length);
     return {
       textBefore,
       textAfter,
@@ -199,9 +214,9 @@ export class MdEditorComponent {
     const el = this.textarea.nativeElement;
     const startPos = Math.min(el.selectionStart, el.selectionEnd);
     const endPos = Math.max(el.selectionStart, el.selectionEnd);
-    const textBefore = this.value.substring(0, startPos);
-    const selection = this.value.substring(startPos, endPos);
-    const textAfter = this.value.substring(endPos, this.value.length);
+    const textBefore = this.localValue.substring(0, startPos);
+    const selection = this.localValue.substring(startPos, endPos);
+    const textAfter = this.localValue.substring(endPos, this.localValue.length);
     return {
       textBefore,
       textAfter,

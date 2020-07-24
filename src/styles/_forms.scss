@@ -8,3 +8,29 @@
     outline: var(--color-accent) groove 1px;
   }
 }
+
+.pk-range {
+  appearance: none;
+  background: transparent;
+
+  &::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 5px;
+    cursor: pointer;
+    background: var(--background-color-secondary);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 16px;
+    width: 16px;
+    background: var(--color-accent);
+    border-radius: 50%;
+    cursor: pointer;
+    margin-top: -6px;
+  }
+}
