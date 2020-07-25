@@ -1,15 +1,15 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { v4 as newUUID } from 'uuid';
-import { Lang } from '~/app/types/i18n/Lang';
 import { PortfolioItem } from '~/app/types/content/PortfolioItem';
 import { AdminWebdevService } from '~/app/admin/services/admin-webdev.service';
+import { Lang } from '~/app/types/i18n/Lang';
 import { UUID } from '~/app/types/UUID';
 
 @Component({
   selector: 'pk-admin-webdev-portfolio',
   template: `
-    <div class="webdev-portfolio">
+    <div *ngIf="content" class="webdev-portfolio">
       <header>
         <h1>WebDev portfolio</h1>
         <button class="pk-button pk-button_accent" (click)="onSaveAll()">Save All</button>
@@ -70,6 +70,14 @@ import { UUID } from '~/app/types/UUID';
     `
       .webdev-portfolio {
         padding-bottom: 2rem;
+      }
+
+      hr {
+        margin: 1rem 0;
+      }
+
+      hr:nth-of-type(2) {
+        margin-top: 0.5rem;
       }
 
       header {
