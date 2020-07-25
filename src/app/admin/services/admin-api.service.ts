@@ -59,4 +59,11 @@ export class AdminApiService {
       this.loading.stop();
     }
   }
+
+  get backupURL(): string {
+    const now = new Date();
+    const date = `${now.getFullYear()}-${now.getMonth() + 1}-${now.getDate()}`;
+    const filename = `backup-${date}.json`;
+    return `${apiBaseUrl}.json?download=${filename}`;
+  }
 }

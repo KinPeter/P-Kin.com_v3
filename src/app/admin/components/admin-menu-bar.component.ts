@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '~/app/admin/services/auth.service';
+import { AdminApiService } from '../services/admin-api.service';
 
 @Component({
   selector: 'pk-admin-menu-bar',
@@ -43,6 +44,9 @@ import { AuthService } from '~/app/admin/services/auth.service';
         </a>
       </div>
       <div class="admin-menu-bar__right">
+        <a [href]="api.backupURL" target="_blank">
+          Backup data
+        </a>
         <a routerLink="/admin/login" (click)="onLogout()">
           Log out
         </a>
@@ -83,7 +87,7 @@ import { AuthService } from '~/app/admin/services/auth.service';
   ],
 })
 export class AdminMenuBarComponent {
-  constructor(private router: Router, private auth: AuthService) {}
+  constructor(private router: Router, private auth: AuthService, public api: AdminApiService) {}
 
   public isLoginPage(): boolean {
     return this.router.url === '/admin/login';
