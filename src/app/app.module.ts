@@ -36,6 +36,7 @@ import { PensService } from '~/app/services/content/pens.service';
 import { NotFoundComponent } from '~/app/components/portfolio/not-found.component';
 import { ErrorComponent } from '~/app/pages/error.component';
 import { ErrorService } from '~/app/services/ui/error.service';
+import { AdminModule } from '~/app/admin/admin.module';
 
 @NgModule({
   declarations: [
@@ -73,6 +74,9 @@ import { ErrorService } from '~/app/services/ui/error.service';
       defaultLanguage: 'en',
     }),
     IconsModule,
+
+    // TODO: REMOVE from here!
+    AdminModule,
   ],
   providers: [
     LoadingService,

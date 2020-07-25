@@ -71,7 +71,7 @@ import {
       .editor {
         display: flex;
         flex-wrap: wrap;
-        height: 450px;
+        height: 430px;
       }
 
       .editor-left,
@@ -141,7 +141,7 @@ import {
 
       textarea {
         width: 100%;
-        min-height: 400px;
+        min-height: 380px;
         resize: none;
       }
     `,
