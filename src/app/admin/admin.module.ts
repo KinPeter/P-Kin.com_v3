@@ -18,6 +18,7 @@ import { GameAnd3dFiltersAdminComponent } from '~/app/admin/pages/game-and-3d-fi
 import { GameAnd3dPortfolioAdminComponent } from '~/app/admin/pages/game-and-3d-portfolio-admin.component';
 import { AdminAboutService } from '~/app/admin/services/admin-about.service';
 import { AdminWebdevService } from '~/app/admin/services/admin-webdev.service';
+import { AdminGameAnd3dService } from '~/app/admin/services/admin-game-and-3d.service';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,12 @@ import { AdminWebdevService } from '~/app/admin/services/admin-webdev.service';
     GameAnd3dPortfolioAdminComponent,
   ],
   imports: [CommonModule, SharedModule, IconsModule, FormsModule, AdminRoutingModule],
-  providers: [AuthService, AdminApiService, AdminAboutService, AdminWebdevService],
+  providers: [
+    AuthService,
+    AdminApiService,
+    AdminAboutService,
+    AdminWebdevService,
+    AdminGameAnd3dService,
+  ],
 })
 export class AdminModule {}
