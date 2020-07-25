@@ -13,6 +13,7 @@ import { Router } from '@angular/router';
 })
 export class AdminComponent {
   constructor(private router: Router) {
-    this.router.navigate(['/admin/about']);
+    const redirectUrl = this.router.url === '/admin' ? '/admin/about' : router.url;
+    this.router.navigate([redirectUrl]);
   }
 }

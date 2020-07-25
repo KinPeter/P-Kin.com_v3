@@ -18,6 +18,7 @@ import { IconCaretRightComponent } from '~/app/components/shared/icons/icon-care
 import { IconSadFaceComponent } from '~/app/components/shared/icons/icon-sad-face.component';
 import { IconCloseComponent } from '~/app/components/shared/icons/icon-close.component';
 import { IconTrashComponent } from '~/app/components/shared/icons/icon-trash.component';
+import { IconArrowComponent } from '~/app/components/shared/icons/icon-arrow.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { IconTrashComponent } from '~/app/components/shared/icons/icon-trash.com
     IconSadFaceComponent,
     IconCloseComponent,
     IconTrashComponent,
+    IconArrowComponent,
   ],
   exports: [
     IconThemesComponent,
@@ -61,6 +63,7 @@ import { IconTrashComponent } from '~/app/components/shared/icons/icon-trash.com
     IconSadFaceComponent,
     IconCloseComponent,
     IconTrashComponent,
+    IconArrowComponent,
   ],
 })
 export class IconsModule {}

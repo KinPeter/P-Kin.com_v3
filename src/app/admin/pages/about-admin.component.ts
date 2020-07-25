@@ -47,7 +47,7 @@ import { Lang } from '~/app/types/i18n/Lang';
               />
               <span>({{ tech[1] }})</span>
             </div>
-            <div class="tech-stack__delete-btn" (click)="onDeleteSkill(i)">
+            <div class="pk-small-icon-button" (click)="onDeleteSkill(i)">
               <pk-icon-trash></pk-icon-trash>
             </div>
           </li>
@@ -82,10 +82,6 @@ import { Lang } from '~/app/types/i18n/Lang';
         margin-bottom: 1rem;
       }
 
-      pk-icon-trash {
-        height: 24px;
-      }
-
       .tech-stack ul {
         padding: 0;
       }
@@ -106,23 +102,6 @@ import { Lang } from '~/app/types/i18n/Lang';
       .tech-stack__values .pk-input,
       .tech-stack__values .pk-range {
         margin-right: 1rem;
-      }
-
-      .tech-stack__delete-btn {
-        height: 36px;
-        width: 36px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 50%;
-        color: var(--text-color-light);
-        cursor: pointer;
-        transition: all 0.2s ease;
-      }
-
-      .tech-stack__delete-btn:hover {
-        color: var(--text-color);
-        background-color: var(--background-color-secondary);
       }
 
       .tech-cloud textarea {

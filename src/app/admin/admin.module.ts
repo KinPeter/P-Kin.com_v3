@@ -17,6 +17,7 @@ import { PensAdminComponent } from '~/app/admin/pages/pens-admin.component';
 import { GameAnd3dFiltersAdminComponent } from '~/app/admin/pages/game-and-3d-filters-admin.component';
 import { GameAnd3dPortfolioAdminComponent } from '~/app/admin/pages/game-and-3d-portfolio-admin.component';
 import { AdminAboutService } from '~/app/admin/services/admin-about.service';
+import { AdminWebdevService } from '~/app/admin/services/admin-webdev.service';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,6 @@ import { AdminAboutService } from '~/app/admin/services/admin-about.service';
     GameAnd3dPortfolioAdminComponent,
   ],
   imports: [CommonModule, SharedModule, IconsModule, FormsModule, AdminRoutingModule],
-  providers: [AuthService, AdminApiService, AdminAboutService],
+  providers: [AuthService, AdminApiService, AdminAboutService, AdminWebdevService],
 })
 export class AdminModule {}
