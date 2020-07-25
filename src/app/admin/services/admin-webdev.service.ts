@@ -18,15 +18,12 @@ export class AdminWebdevService {
   }
 
   public async saveFilters(data: string[]): Promise<void> {
-    const res = await this.api.put<string[], string[]>(
-      `/webdev/filters.json?auth=${this.auth.idToken}`,
-      data
-    );
+    await this.api.put<string[], string[]>(`/webdev/filters.json?auth=${this.auth.idToken}`, data);
     await this.fetch();
   }
 
   public async savePortfolio(data: PortfolioItem[]): Promise<void> {
-    const res = await this.api.put<PortfolioItem[], PortfolioItem[]>(
+    await this.api.put<PortfolioItem[], PortfolioItem[]>(
       `/webdev/portfolio.json?auth=${this.auth.idToken}`,
       data
     );

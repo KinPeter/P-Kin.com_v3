@@ -20,6 +20,7 @@ import { AdminAboutService } from '~/app/admin/services/admin-about.service';
 import { AdminWebdevService } from '~/app/admin/services/admin-webdev.service';
 import { AdminGameAnd3dService } from '~/app/admin/services/admin-game-and-3d.service';
 import { PortfolioItemListComponent } from '~/app/admin/components/portfolio-item-list.component';
+import { AdminPensService } from '~/app/admin/services/admin-pens.service';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { PortfolioItemListComponent } from '~/app/admin/components/portfolio-ite
     AdminAboutService,
     AdminWebdevService,
     AdminGameAnd3dService,
+    AdminPensService,
   ],
 })
 export class AdminModule {}

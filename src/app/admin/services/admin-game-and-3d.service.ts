@@ -18,15 +18,12 @@ export class AdminGameAnd3dService {
   }
 
   public async saveFilters(data: string[]): Promise<void> {
-    const res = await this.api.put<string[], string[]>(
-      `/gamedev/filters.json?auth=${this.auth.idToken}`,
-      data
-    );
+    await this.api.put<string[], string[]>(`/gamedev/filters.json?auth=${this.auth.idToken}`, data);
     await this.fetch();
   }
 
   public async savePortfolio(data: PortfolioItem[]): Promise<void> {
-    const res = await this.api.put<PortfolioItem[], PortfolioItem[]>(
+    await this.api.put<PortfolioItem[], PortfolioItem[]>(
       `/gamedev/portfolio.json?auth=${this.auth.idToken}`,
       data
     );
