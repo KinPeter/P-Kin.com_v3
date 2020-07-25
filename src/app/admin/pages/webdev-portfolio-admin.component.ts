@@ -171,7 +171,6 @@ export class WebdevPortfolioAdminComponent implements OnInit, OnDestroy {
 
   onSaveAll(): void {
     if (!this.content) return;
-    console.log('DATA to save', this.content);
     this.adminWebdevService.savePortfolio(this.content);
   }
 

@@ -171,7 +171,6 @@ export class AboutAdminComponent implements OnInit, OnDestroy {
       skills: newSkills,
       techCloud: newTechCloud,
     };
-    console.log('DATA to save', data);
     this.adminAboutService.save(data);
   }
 }

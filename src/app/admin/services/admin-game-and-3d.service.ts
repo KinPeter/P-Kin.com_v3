@@ -22,7 +22,6 @@ export class AdminGameAnd3dService {
       `/gamedev/filters.json?auth=${this.auth.idToken}`,
       data
     );
-    console.log('saveFilters RES:', res);
     await this.fetch();
   }
 
@@ -31,7 +30,6 @@ export class AdminGameAnd3dService {
       `/gamedev/portfolio.json?auth=${this.auth.idToken}`,
       data
     );
-    console.log('savePortfolio RES:', res);
     await this.fetch();
   }
 }
