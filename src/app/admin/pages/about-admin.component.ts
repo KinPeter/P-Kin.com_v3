@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { AdminAboutService } from '../services/admin-about.service';
-import { AboutResource } from '../../types/content/AboutResource';
 import { Subscription } from 'rxjs';
-import { Lang } from '../../types/i18n/Lang';
+import { AdminAboutService } from '~/app/admin/services/admin-about.service';
+import { AboutResource } from '~/app/types/content/AboutResource';
+import { Lang } from '~/app/types/i18n/Lang';
 
 @Component({
   selector: 'pk-admin-about',

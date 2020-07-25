@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { AboutResource } from '~/app/types/content/AboutResource';
-import { AdminApiService } from './admin-api.service';
-import { AuthService } from './auth.service';
+import { AdminApiService } from '~/app/admin/services/admin-api.service';
+import { AuthService } from '~/app/admin/services/auth.service';
 
 @Injectable()
 export class AdminAboutService {

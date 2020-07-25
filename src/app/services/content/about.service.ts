@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { BehaviorSubject } from 'rxjs';
 import { ApiService } from '~/app/services/api/api.service';
-import { TranslateService } from '@ngx-translate/core';
 import { Lang } from '~/app/types/i18n/Lang';
 import { AboutResource } from '~/app/types/content/AboutResource';
 

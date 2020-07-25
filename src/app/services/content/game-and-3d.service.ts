@@ -3,7 +3,7 @@ import { BehaviorSubject } from 'rxjs';
 import { ApiService } from '~/app/services/api/api.service';
 import { TranslateService } from '@ngx-translate/core';
 import { Lang } from '~/app/types/i18n/Lang';
-import { PortfolioResource } from '../../types/content/PortfolioResource';
+import { PortfolioResource } from '~/app/types/content/PortfolioResource';
 import { PortfolioItem } from '~/app/types/content/PortfolioItem';
 import { LoadedItem } from '~/app/types/content/LoadedItem';
 import { UUID } from '~/app/types/UUID';
