@@ -17,7 +17,10 @@ export class AdminAboutService {
   }
 
   public async save(data: AboutResource): Promise<void> {
-    const res = await this.api.put<AboutResource, AboutResource>(`/about.json?auth=${this.auth.idToken}`, data);
+    const res = await this.api.put<AboutResource, AboutResource>(
+      `/about.json?auth=${this.auth.idToken}`,
+      data
+    );
     this.content.next(res);
   }
 }

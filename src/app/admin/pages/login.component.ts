@@ -9,7 +9,13 @@ import { Router } from '@angular/router';
       <h1>ADMIN LOGIN</h1>
       <form (ngSubmit)="onLogin()" #form="ngForm">
         <input class="pk-input" type="email" name="email" placeholder="Email" [(ngModel)]="email" />
-        <input class="pk-input" type="password" name="password" placeholder="Password" [(ngModel)]="password" />
+        <input
+          class="pk-input"
+          type="password"
+          name="password"
+          placeholder="Password"
+          [(ngModel)]="password"
+        />
         <button class="pk-button pk-button_accent" type="submit">login</button>
       </form>
     </div>

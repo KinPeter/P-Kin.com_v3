@@ -39,7 +39,9 @@ export class GameAnd3dService {
     this.filteredItems.next([]);
     if (this.content) {
       const items =
-        filter === 'All' ? this.content.portfolio : this.content.portfolio.filter(item => item.badges.includes(filter));
+        filter === 'All'
+          ? this.content.portfolio
+          : this.content.portfolio.filter(item => item.badges.includes(filter));
       this.filteredItems.next(items);
       this.currentFilter.next(filter);
     }

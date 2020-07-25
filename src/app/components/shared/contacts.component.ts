@@ -6,7 +6,10 @@ import { DomSanitizer } from '@angular/platform-browser';
   template: `
     <div class="contacts">
       <a class="contact-button button-vertical-animated" [href]="ctc.email" target="_blank">
-        <pk-icon-email class="contact-button__icon" [class.contact-button__icon_hovered]="hovered"></pk-icon-email>
+        <pk-icon-email
+          class="contact-button__icon"
+          [class.contact-button__icon_hovered]="hovered"
+        ></pk-icon-email>
       </a>
       <a class="contact-button button-vertical-animated" [href]="ctc.linkedIn" target="_blank">
         <pk-icon-linkedin
@@ -15,13 +18,22 @@ import { DomSanitizer } from '@angular/platform-browser';
         ></pk-icon-linkedin>
       </a>
       <a class="contact-button button-vertical-animated" [href]="ctc.github" target="_blank">
-        <pk-icon-github class="contact-button__icon" [class.contact-button__icon_hovered]="hovered"></pk-icon-github>
+        <pk-icon-github
+          class="contact-button__icon"
+          [class.contact-button__icon_hovered]="hovered"
+        ></pk-icon-github>
       </a>
       <a class="contact-button button-vertical-animated" [href]="ctc.codePen" target="_blank">
-        <pk-icon-codepen class="contact-button__icon" [class.contact-button__icon_hovered]="hovered"></pk-icon-codepen>
+        <pk-icon-codepen
+          class="contact-button__icon"
+          [class.contact-button__icon_hovered]="hovered"
+        ></pk-icon-codepen>
       </a>
       <a class="contact-button button-vertical-animated" [href]="ctc.skype" target="_blank">
-        <pk-icon-skype class="contact-button__icon" [class.contact-button__icon_hovered]="hovered"></pk-icon-skype>
+        <pk-icon-skype
+          class="contact-button__icon"
+          [class.contact-button__icon_hovered]="hovered"
+        ></pk-icon-skype>
       </a>
       <a class="contact-button button-vertical-animated" [href]="ctc.facebook" target="_blank">
         <pk-icon-facebook

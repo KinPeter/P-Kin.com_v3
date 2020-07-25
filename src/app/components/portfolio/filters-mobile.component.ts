@@ -8,7 +8,11 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
     </div>
     <div class="filters-mobile" *ngIf="isOpen">
       <h1 class="filters-mobile__title">{{ 'c.filters.filter-results' | translate }}</h1>
-      <div *ngFor="let filter of filters" class="filters-mobile__button" (click)="onClickFilter(filter)">
+      <div
+        *ngFor="let filter of filters"
+        class="filters-mobile__button"
+        (click)="onClickFilter(filter)"
+      >
         {{ filter === 'All' ? ('c.filters.all' | translate) : filter }}
         <pk-icon-caret-right [size]="20" *ngIf="isActive(filter)"></pk-icon-caret-right>
       </div>

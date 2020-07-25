@@ -18,7 +18,11 @@ export class AdminApiService {
     }
   }
 
-  public async post<Q, R>(path: string, payload: Q, options: Record<string, unknown> = {}): Promise<R> {
+  public async post<Q, R>(
+    path: string,
+    payload: Q,
+    options: Record<string, unknown> = {}
+  ): Promise<R> {
     this.loading.start();
     try {
       return await this.http.post<R>(apiBaseUrl + path, payload, options).toPromise();
@@ -29,7 +33,11 @@ export class AdminApiService {
     }
   }
 
-  public async put<Q, R>(path: string, payload: Q, options: Record<string, unknown> = {}): Promise<R> {
+  public async put<Q, R>(
+    path: string,
+    payload: Q,
+    options: Record<string, unknown> = {}
+  ): Promise<R> {
     this.loading.start();
     try {
       return await this.http.put<R>(apiBaseUrl + path, payload, options).toPromise();

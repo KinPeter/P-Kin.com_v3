@@ -79,6 +79,8 @@ export class EmbeddedPenComponent implements OnInit {
     this.iframeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
       `https://codepen.io/kinpeter/embed/${this.pen.codepenId}?height=400&theme-id=dark&default-tab=result`
     );
-    this.codepenUrl = this.sanitizer.bypassSecurityTrustUrl(`https://codepen.io/kinpeter/pen/${this.pen.codepenId}`);
+    this.codepenUrl = this.sanitizer.bypassSecurityTrustUrl(
+      `https://codepen.io/kinpeter/pen/${this.pen.codepenId}`
+    );
   }
 }

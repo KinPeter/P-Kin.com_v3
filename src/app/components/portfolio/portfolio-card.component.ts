@@ -6,7 +6,10 @@ import { UUID } from '~/app/types/UUID';
   selector: 'pk-portfolio-card',
   template: `
     <div class="portfolio-card">
-      <div class="portfolio-card-background" [ngStyle]="{ backgroundImage: 'url(' + item?.image + ')' }"></div>
+      <div
+        class="portfolio-card-background"
+        [ngStyle]="{ backgroundImage: 'url(' + item?.image + ')' }"
+      ></div>
       <div class="portfolio-card-overlay">
         <h1>{{ item?.name }}</h1>
         <div class="portfolio-card-overlay__badges">

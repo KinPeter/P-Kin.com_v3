@@ -1,4 +1,13 @@
-import { Component, ElementRef, EventEmitter, Input, OnChanges, Output, SimpleChanges, ViewChild } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  EventEmitter,
+  Input,
+  OnChanges,
+  Output,
+  SimpleChanges,
+  ViewChild,
+} from '@angular/core';
 
 @Component({
   selector: 'pk-md-editor',
@@ -37,13 +46,23 @@ import { Component, ElementRef, EventEmitter, Input, OnChanges, Output, SimpleCh
           <div class="toolbar__spacer"></div>
 
           <span class="toolbar__unsaved-indicator" *ngIf="valueChanged">Unsaved changes!</span>
-          <button [disabled]="!valueChanged" class="pk-button pk-button_accent" (click)="onUpdate()">save</button>
+          <button
+            [disabled]="!valueChanged"
+            class="pk-button pk-button_accent"
+            (click)="onUpdate()"
+          >
+            save
+          </button>
         </div>
         <textarea class="pk-input" #textarea [(ngModel)]="localValue"></textarea>
       </div>
       <div class="editor-right">
         <p>Preview:</p>
-        <div class="editor-right__preview markdown-text" linksTargetBlank [innerHTML]="localValue | marked"></div>
+        <div
+          class="editor-right__preview markdown-text"
+          linksTargetBlank
+          [innerHTML]="localValue | marked"
+        ></div>
       </div>
     </div>
   `,

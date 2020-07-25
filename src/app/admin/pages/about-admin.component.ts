@@ -37,7 +37,14 @@ import { Lang } from '../../types/i18n/Lang';
           <li *ngFor="let tech of techStackArray; let i = index">
             <div class="tech-stack__values">
               <input class="pk-input" type="text" [(ngModel)]="tech[0]" />
-              <input class="pk-range" type="range" min="0" max="10" step="1" [(ngModel)]="tech[1]" />
+              <input
+                class="pk-range"
+                type="range"
+                min="0"
+                max="10"
+                step="1"
+                [(ngModel)]="tech[1]"
+              />
               <span>({{ tech[1] }})</span>
             </div>
             <div class="tech-stack__delete-btn" (click)="onDeleteSkill(i)">

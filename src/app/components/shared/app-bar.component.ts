@@ -6,15 +6,27 @@ import { Router } from '@angular/router';
   template: `
     <div class="app-bar" [class.app-bar_scrolled]="scrolled">
       <div class="app-bar__left">
-        <a routerLink="/about" class="app-bar-button" [class.button-horizontal-animated]="!isActive('/about')">
+        <a
+          routerLink="/about"
+          class="app-bar-button"
+          [class.button-horizontal-animated]="!isActive('/about')"
+        >
           {{ 'menu.about' | translate }}
           <span *ngIf="isActive('/about')" class="app-bar-button__active"></span>
         </a>
-        <a routerLink="/web-dev" class="app-bar-button" [class.button-horizontal-animated]="!isActive('/web-dev')">
+        <a
+          routerLink="/web-dev"
+          class="app-bar-button"
+          [class.button-horizontal-animated]="!isActive('/web-dev')"
+        >
           {{ 'menu.webDev' | translate }}
           <span *ngIf="isActive('/web-dev')" class="app-bar-button__active"></span>
         </a>
-        <a routerLink="/pens" class="app-bar-button" [class.button-horizontal-animated]="!isActive('/pens')">
+        <a
+          routerLink="/pens"
+          class="app-bar-button"
+          [class.button-horizontal-animated]="!isActive('/pens')"
+        >
           {{ 'menu.pens' | translate }}
           <span *ngIf="isActive('/pens')" class="app-bar-button__active"></span>
         </a>

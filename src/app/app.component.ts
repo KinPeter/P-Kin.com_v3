@@ -26,16 +26,18 @@ export class AppComponent {
     translate.use('en');
 
     // logic to add when the language changes
-    translate.onLangChange.subscribe((event: { lang: string; translations: Record<string, unknown> }) => {
-      console.log('Language changed to:', event.lang);
-      if (event.lang === 'kr') {
-        document.body.style.setProperty('--font-sans-serif', 'Noto Sans KR');
-        // document.body.style.setProperty('--font-serif', 'Noto Serif KR');
-      } else {
-        document.body.style.setProperty('--font-sans-serif', 'Montserrat');
-        // document.body.style.setProperty('--font-serif', 'Martel');
+    translate.onLangChange.subscribe(
+      (event: { lang: string; translations: Record<string, unknown> }) => {
+        console.log('Language changed to:', event.lang);
+        if (event.lang === 'kr') {
+          document.body.style.setProperty('--font-sans-serif', 'Noto Sans KR');
+          // document.body.style.setProperty('--font-serif', 'Noto Serif KR');
+        } else {
+          document.body.style.setProperty('--font-sans-serif', 'Montserrat');
+          // document.body.style.setProperty('--font-serif', 'Martel');
+        }
       }
-    });
+    );
 
     this.router.events.subscribe(async event => {
       if (event instanceof NavigationEnd) {
@@ -60,7 +62,9 @@ export class AppComponent {
             newTitle = 'Ooops! | P-kin.com';
             break;
           default:
-            newTitle = event.urlAfterRedirects.startsWith('/admin') ? 'Admin | P-Kin.com' : 'P-Kin.com';
+            newTitle = event.urlAfterRedirects.startsWith('/admin')
+              ? 'Admin | P-Kin.com'
+              : 'P-Kin.com';
             break;
         }
         this.title.setTitle(newTitle);

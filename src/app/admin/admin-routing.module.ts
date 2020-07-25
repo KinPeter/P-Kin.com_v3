@@ -18,10 +18,22 @@ const routes: Routes = [
       { path: 'login', component: LoginComponent },
       { path: 'about', component: AboutAdminComponent, canActivate: [AuthGuard] },
       { path: 'webdev-filters', component: WebdevFiltersAdminComponent, canActivate: [AuthGuard] },
-      { path: 'webdev-portfolio', component: WebdevPortfolioAdminComponent, canActivate: [AuthGuard] },
+      {
+        path: 'webdev-portfolio',
+        component: WebdevPortfolioAdminComponent,
+        canActivate: [AuthGuard],
+      },
       { path: 'pens', component: PensAdminComponent, canActivate: [AuthGuard] },
-      { path: 'game-and-3d-filters', component: GameAnd3dFiltersAdminComponent, canActivate: [AuthGuard] },
-      { path: 'game-and-3d-portfolio', component: GameAnd3dPortfolioAdminComponent, canActivate: [AuthGuard] },
+      {
+        path: 'game-and-3d-filters',
+        component: GameAnd3dFiltersAdminComponent,
+        canActivate: [AuthGuard],
+      },
+      {
+        path: 'game-and-3d-portfolio',
+        component: GameAnd3dPortfolioAdminComponent,
+        canActivate: [AuthGuard],
+      },
     ],
   },
 ];

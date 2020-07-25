@@ -6,7 +6,11 @@ import { Subscription } from 'rxjs';
   selector: 'pk-about',
   template: `
     <div *ngIf="aboutService.isContentLoaded" class="pk-default-container about-wrapper">
-      <div class="about-introduction markdown-text" linksTargetBlank [innerHTML]="introduction | marked"></div>
+      <div
+        class="about-introduction markdown-text"
+        linksTargetBlank
+        [innerHTML]="introduction | marked"
+      ></div>
       <div class="about-skills">
         <h2>{{ 'p.about.tech-stack' | translate }}</h2>
         <pk-tech-stack [skills]="skills"></pk-tech-stack>

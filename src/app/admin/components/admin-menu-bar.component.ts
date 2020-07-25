@@ -8,19 +8,30 @@ import { AuthService } from '../services/auth.service';
     <div *ngIf="!isLoginPage()" class="admin-menu-bar">
       <div class="admin-menu-bar__left">
         <h3>Admin:</h3>
-        <a routerLink="/admin/about" [class.admin-link_active]="isActive('/admin/about')">About page</a>
+        <a routerLink="/admin/about" [class.admin-link_active]="isActive('/admin/about')">
+          About page
+        </a>
         |
-        <a routerLink="/admin/webdev-filters" [class.admin-link_active]="isActive('/admin/webdev-filters')">
+        <a
+          routerLink="/admin/webdev-filters"
+          [class.admin-link_active]="isActive('/admin/webdev-filters')"
+        >
           WebDev filters
         </a>
         |
-        <a routerLink="/admin/webdev-portfolio" [class.admin-link_active]="isActive('/admin/webdev-portfolio')">
+        <a
+          routerLink="/admin/webdev-portfolio"
+          [class.admin-link_active]="isActive('/admin/webdev-portfolio')"
+        >
           WebDev portfolio
         </a>
         |
         <a routerLink="/admin/pens" [class.admin-link_active]="isActive('/admin/pens')">Pens</a>
         |
-        <a routerLink="/admin/game-and-3d-filters" [class.admin-link_active]="isActive('/admin/game-and-3d-filters')">
+        <a
+          routerLink="/admin/game-and-3d-filters"
+          [class.admin-link_active]="isActive('/admin/game-and-3d-filters')"
+        >
           Game & 3D filters
         </a>
         |

@@ -5,7 +5,10 @@ import { Router } from '@angular/router';
   selector: 'pk-side-drawer',
   template: `
     <div class="side-drawer" [class.side-drawer_open]="open">
-      <div class="side-drawer__toggle-header" [class.side-drawer__toggle-header_scrolled]="scrolled">
+      <div
+        class="side-drawer__toggle-header"
+        [class.side-drawer__toggle-header_scrolled]="scrolled"
+      >
         <div class="hamburger-button" (click)="onToggle()">
           <div></div>
           <div></div>

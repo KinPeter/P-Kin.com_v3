@@ -27,7 +27,11 @@ import { LoadedItem } from '~/app/types/content/LoadedItem';
         ></pk-portfolio-card>
       </div>
     </div>
-    <pk-portfolio-modal *ngIf="isModalOpen" [item]="loadedItem" (closeModal)="onCloseModal()"></pk-portfolio-modal>
+    <pk-portfolio-modal
+      *ngIf="isModalOpen"
+      [item]="loadedItem"
+      (closeModal)="onCloseModal()"
+    ></pk-portfolio-modal>
   `,
   styles: [
     `
