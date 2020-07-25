@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
     <div class="admin-container">
       <pk-admin-menu-bar></pk-admin-menu-bar>
       <router-outlet></router-outlet>
+      <pk-snackbar></pk-snackbar>
     </div>
   `,
   styles: [``],

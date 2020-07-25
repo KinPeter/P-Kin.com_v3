@@ -9,7 +9,7 @@ import { LoginComponent } from '~/app/admin/pages/login.component';
 import { AboutAdminComponent } from '~/app/admin/pages/about-admin.component';
 import { AuthService } from '~/app/admin/services/auth.service';
 import { AdminApiService } from '~/app/admin/services/admin-api.service';
-import { AdminComponent } from '~/app/admin/components/admin.component';
+import { AdminComponent } from '~/app/admin/admin.component';
 import { AdminMenuBarComponent } from '~/app/admin/components/admin-menu-bar.component';
 import { WebdevFiltersAdminComponent } from '~/app/admin/pages/webdev-filters-admin.component';
 import { WebdevPortfolioAdminComponent } from '~/app/admin/pages/webdev-portfolio-admin.component';
@@ -21,6 +21,8 @@ import { AdminWebdevService } from '~/app/admin/services/admin-webdev.service';
 import { AdminGameAnd3dService } from '~/app/admin/services/admin-game-and-3d.service';
 import { PortfolioItemListComponent } from '~/app/admin/components/portfolio-item-list.component';
 import { AdminPensService } from '~/app/admin/services/admin-pens.service';
+import { SnackbarComponent } from '~/app/admin/components/snackbar.component';
+import { SnackbarService } from '~/app/admin/services/snackbar.service';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,7 @@ import { AdminPensService } from '~/app/admin/services/admin-pens.service';
     GameAnd3dFiltersAdminComponent,
     GameAnd3dPortfolioAdminComponent,
     PortfolioItemListComponent,
+    SnackbarComponent,
   ],
   imports: [CommonModule, SharedModule, IconsModule, FormsModule, AdminRoutingModule],
   providers: [
@@ -44,6 +47,7 @@ import { AdminPensService } from '~/app/admin/services/admin-pens.service';
     AdminWebdevService,
     AdminGameAnd3dService,
     AdminPensService,
+    SnackbarService,
   ],
 })
 export class AdminModule {}

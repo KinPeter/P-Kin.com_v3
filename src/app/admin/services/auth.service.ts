@@ -4,6 +4,7 @@ import { BehaviorSubject } from 'rxjs';
 import { AuthData } from '~/app/admin/types/AuthData';
 import { LoginResponse } from '~/app/admin/types/LoginResponse';
 import { LoadingService } from '~/app/services/ui/loading.service';
+import { SnackbarService } from '~/app/admin/services/snackbar.service';
 import { apiKey, loginBaseUrl } from '../../../../keys';
 
 const loginUrl = `${loginBaseUrl}${apiKey}`;
@@ -17,7 +18,11 @@ export class AuthService {
   private warningTimer: number | undefined;
   private authData: BehaviorSubject<AuthData | null> = new BehaviorSubject<AuthData | null>(null);
 
-  constructor(private http: HttpClient, private loading: LoadingService) {}
+  constructor(
+    private http: HttpClient,
+    private loading: LoadingService,
+    private snackbar: SnackbarService
+  ) {}
 
   public get isLoggedIn(): boolean {
     return !!this.authData.value?.idToken && this.authData.value?.expires > now();
@@ -39,7 +44,7 @@ export class AuthService {
         .toPromise();
       this.handleLogin(res);
     } catch (e) {
-      console.error('Could not log in: ', e);
+      this.snackbar.showError(`Could not log in! (${e.error.error.message.toLowerCase()})`);
     } finally {
       this.loading.stop();
     }
@@ -56,7 +61,6 @@ export class AuthService {
         });
         this.setLogoutTimer(data.expires - now());
         this.setWarningTimer(data.expires - now());
-        console.log('Login expires at ' + new Date(data.expires));
       } else {
         this.logout();
       }
@@ -71,9 +75,6 @@ export class AuthService {
     sessionStorage.setItem('pk-adminauth', JSON.stringify(this.authData.value));
     this.setLogoutTimer(+res.expiresIn * 1000);
     this.setWarningTimer(+res.expiresIn * 1000);
-    if (this.authData.value) {
-      console.log('Login expires at ' + new Date(this.authData.value.expires));
-    }
   }
 
   private setLogoutTimer(expiresIn: number): void {
@@ -86,11 +87,11 @@ export class AuthService {
   private setWarningTimer(expiresIn: number): void {
     const warningIn = expiresIn - 5 * 60 * 1000;
     if (warningIn > now()) {
-      console.warn('Login expires SOON!'); // TODO: Use snackbar
+      this.snackbar.showWarning('Your session will expire in less than 5 minutes!');
     } else {
       clearTimeout(this.warningTimer);
       this.warningTimer = setTimeout(() => {
-        console.warn('Login expires in 5 minutes!');
+        this.snackbar.showWarning('Your session will expire in 5 minutes!');
       }, warningIn);
     }
   }

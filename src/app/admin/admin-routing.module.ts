@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from '~/app/admin/pages/login.component';
 import { AboutAdminComponent } from '~/app/admin/pages/about-admin.component';
 import { AuthGuard } from '~/app/admin/services/auth.guard';
-import { AdminComponent } from '~/app/admin/components/admin.component';
+import { AdminComponent } from '~/app/admin/admin.component';
 import { WebdevFiltersAdminComponent } from '~/app/admin/pages/webdev-filters-admin.component';
 import { WebdevPortfolioAdminComponent } from '~/app/admin/pages/webdev-portfolio-admin.component';
 import { PensAdminComponent } from '~/app/admin/pages/pens-admin.component';
