@@ -102,6 +102,10 @@ import { PenItem } from '~/app/types/content/PenItem';
         width: 550px;
       }
 
+      .pens-admin input[name='cp-id-input'] {
+        width: 120px;
+      }
+
       .item__actions {
         display: flex;
       }
