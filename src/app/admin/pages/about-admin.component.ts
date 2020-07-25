@@ -8,20 +8,26 @@ import { Lang } from '../../types/i18n/Lang';
   selector: 'pk-admin-about',
   template: `
     <div *ngIf="content" class="about-admin">
-      <h1>Introduction</h1>
-      <button
-        *ngFor="let lang of languages"
-        class="lang-button pk-button"
-        [class.pk-button_active]="lang === currentLangToEdit"
-        [class.pk-button_accent]="lang === currentLangToEdit"
-        (click)="setLangToEdit(lang)"
-      >
-        {{ lang }}
-      </button>
-      <pk-md-editor
-        [value]="content.introduction[currentLangToEdit]"
-        (updateMd)="onMdUpdate($event, currentLangToEdit)"
-      ></pk-md-editor>
+      <header>
+        <h1>Introduction</h1>
+        <button class="pk-button pk-button_accent" (click)="onSaveAll()">Save All</button>
+      </header>
+
+      <section class="introduction">
+        <button
+          *ngFor="let lang of languages"
+          class="lang-button pk-button"
+          [class.pk-button_active]="lang === currentLangToEdit"
+          [class.pk-button_accent]="lang === currentLangToEdit"
+          (click)="setLangToEdit(lang)"
+        >
+          {{ lang }}
+        </button>
+        <pk-md-editor
+          [value]="content.introduction[currentLangToEdit]"
+          (updateMd)="onMdUpdate($event, currentLangToEdit)"
+        ></pk-md-editor>
+      </section>
 
       <hr />
 
@@ -49,11 +55,22 @@ import { Lang } from '../../types/i18n/Lang';
         <textarea class="pk-input" [(ngModel)]="techCloudString"></textarea>
       </section>
 
-      <button class="pk-button pk-button_accent" (click)="onSaveAll()">SAVE</button>
+      <hr />
+
+      <button class="pk-button pk-button_accent" (click)="onSaveAll()">Save All</button>
     </div>
   `,
   styles: [
     `
+      .about-admin {
+        padding-bottom: 2rem;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+      }
+
       .lang-button {
         margin-bottom: 1rem;
       }
@@ -169,5 +186,6 @@ export class AboutAdminComponent implements OnInit, OnDestroy {
       techCloud: newTechCloud,
     };
     console.log('DATA to save', data);
+    this.adminAboutService.save(data);
   }
 }
