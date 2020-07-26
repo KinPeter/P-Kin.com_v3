@@ -58,8 +58,8 @@ import { UUID } from '~/app/types/UUID';
               {{ lang }}
             </button>
             <pk-md-editor
-              [value]="loadedItem.description[this.currentLangToEdit]"
-              (updateMd)="onMdUpdate($event, currentLangToEdit)"
+              [value]="loadedItem.description[currentLangToEdit]"
+              (updateMd)="onMdUpdate($event)"
             ></pk-md-editor>
           </section>
         </div>
@@ -149,6 +149,11 @@ export class GameAnd3dPortfolioAdminComponent implements OnInit, OnDestroy {
       this.adminGameAnd3dService.content$.subscribe(content => {
         this.content = content.portfolio;
         this.languages = Object.keys(this.content[0].description) as Lang[];
+        if (this.loadedItem) {
+          // need to update the reference from the new content object
+          const loadedId = this.loadedItem.id;
+          this.loadedItem = content.portfolio.find(i => i.id === loadedId);
+        }
       })
     );
   }
@@ -159,9 +164,9 @@ export class GameAnd3dPortfolioAdminComponent implements OnInit, OnDestroy {
     });
   }
 
-  onMdUpdate(value: string, lang: string): void {
+  onMdUpdate(value: string): void {
     if (this.loadedItem) {
-      this.loadedItem.description[lang as Lang] = value;
+      this.loadedItem.description[this.currentLangToEdit] = value;
     }
   }
 
