@@ -22,7 +22,7 @@
       "in-progress": "개발중인"
     },
     "filters": {
-      "all": "모두",
+      "all": "모두 보기",
       "filter-results": "결과 필터링",
       "not-found": "검색 결과가 없습니다..."
     }
