@@ -1,27 +1,39 @@
-# PkincomV3
+# P-Kin.com V3
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.1.
+My third portfolio website made with currently the latest version 10 of Angular.
 
-## Development server
+### Public pages:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+![Website gif](https://stuff.p-kin.com/screentogif/pkincom_v3.gif)
 
-## Code scaffolding
+### Admin area:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+![Website gif](https://stuff.p-kin.com/screentogif/pkincom_v3_admin.gif)
 
-## Build
+### Features:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+- **Introduction + Portfolio -**
+Visitors can read about me, my skills, interests, also check out my developer portfolio in three different categories.
 
-## Running unit tests
+- **Exploiting Markdown -**
+Most of the textual content is saved on the server using Markdown syntax, and then parsed on the frontend, thus reducing the necessary HTML in the code itself.  
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- **Internationalization (i18n) -**
+The UI and most of the contents are available in three different languages, and it is possible to switch between them at any time without reloading the page. I used the `ngx-translate` library for the i18n implementation.
 
-## Running end-to-end tests
+- **Dark and light themes -**
+Also switching between the light and dark theme is possible without any glitch thanks to the flexibility of CSS variables.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+- **Admin area with authentication -**
+To make it easy to manage the contents the site has an admin area (as a lazy-loaded module) which is of course only available after authentication.
 
-## Further help
+- **Custom Markdown editor -**
+For creating the Markdown contents I was looking for available editors, but I found all to be over-complicated, or having too many unnecessary dependencies. The solution at the end was to make my own simple implementation.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+### Technologies used:
+
+- Angular 10
+- TypeScript
+- CSS3 + SCSS
+- Markdown
+- Firebase Rest APIs
