@@ -48,13 +48,13 @@ import { Router } from '@angular/router';
           <span *ngIf="isActive('/pens')" class="drawer-button__active"></span>
         </a>
         <a
-          routerLink="/game-and-3d"
+          routerLink="/game-dev"
           class="drawer__button"
-          [class.button-horizontal-animated]="!isActive('/game-and-3d')"
+          [class.button-horizontal-animated]="!isActive('/game-dev')"
           (click)="onClose()"
         >
-          {{ 'menu.gameAnd3d' | translate }}
-          <span *ngIf="isActive('/game-and-3d')" class="drawer-button__active"></span>
+          {{ 'menu.gameDev' | translate }}
+          <span *ngIf="isActive('/game-dev')" class="drawer-button__active"></span>
         </a>
         <div class="drawer__theme-and-language">
           <pk-theme-switch></pk-theme-switch>

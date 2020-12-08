@@ -31,12 +31,12 @@ import { Router } from '@angular/router';
           <span *ngIf="isActive('/pens')" class="app-bar-button__active"></span>
         </a>
         <a
-          routerLink="/game-and-3d"
+          routerLink="/game-dev"
           class="app-bar-button"
-          [class.button-horizontal-animated]="!isActive('/game-and-3d')"
+          [class.button-horizontal-animated]="!isActive('/game-dev')"
         >
-          {{ 'menu.gameAnd3d' | translate }}
-          <span *ngIf="isActive('/game-and-3d')" class="app-bar-button__active"></span>
+          {{ 'menu.gameDev' | translate }}
+          <span *ngIf="isActive('/game-dev')" class="app-bar-button__active"></span>
         </a>
       </div>
       <div class="app-bar__right">

@@ -9,7 +9,7 @@ import { LoadedItem } from '~/app/types/content/LoadedItem';
 import { UUID } from '~/app/types/UUID';
 
 @Injectable({ providedIn: 'root' })
-export class GameAnd3dService {
+export class GameDevService {
   public isContentLoaded = false;
   private content: PortfolioResource | undefined;
 

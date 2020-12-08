@@ -51,8 +51,8 @@ export class AppComponent {
           case '/pens':
             newTitle = await this.getTitleFor('menu.pens');
             break;
-          case '/game-and-3d':
-            newTitle = await this.getTitleFor('menu.gameAnd3d');
+          case '/game-dev':
+            newTitle = await this.getTitleFor('menu.gameDev');
             break;
           case '/admin':
             newTitle = 'Admin | P-Kin.com';

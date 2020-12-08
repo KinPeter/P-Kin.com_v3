@@ -6,7 +6,7 @@ import { PortfolioResource } from '~/app/types/content/PortfolioResource';
 import { PortfolioItem } from '~/app/types/content/PortfolioItem';
 
 @Injectable()
-export class AdminGameAnd3dService {
+export class AdminGameDevService {
   private content: Subject<PortfolioResource> = new Subject<PortfolioResource>();
   public content$: Observable<PortfolioResource> = this.content.asObservable();
 

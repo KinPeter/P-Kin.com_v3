@@ -2,16 +2,16 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { v4 as newUUID } from 'uuid';
 import { PortfolioItem } from '~/app/types/content/PortfolioItem';
-import { AdminGameAnd3dService } from '~/app/admin/services/admin-game-and-3d.service';
+import { AdminGameDevService } from '../services/admin-game-dev.service';
 import { Lang } from '~/app/types/i18n/Lang';
 import { UUID } from '~/app/types/UUID';
 
 @Component({
-  selector: 'pk-admin-game-and-3d-portfolio',
+  selector: 'pk-admin-game-dev-portfolio',
   template: `
     <div *ngIf="content" class="gamedev-portfolio">
       <header>
-        <h1>Game and 3D portfolio</h1>
+        <h1>Game Dev portfolio</h1>
         <button class="pk-button pk-button_accent" (click)="onSaveAll()">Save All</button>
       </header>
       <div class="portfolio-editor-wrapper">
@@ -133,20 +133,20 @@ import { UUID } from '~/app/types/UUID';
     `,
   ],
 })
-export class GameAnd3dPortfolioAdminComponent implements OnInit, OnDestroy {
+export class GameDevPortfolioAdminComponent implements OnInit, OnDestroy {
   private subscriptions: Subscription[] = [];
   public content: PortfolioItem[] = [];
   public loadedItem: PortfolioItem | undefined;
   public languages: Lang[] = [];
   public currentLangToEdit: Lang = 'en';
 
-  constructor(private adminGameAnd3dService: AdminGameAnd3dService) {
-    this.adminGameAnd3dService.fetch();
+  constructor(private adminGameDevService: AdminGameDevService) {
+    this.adminGameDevService.fetch();
   }
 
   ngOnInit(): void {
     this.subscriptions.push(
-      this.adminGameAnd3dService.content$.subscribe(content => {
+      this.adminGameDevService.content$.subscribe(content => {
         this.content = content.portfolio;
         this.languages = Object.keys(this.content[0].description) as Lang[];
         if (this.loadedItem) {
@@ -176,7 +176,7 @@ export class GameAnd3dPortfolioAdminComponent implements OnInit, OnDestroy {
 
   onSaveAll(): void {
     if (!this.content) return;
-    this.adminGameAnd3dService.savePortfolio(this.content);
+    this.adminGameDevService.savePortfolio(this.content);
   }
 
   onSelectItem(id: UUID): void {

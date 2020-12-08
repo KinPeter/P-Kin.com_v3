@@ -1,13 +1,13 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { AdminGameAnd3dService } from '~/app/admin/services/admin-game-and-3d.service';
+import { AdminGameDevService } from '../services/admin-game-dev.service';
 
 @Component({
   selector: 'pk-admin-gamedev-filters',
   template: `
     <div class="gamedev-filters-admin">
       <header>
-        <h1>Game & 3D filters</h1>
+        <h1>GameDev filters</h1>
         <button class="pk-button pk-button_accent" (click)="onSave()">Save</button>
       </header>
 
@@ -66,17 +66,17 @@ import { AdminGameAnd3dService } from '~/app/admin/services/admin-game-and-3d.se
     `,
   ],
 })
-export class GameAnd3dFiltersAdminComponent implements OnInit, OnDestroy {
+export class GameDevFiltersAdminComponent implements OnInit, OnDestroy {
   private subscriptions: Subscription[] = [];
   public filters: string[] = [];
 
-  constructor(private adminGameAnd3dService: AdminGameAnd3dService) {
-    this.adminGameAnd3dService.fetch();
+  constructor(private adminGameDevService: AdminGameDevService) {
+    this.adminGameDevService.fetch();
   }
 
   ngOnInit(): void {
     this.subscriptions.push(
-      this.adminGameAnd3dService.content$.subscribe(content => {
+      this.adminGameDevService.content$.subscribe(content => {
         this.filters = content.filters;
       })
     );
@@ -89,7 +89,7 @@ export class GameAnd3dFiltersAdminComponent implements OnInit, OnDestroy {
   }
 
   onSave(): void {
-    this.adminGameAnd3dService.saveFilters(this.filters);
+    this.adminGameDevService.saveFilters(this.filters);
   }
 
   onDeleteFilter(index: number): void {

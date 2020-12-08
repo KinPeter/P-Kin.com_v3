@@ -3,10 +3,10 @@ import { Subscription } from 'rxjs';
 import { PortfolioItem } from '~/app/types/content/PortfolioItem';
 import { LoadedItem } from '~/app/types/content/LoadedItem';
 import { UUID } from '~/app/types/UUID';
-import { GameAnd3dService } from '~/app/services/content/game-and-3d.service';
+import { GameDevService } from '~/app/services/content/game-dev.service';
 
 @Component({
-  selector: 'pk-game-and-3d',
+  selector: 'pk-game-dev',
   template: `
     <pk-portfolio-wrapper
       [items]="items"
@@ -19,7 +19,7 @@ import { GameAnd3dService } from '~/app/services/content/game-and-3d.service';
   `,
   styles: [``],
 })
-export class GameAnd3dComponent implements OnInit, OnDestroy {
+export class GameDevComponent implements OnInit, OnDestroy {
   private subscriptions: Subscription[] = [];
 
   filters: string[] = [];
@@ -27,22 +27,22 @@ export class GameAnd3dComponent implements OnInit, OnDestroy {
   items: PortfolioItem[] = [];
   loadedItem: LoadedItem = { name: '', badges: [], description: '' };
 
-  constructor(public gameAnd3dService: GameAnd3dService) {
-    this.gameAnd3dService.fetchIfNeeded();
+  constructor(public gameDevService: GameDevService) {
+    this.gameDevService.fetchIfNeeded();
   }
 
   ngOnInit(): void {
     this.subscriptions.push(
-      this.gameAnd3dService.filters$.subscribe(value => {
+      this.gameDevService.filters$.subscribe(value => {
         this.filters = value;
       }),
-      this.gameAnd3dService.currentFilter$.subscribe(value => {
+      this.gameDevService.currentFilter$.subscribe(value => {
         this.currentFilter = value;
       }),
-      this.gameAnd3dService.filteredItems$.subscribe(value => {
+      this.gameDevService.filteredItems$.subscribe(value => {
         this.items = value;
       }),
-      this.gameAnd3dService.loadedItem$.subscribe(value => {
+      this.gameDevService.loadedItem$.subscribe(value => {
         if (value) {
           this.loadedItem = value;
         }
@@ -51,17 +51,17 @@ export class GameAnd3dComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.gameAnd3dService.resetState();
+    this.gameDevService.resetState();
     this.subscriptions.forEach(sub => {
       sub.unsubscribe();
     });
   }
 
   onOpenItem(id: UUID): void {
-    this.gameAnd3dService.loadItem(id);
+    this.gameDevService.loadItem(id);
   }
 
   onApplyFilter(filter: string): void {
-    this.gameAnd3dService.applyFilter(filter);
+    this.gameDevService.applyFilter(filter);
   }
 }

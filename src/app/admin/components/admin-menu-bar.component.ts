@@ -30,17 +30,17 @@ import { AdminApiService } from '../services/admin-api.service';
         <a routerLink="/admin/pens" [class.admin-link_active]="isActive('/admin/pens')">Pens</a>
         |
         <a
-          routerLink="/admin/game-and-3d-filters"
-          [class.admin-link_active]="isActive('/admin/game-and-3d-filters')"
+          routerLink="/admin/game-dev-filters"
+          [class.admin-link_active]="isActive('/admin/game-dev-filters')"
         >
-          Game & 3D filters
+          GameDev filters
         </a>
         |
         <a
-          routerLink="/admin/game-and-3d-portfolio"
-          [class.admin-link_active]="isActive('/admin/game-and-3d-portfolio')"
+          routerLink="/admin/game-dev-portfolio"
+          [class.admin-link_active]="isActive('/admin/game-dev-portfolio')"
         >
-          Game & 3D portfolio
+          GameDev portfolio
         </a>
       </div>
       <div class="admin-menu-bar__right">

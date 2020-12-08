@@ -14,11 +14,11 @@ import { AdminMenuBarComponent } from '~/app/admin/components/admin-menu-bar.com
 import { WebdevFiltersAdminComponent } from '~/app/admin/pages/webdev-filters-admin.component';
 import { WebdevPortfolioAdminComponent } from '~/app/admin/pages/webdev-portfolio-admin.component';
 import { PensAdminComponent } from '~/app/admin/pages/pens-admin.component';
-import { GameAnd3dFiltersAdminComponent } from '~/app/admin/pages/game-and-3d-filters-admin.component';
-import { GameAnd3dPortfolioAdminComponent } from '~/app/admin/pages/game-and-3d-portfolio-admin.component';
+import { GameDevFiltersAdminComponent } from './pages/game-dev-filters-admin.component';
+import { GameDevPortfolioAdminComponent } from './pages/game-dev-portfolio-admin.component';
 import { AdminAboutService } from '~/app/admin/services/admin-about.service';
 import { AdminWebdevService } from '~/app/admin/services/admin-webdev.service';
-import { AdminGameAnd3dService } from '~/app/admin/services/admin-game-and-3d.service';
+import { AdminGameDevService } from './services/admin-game-dev.service';
 import { PortfolioItemListComponent } from '~/app/admin/components/portfolio-item-list.component';
 import { AdminPensService } from '~/app/admin/services/admin-pens.service';
 import { SnackbarComponent } from '~/app/admin/components/snackbar.component';
@@ -34,8 +34,8 @@ import { SnackbarService } from '~/app/admin/services/snackbar.service';
     WebdevFiltersAdminComponent,
     WebdevPortfolioAdminComponent,
     PensAdminComponent,
-    GameAnd3dFiltersAdminComponent,
-    GameAnd3dPortfolioAdminComponent,
+    GameDevFiltersAdminComponent,
+    GameDevPortfolioAdminComponent,
     PortfolioItemListComponent,
     SnackbarComponent,
   ],
@@ -45,7 +45,7 @@ import { SnackbarService } from '~/app/admin/services/snackbar.service';
     AdminApiService,
     AdminAboutService,
     AdminWebdevService,
-    AdminGameAnd3dService,
+    AdminGameDevService,
     AdminPensService,
     SnackbarService,
   ],

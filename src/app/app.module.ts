@@ -13,7 +13,7 @@ import { ThemeSwitchComponent } from '~/app/components/shared/theme-switch.compo
 import { LanguageSwitchComponent } from '~/app/components/shared/language-switch.component';
 import { WebDevComponent } from '~/app/pages/web-dev.component';
 import { PensComponent } from '~/app/pages/pens.component';
-import { GameAnd3dComponent } from '~/app/pages/game-and-3d.component';
+import { GameDevComponent } from '~/app/pages/game-dev.component';
 import { SideDrawerComponent } from '~/app/components/shared/side-drawer.component';
 import { FooterComponent } from '~/app/components/shared/footer.component';
 import { ContactsComponent } from '~/app/components/shared/contacts.component';
@@ -30,7 +30,7 @@ import { PortfolioModalComponent } from '~/app/components/portfolio/portfolio-mo
 import { PortfolioWrapperComponent } from '~/app/components/portfolio/portfolio-wrapper.component';
 import { FiltersDesktopComponent } from '~/app/components/portfolio/filters-desktop.component';
 import { FiltersMobileComponent } from '~/app/components/portfolio/filters-mobile.component';
-import { GameAnd3dService } from '~/app/services/content/game-and-3d.service';
+import { GameDevService } from '~/app/services/content/game-dev.service';
 import { EmbeddedPenComponent } from '~/app/components/pens/embedded-pen.component';
 import { PensService } from '~/app/services/content/pens.service';
 import { NotFoundComponent } from '~/app/components/portfolio/not-found.component';
@@ -48,7 +48,7 @@ import { ErrorService } from '~/app/services/ui/error.service';
     AboutComponent,
     WebDevComponent,
     PensComponent,
-    GameAnd3dComponent,
+    GameDevComponent,
     ThemeSwitchComponent,
     LanguageSwitchComponent,
     TechStackComponent,
@@ -80,7 +80,7 @@ import { ErrorService } from '~/app/services/ui/error.service';
     ApiService,
     AboutService,
     WebDevService,
-    GameAnd3dService,
+    GameDevService,
     PensService,
     Title,
   ],

@@ -7,8 +7,8 @@ import { AdminComponent } from '~/app/admin/admin.component';
 import { WebdevFiltersAdminComponent } from '~/app/admin/pages/webdev-filters-admin.component';
 import { WebdevPortfolioAdminComponent } from '~/app/admin/pages/webdev-portfolio-admin.component';
 import { PensAdminComponent } from '~/app/admin/pages/pens-admin.component';
-import { GameAnd3dFiltersAdminComponent } from '~/app/admin/pages/game-and-3d-filters-admin.component';
-import { GameAnd3dPortfolioAdminComponent } from '~/app/admin/pages/game-and-3d-portfolio-admin.component';
+import { GameDevFiltersAdminComponent } from './pages/game-dev-filters-admin.component';
+import { GameDevPortfolioAdminComponent } from './pages/game-dev-portfolio-admin.component';
 
 const routes: Routes = [
   {
@@ -25,13 +25,13 @@ const routes: Routes = [
       },
       { path: 'pens', component: PensAdminComponent, canActivate: [AuthGuard] },
       {
-        path: 'game-and-3d-filters',
-        component: GameAnd3dFiltersAdminComponent,
+        path: 'game-dev-filters',
+        component: GameDevFiltersAdminComponent,
         canActivate: [AuthGuard],
       },
       {
-        path: 'game-and-3d-portfolio',
-        component: GameAnd3dPortfolioAdminComponent,
+        path: 'game-dev-portfolio',
+        component: GameDevPortfolioAdminComponent,
         canActivate: [AuthGuard],
       },
     ],
