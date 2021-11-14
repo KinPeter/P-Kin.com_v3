@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
-import { Title } from '@angular/platform-browser';
 import { TranslateService } from '@ngx-translate/core';
 import { LoadingService } from '~/app/services/ui/loading.service';
+import { Title } from '@angular/platform-browser';
+import { NavigationEnd, Router } from '@angular/router';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'pk-root',
@@ -41,7 +41,7 @@ export class AppComponent {
     this.router.events.subscribe(async event => {
       if (event instanceof NavigationEnd) {
         let newTitle: string;
-        switch (event.urlAfterRedirects) {
+        switch ((event as NavigationEnd).urlAfterRedirects) {
           case '/about':
             newTitle = await this.getTitleFor('menu.about');
             break;
@@ -61,7 +61,7 @@ export class AppComponent {
             newTitle = 'Ooops! | P-kin.com';
             break;
           default:
-            newTitle = event.urlAfterRedirects.startsWith('/admin')
+            newTitle = (event as NavigationEnd).urlAfterRedirects.startsWith('/admin')
               ? 'Admin | P-Kin.com'
               : 'P-Kin.com';
             break;

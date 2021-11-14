@@ -33,10 +33,6 @@ const routes: Routes = [
     component: ErrorComponent,
   },
   {
-    path: 'admin',
-    loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule),
-  },
-  {
     path: '**',
     redirectTo: '/about',
   },

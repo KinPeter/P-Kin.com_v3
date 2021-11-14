@@ -5,7 +5,3 @@
 
 # dependencies
 /node_modules
-
-# third party
-pk-deploy.js
-pk-deploy.config.js

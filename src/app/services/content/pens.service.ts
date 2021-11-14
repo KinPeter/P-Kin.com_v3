@@ -17,6 +17,7 @@ export class PensService {
   public async fetchIfNeeded(): Promise<void> {
     if (!this.isContentLoaded) {
       const res = await this.api.get<PensResource>('/pens.json');
+      if (!res) return;
       this.items.next(res);
       this.isContentLoaded = true;
     }
