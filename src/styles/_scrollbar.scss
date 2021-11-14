@@ -1,0 +1,37 @@
+$scrollbarBgColor1: var(--background-color-transparent);
+$scrollbarBgColor2: var(--background-color-transparent);
+$scrollbarThumbColor1: var(--text-color-light);
+$scrollbarThumbColor2: var(--text-color-light);
+
+body,
+html {
+  scrollbar-width: thin;
+  scrollbar-color: $scrollbarThumbColor1 $scrollbarBgColor1;
+}
+
+body * {
+  scrollbar-width: thin;
+  scrollbar-color: $scrollbarThumbColor2 $scrollbarBgColor2;
+}
+
+/* Works on Chrome/Edge/Safari */
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+body::-webkit-scrollbar-track {
+  background: $scrollbarBgColor1;
+  //border-radius: 8px;
+}
+body *::-webkit-scrollbar-track {
+  background: $scrollbarBgColor2;
+  //border-radius: 8px;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: $scrollbarThumbColor1;
+  border-radius: 4px;
+}
+body *::-webkit-scrollbar-thumb {
+  background-color: $scrollbarThumbColor2;
+  border-radius: 4px;
+}
