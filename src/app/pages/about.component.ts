@@ -64,6 +64,7 @@ import { Subscription } from 'rxjs';
 
         .about-skills {
           width: 30%;
+          margin-top: 0;
         }
       }
     `,

@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'pk-contacts',
@@ -28,12 +27,6 @@ import { DomSanitizer } from '@angular/platform-browser';
           class="contact-button__icon"
           [class.contact-button__icon_hovered]="hovered"
         ></pk-icon-codepen>
-      </a>
-      <a class="contact-button button-vertical-animated" [href]="ctc.skype" target="_blank">
-        <pk-icon-skype
-          class="contact-button__icon"
-          [class.contact-button__icon_hovered]="hovered"
-        ></pk-icon-skype>
       </a>
       <a class="contact-button button-vertical-animated" [href]="ctc.facebook" target="_blank">
         <pk-icon-facebook
@@ -73,14 +66,13 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class ContactsComponent {
   @Input() hovered = false;
 
-  constructor(private sanitizer: DomSanitizer) {}
+  constructor() {}
 
   public ctc = {
     email: 'mailto:kinpeter85@gmail.com',
     linkedIn: 'https://www.linkedin.com/in/peter-kin-6b7794172/',
     github: 'https://github.com/KinPeter',
     codePen: 'https://codepen.io/kinpeter',
-    skype: this.sanitizer.bypassSecurityTrustUrl('skype:kinpeter?chat'),
     facebook: 'https://www.facebook.com/peter.kin',
   };
 }

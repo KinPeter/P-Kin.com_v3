@@ -3,6 +3,7 @@ import { LoadingService } from '~/app/services/ui/loading.service';
 import { Title } from '@angular/platform-browser';
 import { NavigationEnd, Router } from '@angular/router';
 import { Component } from '@angular/core';
+import { firstValueFrom } from 'rxjs';
 
 @Component({
   selector: 'pk-root',
@@ -27,52 +28,45 @@ export class AppComponent {
 
     // logic to add when the language changes
     translate.onLangChange.subscribe(
-      (event: { lang: string; translations: Record<string, unknown> }) => {
-        if (event.lang === 'kr') {
-          document.body.style.setProperty('--font-sans-serif', 'Noto Sans KR');
-          // document.body.style.setProperty('--font-serif', 'Noto Serif KR');
-        } else {
-          document.body.style.setProperty('--font-sans-serif', 'Montserrat');
-          // document.body.style.setProperty('--font-serif', 'Martel');
-        }
+      async (/*event: { lang: string; translations: Record<string, unknown> }*/) => {
+        await this.setTitleFor(this.router.url);
       }
     );
 
     this.router.events.subscribe(async event => {
       if (event instanceof NavigationEnd) {
-        let newTitle: string;
-        switch ((event as NavigationEnd).urlAfterRedirects) {
-          case '/about':
-            newTitle = await this.getTitleFor('menu.about');
-            break;
-          case '/web-dev':
-            newTitle = await this.getTitleFor('menu.webDev');
-            break;
-          case '/pens':
-            newTitle = await this.getTitleFor('menu.pens');
-            break;
-          case '/game-dev':
-            newTitle = await this.getTitleFor('menu.gameDev');
-            break;
-          case '/admin':
-            newTitle = 'Admin | P-Kin.com';
-            break;
-          case '/error':
-            newTitle = 'Ooops! | P-kin.com';
-            break;
-          default:
-            newTitle = (event as NavigationEnd).urlAfterRedirects.startsWith('/admin')
-              ? 'Admin | P-Kin.com'
-              : 'P-Kin.com';
-            break;
-        }
-        this.title.setTitle(newTitle);
+        await this.setTitleFor((event as NavigationEnd).urlAfterRedirects);
       }
     });
   }
 
+  private async setTitleFor(url: string): Promise<void> {
+    let newTitle: string;
+    switch (url) {
+      case '/about':
+        newTitle = await this.getTitleFor('menu.about');
+        break;
+      case '/web-dev':
+        newTitle = await this.getTitleFor('menu.webDev');
+        break;
+      case '/pens':
+        newTitle = await this.getTitleFor('menu.pens');
+        break;
+      case '/game-dev':
+        newTitle = await this.getTitleFor('menu.gameDev');
+        break;
+      case '/error':
+        newTitle = 'Ooops! | P-kin.com';
+        break;
+      default:
+        newTitle = 'P-Kin.com';
+        break;
+    }
+    this.title.setTitle(newTitle);
+  }
+
   private async getTitleFor(translateKey: string): Promise<string> {
-    const route = await this.translate.get(translateKey).toPromise();
+    const route = await firstValueFrom(this.translate.get(translateKey));
     return route + ' | P-Kin.com';
   }
 }

@@ -21,14 +21,6 @@ import { TranslateService } from '@ngx-translate/core';
         {{ 'languages.hu' | translate }}
         <span *ngIf="!isEnabled('hu')" class="language-switch__active"></span>
       </div>
-      <div
-        class="language-switch__button"
-        [class.button-vertical-animated]="isEnabled('kr')"
-        (click)="translate.use('kr')"
-      >
-        {{ 'languages.kr' | translate }}
-        <span *ngIf="!isEnabled('kr')" class="language-switch__active"></span>
-      </div>
     </div>
   `,
   styles: [
