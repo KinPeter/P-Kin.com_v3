@@ -6,7 +6,7 @@ import { UUID } from '~/app/types/UUID';
 import { LoadedItem } from '~/app/types/content/LoadedItem';
 
 @Component({
-  selector: 'pk-web-dev',
+  selector: 'pk-projects',
   template: `
     <pk-portfolio-wrapper
       [items]="items"
@@ -19,7 +19,7 @@ import { LoadedItem } from '~/app/types/content/LoadedItem';
   `,
   styles: [``],
 })
-export class WebDevComponent implements OnInit, OnDestroy {
+export class ProjectsComponent implements OnInit, OnDestroy {
   private subscriptions: Subscription[] = [];
 
   filters: string[] = [];

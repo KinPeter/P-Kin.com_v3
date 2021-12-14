@@ -1,5 +1,7 @@
 import { Component, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
+import { RouterLinks } from '~/app/types/RouterLinks';
+import { routerLinks } from '~/app/constants/routerLinks';
 
 @Component({
   selector: 'pk-app-bar',
@@ -7,36 +9,36 @@ import { Router } from '@angular/router';
     <div class="app-bar" [class.app-bar_scrolled]="scrolled">
       <div class="app-bar__left">
         <a
-          routerLink="/about"
+          [routerLink]="links.ABOUT"
           class="app-bar-button"
-          [class.button-horizontal-animated]="!isActive('/about')"
+          [class.button-horizontal-animated]="!isActive(links.ABOUT)"
         >
           {{ 'menu.about' | translate }}
-          <span *ngIf="isActive('/about')" class="app-bar-button__active"></span>
+          <span *ngIf="isActive(links.ABOUT)" class="app-bar-button__active"></span>
         </a>
         <a
-          routerLink="/web-dev"
+          [routerLink]="links.EXPERIENCE"
           class="app-bar-button"
-          [class.button-horizontal-animated]="!isActive('/web-dev')"
+          [class.button-horizontal-animated]="!isActive(links.EXPERIENCE)"
         >
-          {{ 'menu.webDev' | translate }}
-          <span *ngIf="isActive('/web-dev')" class="app-bar-button__active"></span>
+          {{ 'menu.experience' | translate }}
+          <span *ngIf="isActive(links.EXPERIENCE)" class="app-bar-button__active"></span>
         </a>
         <a
-          routerLink="/pens"
+          [routerLink]="links.PROJECTS"
           class="app-bar-button"
-          [class.button-horizontal-animated]="!isActive('/pens')"
+          [class.button-horizontal-animated]="!isActive(links.PROJECTS)"
+        >
+          {{ 'menu.projects' | translate }}
+          <span *ngIf="isActive(links.PROJECTS)" class="app-bar-button__active"></span>
+        </a>
+        <a
+          [routerLink]="links.PENS"
+          class="app-bar-button"
+          [class.button-horizontal-animated]="!isActive(links.PENS)"
         >
           {{ 'menu.pens' | translate }}
-          <span *ngIf="isActive('/pens')" class="app-bar-button__active"></span>
-        </a>
-        <a
-          routerLink="/game-dev"
-          class="app-bar-button"
-          [class.button-horizontal-animated]="!isActive('/game-dev')"
-        >
-          {{ 'menu.gameDev' | translate }}
-          <span *ngIf="isActive('/game-dev')" class="app-bar-button__active"></span>
+          <span *ngIf="isActive(links.PENS)" class="app-bar-button__active"></span>
         </a>
       </div>
       <div class="app-bar__right">
@@ -115,6 +117,8 @@ import { Router } from '@angular/router';
 })
 export class AppBarComponent {
   public scrolled: boolean = window.scrollY !== 0;
+  public links: RouterLinks = routerLinks;
+
   constructor(private router: Router) {}
 
   @HostListener('window:scroll')

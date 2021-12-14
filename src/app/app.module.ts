@@ -12,8 +12,8 @@ import { IconsModule } from '~/app/components/shared/icons/icons.module';
 import { ThemeSwitchComponent } from '~/app/components/shared/theme-switch.component';
 import { TechStackComponent } from '~/app/components/about/tech-stack.component';
 import { TechCloudComponent } from '~/app/components/about/tech-cloud.component';
-import { WebDevComponent } from '~/app/pages/web-dev.component';
-import { GameDevComponent } from '~/app/pages/game-dev.component';
+import { ProjectsComponent } from '~/app/pages/projects.component';
+import { ExperienceComponent } from '~/app/pages/experience.component';
 import { SideDrawerComponent } from '~/app/components/shared/side-drawer.component';
 import { NotFoundComponent } from '~/app/components/portfolio/not-found.component';
 import { FiltersMobileComponent } from '~/app/components/portfolio/filters-mobile.component';
@@ -42,9 +42,9 @@ import { AboutComponent } from '~/app/pages/about.component';
     ContactsComponent,
     LoadingComponent,
     AboutComponent,
-    WebDevComponent,
+    ProjectsComponent,
     PensComponent,
-    GameDevComponent,
+    ExperienceComponent,
     ThemeSwitchComponent,
     LanguageSwitchComponent,
     TechStackComponent,

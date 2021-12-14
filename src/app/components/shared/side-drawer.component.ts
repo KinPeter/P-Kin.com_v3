@@ -1,5 +1,7 @@
 import { Component, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
+import { RouterLinks } from '~/app/types/RouterLinks';
+import { routerLinks } from '~/app/constants/routerLinks';
 
 @Component({
   selector: 'pk-side-drawer',
@@ -21,40 +23,40 @@ import { Router } from '@angular/router';
           <div></div>
         </div>
         <a
-          routerLink="/about"
+          [routerLink]="links.ABOUT"
           class="drawer__button"
-          [class.button-horizontal-animated]="!isActive('/about')"
+          [class.button-horizontal-animated]="!isActive(links.ABOUT)"
           (click)="onClose()"
         >
           {{ 'menu.about' | translate }}
-          <span *ngIf="isActive('/about')" class="drawer-button__active"></span>
+          <span *ngIf="isActive(links.ABOUT)" class="drawer-button__active"></span>
         </a>
         <a
-          routerLink="/web-dev"
+          [routerLink]="links.EXPERIENCE"
           class="drawer__button"
-          [class.button-horizontal-animated]="!isActive('/web-dev')"
+          [class.button-horizontal-animated]="!isActive(links.EXPERIENCE)"
           (click)="onClose()"
         >
-          {{ 'menu.webDev' | translate }}
-          <span *ngIf="isActive('/web-dev')" class="drawer-button__active"></span>
+          {{ 'menu.experience' | translate }}
+          <span *ngIf="isActive(links.EXPERIENCE)" class="drawer-button__active"></span>
         </a>
         <a
-          routerLink="/pens"
+          [routerLink]="links.PROJECTS"
           class="drawer__button"
-          [class.button-horizontal-animated]="!isActive('/pens')"
+          [class.button-horizontal-animated]="!isActive(links.PROJECTS)"
+          (click)="onClose()"
+        >
+          {{ 'menu.projects' | translate }}
+          <span *ngIf="isActive(links.PROJECTS)" class="drawer-button__active"></span>
+        </a>
+        <a
+          [routerLink]="links.PENS"
+          class="drawer__button"
+          [class.button-horizontal-animated]="!isActive(links.PENS)"
           (click)="onClose()"
         >
           {{ 'menu.pens' | translate }}
-          <span *ngIf="isActive('/pens')" class="drawer-button__active"></span>
-        </a>
-        <a
-          routerLink="/game-dev"
-          class="drawer__button"
-          [class.button-horizontal-animated]="!isActive('/game-dev')"
-          (click)="onClose()"
-        >
-          {{ 'menu.gameDev' | translate }}
-          <span *ngIf="isActive('/game-dev')" class="drawer-button__active"></span>
+          <span *ngIf="isActive(links.PENS)" class="drawer-button__active"></span>
         </a>
         <div class="drawer__theme-and-language">
           <pk-theme-switch></pk-theme-switch>
@@ -203,6 +205,7 @@ import { Router } from '@angular/router';
 export class SideDrawerComponent {
   public scrolled: boolean = window.scrollY !== 0;
   public open = false;
+  public links: RouterLinks = routerLinks;
 
   @HostListener('window:scroll')
   onWindowScroll(): void {

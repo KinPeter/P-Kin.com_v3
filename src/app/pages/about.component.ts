@@ -75,7 +75,7 @@ export class AboutComponent implements OnInit, OnDestroy {
 
   introduction = '';
   skills: Record<string, number> = {};
-  techCloud: string[] = [];
+  techCloud: string[] = this.aboutService.techCloud;
 
   constructor(public aboutService: AboutService) {
     this.aboutService.fetchIfNeeded();
@@ -85,12 +85,6 @@ export class AboutComponent implements OnInit, OnDestroy {
     this.subscriptions.push(
       this.aboutService.introduction$.subscribe(value => {
         this.introduction = value;
-      }),
-      this.aboutService.skills$.subscribe(value => {
-        this.skills = value;
-      }),
-      this.aboutService.techCloud$.subscribe(value => {
-        this.techCloud = value;
       })
     );
   }

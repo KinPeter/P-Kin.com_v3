@@ -3,20 +3,18 @@ import { TranslateService } from '@ngx-translate/core';
 import { BehaviorSubject } from 'rxjs';
 import { ApiService } from '~/app/services/api/api.service';
 import { Lang } from '~/app/types/i18n/Lang';
-import { AboutResource } from '~/app/types/content/AboutResource';
+import { techCloud } from '~/app/ts-content/techCloud';
 
 @Injectable({ providedIn: 'root' })
 export class AboutService {
   public isContentLoaded = false;
-  private content: AboutResource | undefined;
+  public techCloud: string[] = techCloud;
 
+  private introductionContent: { en: string; hu: string } | undefined;
   private introduction = new BehaviorSubject<string>('');
-  private skills = new BehaviorSubject<Record<string, number>>({});
-  private techCloud = new BehaviorSubject<string[]>([]);
-
   public introduction$ = this.introduction.asObservable();
-  public skills$ = this.skills.asObservable();
-  public techCloud$ = this.techCloud.asObservable();
+
+  private skills = new BehaviorSubject<Record<string, number>>({});
 
   constructor(private api: ApiService, private translate: TranslateService) {
     this.translate.onLangChange.subscribe(() => this.updateState());
@@ -24,7 +22,15 @@ export class AboutService {
 
   public async fetchIfNeeded(): Promise<void> {
     if (!this.isContentLoaded) {
-      this.content = await this.api.get<AboutResource>('/about.json');
+      const [en, hu] = await Promise.all([
+        this.api.getMd('about/about_en.md'),
+        this.api.getMd('about/about_hu.md'),
+      ]);
+      if (!en || !hu) return;
+      this.introductionContent = {
+        en,
+        hu,
+      };
       this.isContentLoaded = true;
       this.updateState();
     }
@@ -32,10 +38,7 @@ export class AboutService {
 
   private updateState(): void {
     const currentLang: Lang = this.translate.currentLang as Lang;
-    if (this.content) {
-      this.introduction.next(this.content.introduction[currentLang]);
-      this.skills.next(this.content.skills);
-      this.techCloud.next(this.content.techCloud);
-    }
+    if (!this.introductionContent) return;
+    this.introduction.next(this.introductionContent[currentLang]);
   }
 }

@@ -1,9 +1,9 @@
 {
   "menu": {
     "about": "Rólam",
-    "webDev": "Web Dev",
-    "pens": "Pen-ek",
-    "gameDev": "Játékfejlesztés"
+    "experience": "Tapasztalat",
+    "projects": "Projektjeim",
+    "pens": "Pen-ek"
   },
   "languages": {
     "en": "EN",

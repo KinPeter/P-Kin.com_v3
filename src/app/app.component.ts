@@ -4,6 +4,7 @@ import { Title } from '@angular/platform-browser';
 import { NavigationEnd, Router } from '@angular/router';
 import { Component } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
+import { RoutePath } from '~/app/types/enums/RoutePath';
 
 @Component({
   selector: 'pk-root',
@@ -43,19 +44,19 @@ export class AppComponent {
   private async setTitleFor(url: string): Promise<void> {
     let newTitle: string;
     switch (url) {
-      case '/about':
+      case `/${RoutePath.ABOUT}`:
         newTitle = await this.getTitleFor('menu.about');
         break;
-      case '/web-dev':
-        newTitle = await this.getTitleFor('menu.webDev');
+      case `/${RoutePath.PROJECTS}`:
+        newTitle = await this.getTitleFor('menu.projects');
         break;
-      case '/pens':
+      case `/${RoutePath.PENS}`:
         newTitle = await this.getTitleFor('menu.pens');
         break;
       case '/game-dev':
         newTitle = await this.getTitleFor('menu.gameDev');
         break;
-      case '/error':
+      case `/${RoutePath.ERROR}`:
         newTitle = 'Ooops! | P-kin.com';
         break;
       default:

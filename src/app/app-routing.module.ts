@@ -1,40 +1,42 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AboutComponent } from '~/app/pages/about.component';
-import { WebDevComponent } from '~/app/pages/web-dev.component';
+import { ProjectsComponent } from '~/app/pages/projects.component';
 import { PensComponent } from '~/app/pages/pens.component';
-import { GameDevComponent } from '~/app/pages/game-dev.component';
+import { ExperienceComponent } from '~/app/pages/experience.component';
 import { ErrorComponent } from '~/app/pages/error.component';
+import { RoutePath } from '~/app/types/enums/RoutePath';
+import { routerLinks } from '~/app/constants/routerLinks';
 
 const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: '/about',
+    redirectTo: routerLinks.ABOUT,
   },
   {
-    path: 'about',
+    path: RoutePath.ABOUT,
     component: AboutComponent,
   },
   {
-    path: 'web-dev',
-    component: WebDevComponent,
+    path: RoutePath.EXPERIENCE,
+    component: ExperienceComponent,
   },
   {
-    path: 'pens',
+    path: RoutePath.PROJECTS,
+    component: ProjectsComponent,
+  },
+  {
+    path: RoutePath.PENS,
     component: PensComponent,
   },
   {
-    path: 'game-dev',
-    component: GameDevComponent,
-  },
-  {
-    path: 'error',
+    path: RoutePath.ERROR,
     component: ErrorComponent,
   },
   {
     path: '**',
-    redirectTo: '/about',
+    redirectTo: routerLinks.ABOUT,
   },
 ];
 
