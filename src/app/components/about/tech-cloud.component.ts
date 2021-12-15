@@ -13,6 +13,8 @@ import { Component, Input } from '@angular/core';
     `
       .tech-cloud {
         text-align: justify;
+        opacity: 0;
+        animation: blurRightAndFade 0.3s 0.8s ease forwards;
       }
 
       .tech-cloud__tech {

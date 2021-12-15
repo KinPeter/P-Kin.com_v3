@@ -5,7 +5,7 @@ import { Skill } from '~/app/types/content/Skill';
   selector: 'pk-tech-stack',
   template: `
     <div class="tech-stack">
-      <div class="skill" *ngFor="let skill of skills">
+      <div class="skill" *ngFor="let skill of skills; let i = index" [ngStyle]="getSkillStyle(i)">
         <pk-svg [src]="skill.icon" [size]="20"></pk-svg>
         <span>{{ skill.name.toUpperCase() }}</span>
       </div>
@@ -22,6 +22,8 @@ import { Skill } from '~/app/types/content/Skill';
         display: flex;
         align-items: center;
         margin: 0 0 0.5rem 1rem;
+        opacity: 0;
+        animation: blurRightAndFade 0.3s 0.5s ease forwards;
 
         span {
           margin-left: 1rem;
@@ -35,9 +37,8 @@ export class TechStackComponent {
 
   constructor() {}
 
-  getSkillBarStickStyle(i: number): Record<string, string | number> {
+  getSkillStyle(i: number): Record<string, string | number> {
     return {
-      opacity: 1 - i * 0.08,
       animationDelay: `${0.3 + i / 10}s`,
     };
   }

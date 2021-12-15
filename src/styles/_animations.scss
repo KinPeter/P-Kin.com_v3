@@ -31,3 +31,19 @@
     opacity: 1;
   }
 }
+
+@keyframes blurRightAndFade {
+  0% {
+    transform: translateX(-10px);
+    filter: blur(5px);
+    opacity: 0;
+  }
+  50% {
+    filter: blur(3px);
+  }
+  100% {
+    transform: translateX(0);
+    filter: blur(0);
+    opacity: 1;
+  }
+}
