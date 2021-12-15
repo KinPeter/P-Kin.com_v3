@@ -4,17 +4,18 @@ import { BehaviorSubject } from 'rxjs';
 import { ApiService } from '~/app/services/api/api.service';
 import { Lang } from '~/app/types/i18n/Lang';
 import { techCloud } from '~/app/ts-content/techCloud';
+import { techStack } from '~/app/ts-content/techStack';
+import { Skill } from '~/app/types/content/Skill';
 
 @Injectable({ providedIn: 'root' })
 export class AboutService {
   public isContentLoaded = false;
   public techCloud: string[] = techCloud;
+  public skills: Skill[] = techStack;
 
   private introductionContent: { en: string; hu: string } | undefined;
   private introduction = new BehaviorSubject<string>('');
   public introduction$ = this.introduction.asObservable();
-
-  private skills = new BehaviorSubject<Record<string, number>>({});
 
   constructor(private api: ApiService, private translate: TranslateService) {
     this.translate.onLangChange.subscribe(() => this.updateState());

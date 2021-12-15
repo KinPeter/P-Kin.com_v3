@@ -1,38 +1,21 @@
 import { Component, Input } from '@angular/core';
+import { contacts } from '~/app/ts-content/contacts';
 
 @Component({
   selector: 'pk-contacts',
   template: `
     <div class="contacts">
-      <a class="contact-button button-vertical-animated" [href]="ctc.email" target="_blank">
-        <pk-icon-email
+      <a
+        *ngFor="let ctc of contacts"
+        class="contact-button button-vertical-animated"
+        [href]="ctc.link"
+        target="_blank"
+      >
+        <pk-svg
+          [src]="ctc.icon"
           class="contact-button__icon"
           [class.contact-button__icon_hovered]="hovered"
-        ></pk-icon-email>
-      </a>
-      <a class="contact-button button-vertical-animated" [href]="ctc.linkedIn" target="_blank">
-        <pk-icon-linkedin
-          class="contact-button__icon"
-          [class.contact-button__icon_hovered]="hovered"
-        ></pk-icon-linkedin>
-      </a>
-      <a class="contact-button button-vertical-animated" [href]="ctc.github" target="_blank">
-        <pk-icon-github
-          class="contact-button__icon"
-          [class.contact-button__icon_hovered]="hovered"
-        ></pk-icon-github>
-      </a>
-      <a class="contact-button button-vertical-animated" [href]="ctc.codePen" target="_blank">
-        <pk-icon-codepen
-          class="contact-button__icon"
-          [class.contact-button__icon_hovered]="hovered"
-        ></pk-icon-codepen>
-      </a>
-      <a class="contact-button button-vertical-animated" [href]="ctc.facebook" target="_blank">
-        <pk-icon-facebook
-          class="contact-button__icon"
-          [class.contact-button__icon_hovered]="hovered"
-        ></pk-icon-facebook>
+        ></pk-svg>
       </a>
     </div>
   `,
@@ -66,13 +49,7 @@ import { Component, Input } from '@angular/core';
 export class ContactsComponent {
   @Input() hovered = false;
 
-  constructor() {}
+  public contacts: { link: string; icon: string }[] = contacts;
 
-  public ctc = {
-    email: 'mailto:kinpeter85@gmail.com',
-    linkedIn: 'https://www.linkedin.com/in/peter-kin-6b7794172/',
-    github: 'https://github.com/KinPeter',
-    codePen: 'https://codepen.io/kinpeter',
-    facebook: 'https://www.facebook.com/peter.kin',
-  };
+  constructor() {}
 }

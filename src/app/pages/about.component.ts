@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { AboutService } from '~/app/services/content/about.service';
 import { Subscription } from 'rxjs';
+import { Skill } from '~/app/types/content/Skill';
 
 @Component({
   selector: 'pk-about',
@@ -74,7 +75,7 @@ export class AboutComponent implements OnInit, OnDestroy {
   private subscriptions: Subscription[] = [];
 
   introduction = '';
-  skills: Record<string, number> = {};
+  skills: Skill[] = this.aboutService.skills;
   techCloud: string[] = this.aboutService.techCloud;
 
   constructor(public aboutService: AboutService) {
