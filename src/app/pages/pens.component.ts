@@ -1,7 +1,6 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
-import { PensService } from '~/app/services/content/pens.service';
+import { Component } from '@angular/core';
 import { PenItem } from '~/app/types/content/PenItem';
+import { pens } from '~/app/ts-content/pens';
 
 @Component({
   selector: 'pk-pens',
@@ -26,26 +25,8 @@ import { PenItem } from '~/app/types/content/PenItem';
     `,
   ],
 })
-export class PensComponent implements OnInit, OnDestroy {
-  private subscriptions: Subscription[] = [];
+export class PensComponent {
+  public pens: PenItem[] = pens;
 
-  pens: PenItem[] = [];
-
-  constructor(private pensService: PensService) {
-    this.pensService.fetchIfNeeded();
-  }
-
-  ngOnInit(): void {
-    this.subscriptions.push(
-      this.pensService.items$.subscribe(value => {
-        this.pens = value;
-      })
-    );
-  }
-
-  ngOnDestroy(): void {
-    this.subscriptions.forEach(sub => {
-      sub.unsubscribe();
-    });
-  }
+  constructor() {}
 }
