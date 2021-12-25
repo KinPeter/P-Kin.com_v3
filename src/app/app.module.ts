@@ -30,11 +30,13 @@ import { PortfolioModalComponent } from '~/app/components/portfolio/portfolio-mo
 import { PortfolioCardComponent } from '~/app/components/portfolio/portfolio-card.component';
 import { EmbeddedPenComponent } from '~/app/components/pens/embedded-pen.component';
 import { AboutComponent } from '~/app/pages/about.component';
+import { MarkedWithIconsPipe } from '~/app/pipes/marked-with-icons.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     MarkedPipe,
+    MarkedWithIconsPipe,
     LinksTargetBlankDirective,
     AppBarComponent,
     SideDrawerComponent,

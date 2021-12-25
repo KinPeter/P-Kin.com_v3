@@ -6,7 +6,7 @@ import { Skill } from '~/app/types/content/Skill';
 @Component({
   selector: 'pk-about',
   template: `
-    <div *ngIf="aboutService.isContentLoaded" class="pk-default-container about-wrapper">
+    <div class="pk-default-container about-wrapper">
       <div
         class="about-introduction markdown-text"
         linksTargetBlank
@@ -72,18 +72,18 @@ import { Skill } from '~/app/types/content/Skill';
   ],
 })
 export class AboutComponent implements OnInit, OnDestroy {
-  private subscriptions: Subscription[] = [];
+  private subscriptions: Subscription = new Subscription();
 
-  introduction = '';
-  skills: Skill[] = this.aboutService.skills;
-  techCloud: string[] = this.aboutService.techCloud;
+  public introduction = '';
+  public skills: Skill[] = this.aboutService.skills;
+  public techCloud: string[] = this.aboutService.techCloud;
 
   constructor(public aboutService: AboutService) {
     this.aboutService.fetchIfNeeded();
   }
 
   ngOnInit(): void {
-    this.subscriptions.push(
+    this.subscriptions.add(
       this.aboutService.introduction$.subscribe(value => {
         this.introduction = value;
       })
@@ -91,8 +91,6 @@ export class AboutComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.subscriptions.forEach(sub => {
-      sub.unsubscribe();
-    });
+    this.subscriptions.unsubscribe();
   }
 }

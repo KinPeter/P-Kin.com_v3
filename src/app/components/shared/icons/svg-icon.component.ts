@@ -2,6 +2,7 @@ import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { SvgService } from '~/app/services/content/svg.service';
 import { Subscription } from 'rxjs';
+import { getViewBox, stripSvg } from '~/app/lib/utils/svg';
 
 @Component({
   selector: 'pk-svg',
@@ -42,14 +43,11 @@ export class SvgIconComponent implements OnInit, OnDestroy {
     }
     this.subscription.add(
       this.svgService.getSvg(this.src).subscribe(svg => {
-        const viewBoxMatches = svg.match(/(?:viewBox=")([\d\s.]+)(?:")/);
-        if (viewBoxMatches?.length) {
-          this.viewBox = viewBoxMatches[1];
+        const viewBox = getViewBox(svg);
+        if (viewBox) {
+          this.viewBox = viewBox;
         }
-        const innerHtml = svg
-          .replace(/(<svg[^>]+>)/, '')
-          .replace(/(<\/svg>)/, '')
-          .trim();
+        const innerHtml = stripSvg(svg);
         this.innerHtml = this.domSanitizer.bypassSecurityTrustHtml(innerHtml);
       })
     );

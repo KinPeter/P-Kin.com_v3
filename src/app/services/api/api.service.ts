@@ -7,6 +7,9 @@ import { ErrorService } from '~/app/services/ui/error.service';
 
 @Injectable({ providedIn: 'root' })
 export class ApiService {
+  private readonly contentRoot = '/assets/content/';
+  private readonly cache: Map<string, string> = new Map();
+
   constructor(
     private http: HttpClient,
     private loading: LoadingService,
@@ -29,10 +32,17 @@ export class ApiService {
   public async getMd(path: string): Promise<string | undefined> {
     this.loading.start();
     try {
-      return firstValueFrom(this.http.get('/assets/content/' + path, { responseType: 'text' }));
+      if (this.cache.has(path)) {
+        return this.cache.get(path);
+      }
+      const content = await firstValueFrom(
+        this.http.get(this.contentRoot + path, { responseType: 'text' })
+      );
+      this.cache.set(path, content);
+      return content;
     } catch (e) {
       this.errorService.reportError(this.translate.instant('error.cannot-get'));
-      throw new Error(`Unable to get from ${path}`);
+      throw new Error(`Unable to get from ${this.contentRoot + path}`);
     } finally {
       this.loading.stop();
     }

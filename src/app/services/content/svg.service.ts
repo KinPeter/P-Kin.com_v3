@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { of, Observable, tap } from 'rxjs';
+import { of, Observable, tap, firstValueFrom } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class SvgService {
@@ -17,5 +17,9 @@ export class SvgService {
         this.cache.set(src, svg);
       })
     );
+  }
+
+  public async getSvgAsync(src: string): Promise<string> {
+    return firstValueFrom(this.getSvg(src));
   }
 }

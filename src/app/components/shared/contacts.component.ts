@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { contacts } from '~/app/ts-content/contacts';
+import { Contact } from '~/app/types/content/Contact';
 
 @Component({
   selector: 'pk-contacts',
@@ -49,7 +50,7 @@ import { contacts } from '~/app/ts-content/contacts';
 export class ContactsComponent {
   @Input() hovered = false;
 
-  public contacts: { link: string; icon: string }[] = contacts;
+  public contacts: Contact[] = contacts;
 
   constructor() {}
 }

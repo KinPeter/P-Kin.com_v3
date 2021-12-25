@@ -1,4 +1,6 @@
-export const techStack: { name: string; icon: string }[] = [
+import { Skill } from '~/app/types/content/Skill';
+
+export const techStack: Skill[] = [
   { name: 'Angular', icon: 'assets/svg/angular.svg' },
   { name: 'React', icon: 'assets/svg/react.svg' },
   { name: 'TypeScript', icon: 'assets/svg/ts.svg' },
