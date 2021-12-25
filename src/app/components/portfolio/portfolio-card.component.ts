@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { PortfolioItem } from '~/app/types/content/PortfolioItem';
-import { UUID } from '~/app/types/UUID';
 
 @Component({
   selector: 'pk-portfolio-card',
@@ -173,7 +172,7 @@ import { UUID } from '~/app/types/UUID';
 export class PortfolioCardComponent {
   @Input() item: PortfolioItem | undefined;
 
-  @Output() openItem: EventEmitter<UUID> = new EventEmitter<UUID>();
+  @Output() openItem: EventEmitter<string> = new EventEmitter<string>();
 
   constructor() {}
 

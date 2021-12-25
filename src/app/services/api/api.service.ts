@@ -17,18 +17,6 @@ export class ApiService {
     private translate: TranslateService
   ) {}
 
-  public async get<T>(path: string): Promise<T | undefined> {
-    this.loading.start();
-    try {
-      return await this.http.get<T>('https://p-kin-com.firebaseio.com/v3' + path).toPromise();
-    } catch (e) {
-      this.errorService.reportError(this.translate.instant('error.cannot-get'));
-      throw new Error(`Unable to get from ${path}`);
-    } finally {
-      this.loading.stop();
-    }
-  }
-
   public async getMd(path: string): Promise<string | undefined> {
     this.loading.start();
     try {

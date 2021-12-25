@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { PortfolioItem } from '~/app/types/content/PortfolioItem';
-import { UUID } from '~/app/types/UUID';
 import { LoadedItem } from '~/app/types/content/LoadedItem';
 
 @Component({
@@ -89,7 +88,7 @@ export class PortfolioWrapperComponent {
   @Input() items: PortfolioItem[] = [];
   @Input() loadedItem: LoadedItem = { name: '', badges: [], description: '' };
 
-  @Output() openItem: EventEmitter<UUID> = new EventEmitter<UUID>();
+  @Output() openItem: EventEmitter<string> = new EventEmitter<string>();
   @Output() applyFilter: EventEmitter<string> = new EventEmitter<string>();
 
   isModalOpen = false;
@@ -102,7 +101,7 @@ export class PortfolioWrapperComponent {
     };
   }
 
-  onOpenItem(id: UUID): void {
+  onOpenItem(id: string): void {
     this.isModalOpen = true;
     this.openItem.emit(id);
   }

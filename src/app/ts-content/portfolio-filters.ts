@@ -1,0 +1,15 @@
+export const filters = [
+  'All',
+  'Angular',
+  'Vue',
+  'React',
+  'Svelte',
+  'TypeScript',
+  'Material',
+  'Full Stack',
+  'Firebase',
+  'NestJS',
+  'Node.js',
+  'Mobile',
+  'Game',
+];
