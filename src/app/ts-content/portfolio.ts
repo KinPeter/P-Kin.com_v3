@@ -47,6 +47,12 @@ export const portfolio: PortfolioItem[] = [
     image: 'https://stuff.p-kin.com/pf-thumbs/studycards.jpg',
   },
   {
+    id: 'games',
+    name: '3D Games (Unity)',
+    badges: ['Game', 'Unity', 'C#', 'Course contents'],
+    image: 'https://stuff.p-kin.com/pf-thumbs/games/argonassault.jpg',
+  },
+  {
     id: 'startpage-v2',
     name: 'StartPage 2.0',
     badges: ['Angular', 'TypeScript', 'Firebase', 'AngularFire'],
