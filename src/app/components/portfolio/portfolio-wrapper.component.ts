@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Observable } from 'rxjs';
 import { PortfolioItem } from '~/app/types/content/PortfolioItem';
 import { LoadedItem } from '~/app/types/content/LoadedItem';
+import { LoadingService } from '~/app/services/ui/loading.service';
 
 @Component({
   selector: 'pk-portfolio-wrapper',
@@ -27,7 +29,7 @@ import { LoadedItem } from '~/app/types/content/LoadedItem';
       </div>
     </div>
     <pk-portfolio-modal
-      *ngIf="isModalOpen"
+      *ngIf="!(isLoading | async) && isModalOpen"
       [item]="loadedItem"
       (closeModal)="onCloseModal()"
     ></pk-portfolio-modal>
@@ -91,9 +93,12 @@ export class PortfolioWrapperComponent {
   @Output() openItem: EventEmitter<string> = new EventEmitter<string>();
   @Output() applyFilter: EventEmitter<string> = new EventEmitter<string>();
 
-  isModalOpen = false;
+  public isModalOpen = false;
+  public isLoading!: Observable<boolean>;
 
-  constructor() {}
+  constructor(private loadingService: LoadingService) {
+    this.isLoading = loadingService.getStatus();
+  }
 
   getCardStyle(i: number): Record<string, string | number> {
     return {
@@ -107,6 +112,7 @@ export class PortfolioWrapperComponent {
   }
 
   onCloseModal(): void {
+    this.loadedItem = { name: '', badges: [], description: '' };
     this.isModalOpen = false;
   }
 
