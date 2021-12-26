@@ -7,7 +7,8 @@
     "build": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
     "lint": "eslint . --ext .ts",
-    "format:check": "prettier --check  \"src/**/*.{ts,scss,html,json}\""
+    "format:check": "prettier --check  \"src/**/*.{ts,scss,html,json}\"",
+    "prepare": "husky install"
   },
   "private": true,
   "dependencies": {
@@ -36,6 +37,7 @@
     "@typescript-eslint/parser": "^5.3.1",
     "eslint": "^8.2.0",
     "eslint-config-prettier": "^8.3.0",
+    "husky": "^7.0.4",
     "prettier": "^2.4.1",
     "typescript": "~4.4.3"
   }
