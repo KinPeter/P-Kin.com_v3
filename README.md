@@ -1,14 +1,10 @@
 # P-Kin.com V3
 
-My third portfolio website made with currently the latest version 10 of Angular.
+My third portfolio website made with currently the latest version 13 of Angular.
 
 ### Public pages:
 
 ![Website gif](https://stuff.p-kin.com/screentogif/pkincom_v3.gif)
-
-### Admin area:
-
-![Website gif](https://stuff.p-kin.com/screentogif/pkincom_v3_admin.gif)
 
 ### Features:
 
@@ -24,16 +20,9 @@ The UI and most of the contents are available in three different languages, and 
 - **Dark and light themes -**
 Also switching between the light and dark theme is possible without any glitch thanks to the flexibility of CSS variables.
 
-- **Admin area with authentication -**
-To make it easy to manage the contents the site has an admin area (as a lazy-loaded module) which is of course only available after authentication.
-
-- **Custom Markdown editor -**
-For creating the Markdown contents I was looking for available editors, but I found all to be over-complicated, or having too many unnecessary dependencies. The solution at the end was to make my own simple implementation.
-
 ### Technologies used:
 
-- Angular 10
+- Angular 13
 - TypeScript
 - CSS3 + SCSS
 - Markdown
-- Firebase Rest APIs

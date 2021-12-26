@@ -4,8 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port 4400",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development"
+    "build": "ng build --configuration production",
+    "watch": "ng build --watch --configuration development",
+    "lint": "eslint . --ext .ts",
+    "format:check": "prettier --check  \"src/**/*.{ts,scss,html,json}\""
   },
   "private": true,
   "dependencies": {
