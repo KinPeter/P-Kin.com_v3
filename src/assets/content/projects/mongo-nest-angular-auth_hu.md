@@ -4,52 +4,49 @@ Viszont egész sok hasznos és számomra új dolgot sikerült ebben implementál
 
 ### Implementált funkciók
 
-- **Backend:**
-    - Teljes, JWT-n alapuló autentikációs rendszer
-        - Feliratkozás emaillel és jelszóval
-        - Autentikáció
-        - Jelszó helyreállító email
-        - Token refresh
-        - Autorizáció
-    - Felhasználói profil és más entitások kezelése validációkkal mindkét oldalon
-    - Swagger API dokumentáció
-    - API integrációs és end-to-end tesztek
+#### Backend:
+* Teljes, JWT-n alapuló autentikációs rendszer
+  * Feliratkozás emaillel és jelszóval
+  * Autentikáció
+  * Jelszó helyreállító email
+  * Token refresh
+  * Autorizáció
+* Felhasználói profil és más entitások kezelése validációkkal mindkét oldalon
+* Swagger API dokumentáció
+* API integrációs és end-to-end tesztek
 
-
-- **Frontend:**
-    - Szép Material UI
-    - Nyelvesítés (I18n)
-    - Lazy loaded modulok
-    - Egyedi RX alapú state management
-    - Képfeltöltés Firebase storage-ra
-    - Unit és komponens tesztek
+#### Frontend:
+* Szép Material UI
+* Nyelvesítés (I18n)
+* Lazy loaded modulok
+* Egyedi RX alapú state management
+* Képfeltöltés Firebase storage-ra
+* Unit és komponens tesztek
 
 ### Használt technológiák
 
-- **Frontend:**
-    - TypeScript
-    - Angular 11
-    - Firebase (AngularFire)
-    - Angular Material
-    - Karma + Jasmine tesztekhez
-    - Static hosting + FTP deploy script
+#### Frontend:
+* TypeScript
+* Angular 11
+* Firebase (AngularFire)
+* Angular Material
+* Karma + Jasmine tesztekhez
+* Static hosting + FTP deploy script
 
+#### Backend:
+* TypeScript
+* NestJS
+* MongoDB + Mongoose
+* JWT (Passport)
+* Swagger UI (OpenAPI)
+* Supertest + Chai + Mocha tesztekhez
+* Google App Engine hosting
 
-- **Backend:**
-    - TypeScript
-    - NestJS
-    - MongoDB + Mongoose
-    - JWT (Passport)
-    - Swagger UI (OpenAPI)
-    - Supertest + Chai + Mocha tesztekhez
-    - Google App Engine hosting
-
-
-- **Code quality:**
-    - Eslint
-    - Prettier
+#### Code quality:
+* Eslint
+* Prettier
 
 
 ---
 ### Kód:
-- Frontend + Backend monorepo: [katt ide](https://github.com/KinPeter/Mongo-Nest-Angular-Auth)
+Frontend + Backend monorepo: [katt ide](https://github.com/KinPeter/Mongo-Nest-Angular-Auth)
