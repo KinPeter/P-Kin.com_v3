@@ -2,6 +2,12 @@ import { PortfolioItem } from '~/app/types/content/PortfolioItem';
 
 export const portfolio: PortfolioItem[] = [
   {
+    id: 'map-of-things',
+    name: 'Map of Things',
+    badges: ['React', 'TypeScript', 'OpenSeaDragon', 'CI/CD'],
+    image: 'https://stuff.p-kin.com/pf-thumbs/map-of-things.jpg',
+  },
+  {
     id: 'pk-start',
     name: 'PK-Start (v3)',
     badges: [
