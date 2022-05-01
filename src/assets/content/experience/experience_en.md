@@ -2,6 +2,19 @@
 
 A list of the official projects I participated at so far:
 
+## "1000 motifs" web application for the Museum of Ethnography
+
+A touch screen optimized application deployed to a kiosk in the museum and also on the Web, its base purpose is to provide information about traditional motifs and decorations from the vast collection of the Museum of Ethnography. The main feature however is that the user can select individual motifs and create different compositions or patterns which they can download and share with their friends.
+
+As a lead developer of this project I was responsible for designing the application architecture from scratch, managing the JIRA board and repositories, as well as mentoring and supervising the junior teammates.
+
+::ts:: ::react:: ::nestjs::
+
+- Other technologies: OpenSeaDragon, SVG, Canvas
+- Time spent on project: **3 months**
+- Main tasks: Leading and mentoring the team, feature implementations.
+
+---
 ## Nursing home management web application
 
 Recreation of a nursing home management desktop application developed in the 90's but now ported to the Web. The aim was to give a more modern look to improve user experience and to create a more robust, extensible application with lots of features to document, supervise and plan everything that happens in a nursing home. 
@@ -11,7 +24,7 @@ This was my first project where I could work as a full-stack developer thanks to
 ::ts:: ::react:: ::nestjs::
 
 - Other technologies: GraphQL, Material UI, NX, GitHub Actions, Heroku
-- Time spent on project: **9 months**
+- Time spent on project: **1 year 2 months**
 - Main tasks: Implementing new features on both the back- and frontend, writing unit and e2e tests
 
 ---

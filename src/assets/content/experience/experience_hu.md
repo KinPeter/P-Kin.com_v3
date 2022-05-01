@@ -2,6 +2,19 @@
 
 Karrierem során az alábbi hivatalos projekteken vettem részt:
 
+## "1000 motívum" webalkalmazás a Néprajzi Múzeum részére
+
+Érintőképernyőre optimalizált alkalmazás, amely a múzeumban lévő kioszkra és a Webre is felkerült. Alapvető célja, hogy megismertesse a látogatókat a múzeum gyűjteményéből származó hagyományos motívumokkal, fő funkciója azonban az, hogy a látogatók kiválaszthatnak néhány motívumot és azokból különböző egyedi mintázatokat hozhatnak létre, amelyeket aztán letölthetnek és megoszthatnak barátaikkal.
+
+A projekt vezető fejlesztőjeként felelős voltam az alkalmazás tervezéséért és felépítéséért, a JIRA board és a repók kezeléséért, valamint a junior kollégák mentorálása és felügyelete is a feladataim közé tartozott.
+
+::ts:: ::react:: ::nestjs::
+
+- Egyéb technológiák: OpenSeaDragon, SVG, Canvas
+- Projekten töltött idő: **3 hónap**
+- Főbb feladatok: A csapat vezetése és mentorálása, funckió implementációk.
+
+---
 ## Web applikáció idősek otthona menedzselésére
 
 A feladat egy 90-es években íródott desktop alkalmazás újraírása webes környezetre. A cél egy modernebb UI és a jobb felhasználási élmény elérése volt egy bővíthető, robosztus alkalmazás életre hívásával, ami minden olyan funkcióval bír ami szükséges lehet dokumentálni, megfigyelni és tervezni mindazt, ami egy idősek otthonában történik.
@@ -11,7 +24,7 @@ Ez volt az első projektem, ahol full-stack fejlesztőként dolgozhattam, kösz�
 ::ts:: ::react:: ::nestjs::
 
 - Egyéb technológiák: GraphQL, Material UI, NX, GitHub Actions, Heroku
-- Projekten töltött idő: **9 hónap**
+- Projekten töltött idő: **1 év 2 hónap**
 - Főbb feladatok: Új funkciók implementálása szerver és kliens oldalon, unit és e2e tesztek írása
 
 ---
