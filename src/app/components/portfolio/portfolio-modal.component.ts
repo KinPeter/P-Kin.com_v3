@@ -107,6 +107,7 @@ import { LoadedItem } from '~/app/types/content/LoadedItem';
           margin-top: 3rem;
           padding: 1.5rem;
           width: 768px;
+          height: min-content;
           max-height: calc(100% - 6rem);
           -ms-overflow-style: none;
         }
