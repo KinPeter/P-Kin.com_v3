@@ -24,7 +24,7 @@ This was my first project where I could work as a full-stack developer thanks to
 ::ts:: ::react:: ::nestjs::
 
 - Other technologies: GraphQL, Material UI, NX, GitHub Actions, Heroku
-- Time spent on project: **1 year 2 months**
+- Time spent on project: **1 year 3 months**
 - Main tasks: Implementing new features on both the back- and frontend, writing unit and e2e tests
 
 ---

@@ -24,7 +24,7 @@ Ez volt az első projektem, ahol full-stack fejlesztőként dolgozhattam, kösz�
 ::ts:: ::react:: ::nestjs::
 
 - Egyéb technológiák: GraphQL, Material UI, NX, GitHub Actions, Heroku
-- Projekten töltött idő: **1 év 2 hónap**
+- Projekten töltött idő: **1 év 3 hónap**
 - Főbb feladatok: Új funkciók implementálása szerver és kliens oldalon, unit és e2e tesztek írása
 
 ---
