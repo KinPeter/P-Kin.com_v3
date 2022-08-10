@@ -20,5 +20,5 @@ Mobile first web app to study vocabulary using flashcards.
 
 ---
 ### Code:
-- Frontend repository: [click here](https://github.com/KinPeter/StudyCards)
-- Backend repository: [click here](https://github.com/KinPeter/StudyCards-Backend)
+- Frontend repository: [click here](https://github.com/KinPeter/Old-Code/tree/master/StudyCards)
+- Backend repository: [click here](https://github.com/KinPeter/Old-Code/tree/master/StudyCards-Backend)

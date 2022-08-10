@@ -19,4 +19,4 @@ Az app célja, hogy untam, amikor mindig különböző helyeken kell keresnem a 
 - MySQL
 
 ---
-A kód repóért [kattints ide](https://github.com/KinPeter/StartPage)
+A kód repóért [kattints ide](https://github.com/KinPeter/Old-Code/tree/master/StartPage)

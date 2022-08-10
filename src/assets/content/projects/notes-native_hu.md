@@ -16,4 +16,4 @@ Native "Jegyzetek" alkalmazás Dart-ban írva a Flutter framework segítségéve
 - FlutterFire
 
 --- 
-A kódot megtalálod [itt](https://github.com/KinPeter/Notes-Flutter).
+A kódot megtalálod [itt](https://github.com/KinPeter/Old-Code/tree/master/Notes-Flutter).

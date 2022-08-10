@@ -22,4 +22,4 @@ Az adatok olvasása szűrhető és rendezhető táblázatokkal, új elemek hozz�
 - AngularFire
 
 ---
-A kód repóért [kattints ide](https://github.com/KinPeter/Firestore-DB-Admin).
+A kód repóért [kattints ide](https://github.com/KinPeter/Old-Code/tree/master/Firestore-DB-Admin).

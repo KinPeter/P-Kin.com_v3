@@ -16,4 +16,4 @@ My first experiment with React, a reusable and customizable component for input 
 - SCSS
 
 ---
-For the code repository [click here](https://github.com/KinPeter/React-autocomplete-component)
+For the code repository [click here](https://github.com/KinPeter/Old-Code/tree/master/React-autocomplete-component)

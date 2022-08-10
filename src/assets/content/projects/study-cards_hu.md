@@ -20,5 +20,5 @@ Szótanuló web app első sorban mobilra.
 
 ---
 ### Kód:
-- Frontend repository: [katt ide](https://github.com/KinPeter/StudyCards)
-- Backend repository: [katt ide](https://github.com/KinPeter/StudyCards-Backend)
+- Frontend repository: [katt ide](https://github.com/KinPeter/Old-Code/tree/master/StudyCards)
+- Backend repository: [katt ide](https://github.com/KinPeter/Old-Code/tree/master/StudyCards-Backend)

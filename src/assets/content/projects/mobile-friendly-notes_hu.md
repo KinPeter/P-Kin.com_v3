@@ -16,4 +16,4 @@ A Javascript SDK segítségével az app könnyedén csatlakozik a Firebase auten
 - Custom icon font
 
 ---
-A kód repóért [kattints ide](https://github.com/KinPeter/Notes-Mobile-Svelte).
+A kód repóért [kattints ide](https://github.com/KinPeter/Old-Code/tree/master/Notes-Mobile-Svelte).

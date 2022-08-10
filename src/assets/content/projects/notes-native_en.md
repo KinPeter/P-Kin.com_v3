@@ -17,4 +17,4 @@ For backend I use Firebase (Auth and Firestore), which is also connected to one 
 - FlutterFire
 
 --- 
-You can find the code repository [here](https://github.com/KinPeter/Notes-Flutter).
+You can find the code repository [here](https://github.com/KinPeter/Old-Code/tree/master/Notes-Flutter).

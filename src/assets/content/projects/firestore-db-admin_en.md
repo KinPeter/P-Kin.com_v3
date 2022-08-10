@@ -22,4 +22,4 @@ Read data with the filterable and sortable reactive data tables, create, update 
 - AngularFire
 
 ---
-For the code repository [click here](https://github.com/KinPeter/Firestore-DB-Admin).
+For the code repository [click here](https://github.com/KinPeter/Old-Code/tree/master/Firestore-DB-Admin).

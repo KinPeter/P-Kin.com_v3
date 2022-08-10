@@ -20,4 +20,4 @@ The search algorithm checks both languages, first looking for exact matches, the
 - SCSS
 
 ---
-For the code repository [click here](https://github.com/KinPeter/Web-Dictionary-React)
+For the code repository [click here](https://github.com/KinPeter/Old-Code/tree/master/Web-Dictionary-React)

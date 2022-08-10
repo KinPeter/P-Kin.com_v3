@@ -46,6 +46,6 @@ Google Cloud web service (Node.js) to fetch all data from my Firestore databases
 - Google App Engine
 
 ---
-For the code repository [click here](https://github.com/KinPeter/StartPage-2).
+For the code repository [click here](https://github.com/KinPeter/Old-Code/tree/master/StartPage-2).
 
 Or you can [try the demo here](https://startdemo.p-kin.com)!

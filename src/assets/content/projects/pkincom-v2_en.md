@@ -50,4 +50,4 @@ Portfolio page and some assets use lazy loading for better performance.
 Whether I want to add a new portfolio item or make a change on my tech stack, no need to touch the frontend, only to adjust the data in the database.
 
 ---
-Repositories: [Public page](https://github.com/KinPeter/P-Kin.com_v2), [Backstage](https://github.com/KinPeter/P-Kin.com_v2-backstage)
+Repositories: [Public page](https://github.com/KinPeter/Old-Code/tree/master/P-Kin.com_v2), [Backstage](https://github.com/KinPeter/Old-Code/tree/master/P-Kin.com_v2-backstage)

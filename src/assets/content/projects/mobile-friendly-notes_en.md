@@ -16,4 +16,4 @@ Now I can quickly read or archive my notes on the go or even create a new one.
 - Custom icon font
 
 ---
-For the code repository [click here](https://github.com/KinPeter/Notes-Mobile-Svelte).
+For the code repository [click here](https://github.com/KinPeter/Old-Code/tree/master/Notes-Mobile-Svelte).

@@ -16,4 +16,4 @@ Az első kíséretezésem a React-el ez az újrahasználható és testre szabhat
 - SCSS
 
 ---
-A kód repóért [kattints ide](https://github.com/KinPeter/React-autocomplete-component).
+A kód repóért [kattints ide](https://github.com/KinPeter/Old-Code/tree/master/React-autocomplete-component).

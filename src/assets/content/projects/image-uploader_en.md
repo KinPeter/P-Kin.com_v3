@@ -17,6 +17,6 @@ Images can be uploaded by drag and dropping and also by using the browser native
 - Stencil JS
 
 ---
-For the code repository [click here](https://github.com/KinPeter/PK-Image-Uploader).
+For the code repository [click here](https://github.com/KinPeter/Old-Code/tree/master/PK-Image-Uploader).
 
 Or you can check out a [DEMO PEN here](https://codepen.io/kinpeter/pen/yLNZNMX).

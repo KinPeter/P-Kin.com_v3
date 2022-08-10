@@ -51,4 +51,4 @@ A külön oldalak és tartalmak 'lazy loading'-ot használnak a jobb teljesítm�
 Ha egy új elemet szeretnék adni a portfóliómhoz, vagy átírni a bemutatkozást, nem kell a kódhoz nyúlnom, hisz minden adatbázisból jön.
 
 ---
-Repók: [Portfolio oldal](https://github.com/KinPeter/P-Kin.com_v2), [Backstage](https://github.com/KinPeter/P-Kin.com_v2-backstage)
+Repók: [Portfolio oldal](https://github.com/KinPeter/Old-Code/tree/master/P-Kin.com_v2), [Backstage](https://github.com/KinPeter/Old-Code/tree/master/P-Kin.com_v2-backstage)

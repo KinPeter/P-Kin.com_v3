@@ -24,4 +24,4 @@ AJAX hívások használatával a tartalom egy része adatbázisból van kinyerve
 - MySQL
 
 ---
-A kód repóért [kattints ide](https://github.com/KinPeter/P-Kin.com_v1)
+A kód repóért [kattints ide](https://github.com/KinPeter/Old-Code/tree/master/P-Kin.com_v1)

@@ -17,6 +17,6 @@ A képek drag and drop-pal vagy a böngésző saját feltöltő ablaka segítsé
 - Stencil JS
 
 ---
-A kód repóért [kattints ide](https://github.com/KinPeter/PK-Image-Uploader).
+A kód repóért [kattints ide](https://github.com/KinPeter/Old-Code/tree/master/PK-Image-Uploader).
 
 Vagy akár ki is próbálhatod a [DEMO PEN-t itt](https://codepen.io/kinpeter/pen/yLNZNMX).

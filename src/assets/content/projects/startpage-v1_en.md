@@ -19,4 +19,4 @@ I got a bit bored of always looking for my favorite bookmarks and of going to di
 - MySQL
 
 ---
-For the code repository [click here](https://github.com/KinPeter/StartPage)
+For the code repository [click here](https://github.com/KinPeter/Old-Code/tree/master/StartPage)

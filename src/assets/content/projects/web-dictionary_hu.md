@@ -20,4 +20,4 @@ A kereső algoritmus mindkét nyelvben először pontos egyezést keres, majd az
 - SCSS
 
 ---
-A kód repóért [kattints ide](https://github.com/KinPeter/Web-Dictionary-React)
+A kód repóért [kattints ide](https://github.com/KinPeter/Old-Code/tree/master/Web-Dictionary-React)
