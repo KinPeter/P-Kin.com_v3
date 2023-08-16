@@ -2,6 +2,12 @@ import { PortfolioItem } from '~/app/types/content/PortfolioItem';
 
 export const portfolio: PortfolioItem[] = [
   {
+    id: 'velolyze',
+    name: 'Velolyze',
+    badges: ['Angular', 'TypeScript', 'PrimeNG', 'Firebase'],
+    image: 'https://stuff.p-kin.com/pf-thumbs/velolyze.jpg',
+  },
+  {
     id: 'map-of-things',
     name: 'Map of Things',
     badges: ['React', 'TypeScript', 'OpenSeaDragon', 'CI/CD'],

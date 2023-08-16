@@ -2,6 +2,18 @@
 
 Karrierem során az alábbi hivatalos projekteken vettem részt:
 
+## GENESYS Cloud
+
+A világ vezető felhő alapú ügyfélszolgálati platformja több száz vállalati ügyféllel és milliós nagyságrendű felhasználóval mind az ügynöki és a vásárlói oldalról. A terméken belül én főleg a Knowledge Authoring területén dolgozom, ami tudásbázisokkal és cikkekkel kapcsolatos megoldásokat foglal magában.
+
+Frontend fókuszú fejlesztőként első sorban Angulart használok mikrofrontendeken egy megfelelően agilis, nemzetközi csapatban és környezetben. 
+Emellett a feature-ök tervezésében, előkészítésében; alapos, automatizált E2E, unit és API tesztelésben  veszek részt, technikai dokumentációkat kezelek a release folyamatok részeként, illetve mentorálom a csapat gyakornokait.
+
+::ts:: ::angular::
+
+- Other technologies: Java, Python, AWS Lambdas, Jenkins CI/CD
+- Time spent on project: **1+ year and counting...**
+
 ## "1000 motívum" webalkalmazás a Néprajzi Múzeum részére
 
 Érintőképernyőre optimalizált alkalmazás, amely a múzeumban lévő kioszkra és a Webre is felkerült. Alapvető célja, hogy megismertesse a látogatókat a múzeum gyűjteményéből származó hagyományos motívumokkal, fő funkciója azonban az, hogy a látogatók kiválaszthatnak néhány motívumot és azokból különböző egyedi mintázatokat hozhatnak létre, amelyeket aztán letölthetnek és megoszthatnak barátaikkal.

@@ -1,6 +1,6 @@
 # P-Kin.com V3
 
-My third portfolio website made with currently the latest version 13 of Angular.
+My third portfolio website made with version 13 of Angular.
 
 ### Public pages:
 
