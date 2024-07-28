@@ -4,15 +4,15 @@ Karrierem során az alábbi hivatalos projekteken vettem részt:
 
 ## GENESYS Cloud
 
-A világ vezető felhő alapú ügyfélszolgálati platformja több száz vállalati ügyféllel és milliós nagyságrendű felhasználóval mind az ügynöki és a vásárlói oldalról. A terméken belül én főleg a Knowledge Authoring területén dolgozom, ami tudásbázisokkal és cikkekkel kapcsolatos megoldásokat foglal magában.
+A világ vezető felhő alapú ügyfélszolgálati platformja több száz vállalati ügyféllel és milliós nagyságrendű felhasználóval mind az ügynöki és a vásárlói oldalról. A terméken belül én főleg az új AI alapú Agent Copilot-on, valamint a Knowledge Authoring területén dolgozom, ami tudásbázisokkal és cikkekkel kapcsolatos megoldásokat foglal magában.
 
-Frontend fókuszú fejlesztőként első sorban Angulart használok mikrofrontendeken egy megfelelően agilis, nemzetközi csapatban és környezetben. 
+Frontend fókuszú fejlesztőként első sorban Angulart és Reactet használok mikrofrontendeken egy megfelelően agilis, nemzetközi csapatban és környezetben. 
 Emellett a feature-ök tervezésében, előkészítésében; alapos, automatizált E2E, unit és API tesztelésben  veszek részt, technikai dokumentációkat kezelek a release folyamatok részeként, illetve mentorálom a csapat gyakornokait.
 
-::ts:: ::angular::
+::ts:: ::angular:: ::react::
 
-- Other technologies: Java, Python, AWS Lambdas, Jenkins CI/CD
-- Time spent on project: **1+ year and counting...**
+- Egyéb technológiák: Java, Python, AWS Lambdas, Jenkins CI/CD
+- Projekten töltött idő: **2+ év, jelenleg is**
 
 ## "1000 motívum" webalkalmazás a Néprajzi Múzeum részére
 

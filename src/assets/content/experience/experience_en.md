@@ -4,15 +4,15 @@ A list of the official projects I participated at so far:
 
 ## GENESYS Cloud
 
-The world's leading cloud based customer service platform serving hundreds of companies, millions of agents and customers. My main area of the product is Knowledge Authoring that includes all features related to knowledge bases and articles.
+The world's leading cloud based customer service platform serving hundreds of companies, millions of agents and customers. My main areas of the product are the new AI powered Agent Copilot and Knowledge Authoring that includes all features related to knowledge bases and articles.
 
-As a Frontend focused development engineer I mainly use Angular working on microfrontends in a well maintained agile way as a part of a multinational team and environment. 
+As a Frontend focused development engineer I mainly use Angular and React working on microfrontends in a well maintained agile way as a part of a multinational team and environment. 
 I am also taking part in planning and refinement of features, thorough automated E2E, unit and API acceptance testing, managing technical documentation through the release processes and mentoring and leading interns in the team.
 
-::ts:: ::angular::
+::ts:: ::angular:: ::react::
 
 - Other technologies: Java, Python, AWS Lambdas, Jenkins CI/CD
-- Time spent on project: **1+ year and counting...**
+- Time spent on project: **2+ years and counting...**
 
 ## "1000 motifs" web application for the Museum of Ethnography
 
