@@ -2,8 +2,6 @@
 
 Életem legelső VueJS projektjének egy új saját portfólió oldal készétését választottam. A célom az volt, hogy minél egyszerűbben láthassa bárki a munkáimat, akit érdekel.
 
-[>> Megnézheted itt!](https://v2.p-kin.com)
-
 ### Funkciók:
 
 - **About me & my skills -** A főoldal némi bemutatkozást és az általam ismert nyelvek, techológiák felsorolását tartalmazza.

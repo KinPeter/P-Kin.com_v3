@@ -42,5 +42,3 @@ Egy Node.js-ben írt Google Cloud web service képes lekérni minden adatot a Fi
 
 ---
 A kód repóért [kattints ide](https://github.com/KinPeter/Old-Code/tree/master/StartPage-2).
-
-Vagy akár [próbáld ki a demót itt](https://startdemo.p-kin.com)!

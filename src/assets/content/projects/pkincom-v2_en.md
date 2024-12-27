@@ -2,8 +2,6 @@
 
 For my very first VueJS project I choose to create a new portfolio website for myself. My goal was to make it easy for anyone who is interested in my work to find all the relevant information.
 
-[>> Check it out here!](https://v2.p-kin.com)
-
 ### Features:
 
 - **About me & my skills -** On the home page there are a few words about me and I list all the technologies and languages I'm familiar with

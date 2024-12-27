@@ -2,8 +2,6 @@
 
 Internetes szótár alkalmazás, ami a saját szólistámat használja.
 
-> [Próbáld ki itt!](https://dict.p-kin.com)
-
 ### Funkciók: 
 - **Adat a Google Sheet-ből -**
 Az alkalmazás közvetlenül a Google Sheet-ből tölti le a szólistát TSV formátumban, mely aztán könnyen feldolgozható JavaScript segítségével.

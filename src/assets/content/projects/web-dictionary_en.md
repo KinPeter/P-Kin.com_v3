@@ -2,8 +2,6 @@
 
 Web-dictionary app that uses my own word list.  
 
-> [Try it here!](https://dict.p-kin.com)
-
 ### Features: 
 - **Data from Google Sheet -**
 The app downloads the wordlist file directly from a published Google Sheet in TSV format which is then easily parsed by JavaScript.
