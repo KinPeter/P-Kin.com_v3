@@ -16,5 +16,7 @@ I'm working as a **senior software engineer** with stronger focus on the **front
 - Tinkering with Linux, cloud and server stuff
  
 ## Current goals
+- Maximize AI utilization as a tool for my work and projects
+- Perfect my knowledge in Web Accessibility (A11y)
 - Learn more about backend with serverless/lambda functions and databases
 - Discover DevOps, CI/CD workflows

@@ -20,4 +20,4 @@ Personal dashboard application to manage some everyday things, provide e.g weath
 * Jest & Cypress for testing
 
 --- 
-You can find the code repository [here](https://github.com/KinPeter/PK-Start).
+You can find the code repository [here](https://github.com/KinPeter/Old-Code/tree/master/PKStart-v3).

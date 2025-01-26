@@ -21,4 +21,4 @@ The idea and most of the implementation came from an official project where I ha
 - GitHub Actions
 
 ---
-For the code repository [click here](https://github.com/KinPeter/Map-of-things)
+For the code repository [click here](https://github.com/KinPeter/Old-Code/tree/master/Map-of-things)

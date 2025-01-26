@@ -20,4 +20,4 @@ Személyes "dashboard" applikáció mindennapi dolgok kezelésére, pl jegyzetek
 * Jest & Cypress teszteléshez
 
 --- 
-A kódot megtalálod [itt](https://github.com/KinPeter/PK-Start).
+A kódot megtalálod [itt](https://github.com/KinPeter/Old-Code/tree/master/PKStart-v3).

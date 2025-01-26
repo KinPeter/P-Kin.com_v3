@@ -10,7 +10,7 @@ export const portfolio: PortfolioItem[] = [
   {
     id: 'pk-central',
     name: 'PK-Central',
-    badges: ['Node.js', 'TypeScript', 'API', 'Netlify functions'],
+    badges: ['Node.js', 'TypeScript', 'API', 'MongoDB', 'Docker'],
     image: 'https://stuff.p-kin.com/pf-thumbs/pk-central.jpg',
   },
   {
@@ -31,6 +31,7 @@ export const portfolio: PortfolioItem[] = [
     badges: [
       'Full Stack',
       'Angular',
+      'Node.js',
       'NestJS',
       'MongoDB',
       'Material',
@@ -43,7 +44,7 @@ export const portfolio: PortfolioItem[] = [
   {
     id: 'mongo-nest-angular-auth',
     name: 'MongoDB + NestJS + Angular Auth',
-    badges: ['Full Stack', 'Angular', 'TypeScript', 'Material', 'NestJS', 'MongoDB'],
+    badges: ['Full Stack', 'Angular', 'TypeScript', 'Material', 'Node.js', 'NestJS', 'MongoDB'],
     image: 'https://stuff.p-kin.com/pf-thumbs/tripplanner-login.png',
   },
   {

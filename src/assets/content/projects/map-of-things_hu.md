@@ -21,4 +21,4 @@ Az ötlet és az implementáció egy része egy hivatalos projektemből származ
 - GitHub Actions
 
 ---
-A kód repóért [kattints ide](https://github.com/KinPeter/Map-of-things)
+A kód repóért [kattints ide](https://github.com/KinPeter/Old-Code/tree/master/Map-of-things)

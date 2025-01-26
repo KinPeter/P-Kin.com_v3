@@ -16,5 +16,7 @@
 - Linux, cloud és egyéb szerver oldali dolgokkal bütykölni
 
 ## Aktuális céljaim:
+- Maximálisan kihasználni az AI-t a munkám és projekteim során
+- Tökéletesíteni a tudásom a Web Accessibility (A11y) területén
 - Tanulni többet a backend-ről, serverless/lambda függvényekről, adatbázisokról
 - Felfedezni DevOps és CI/CD lehetőségeket

@@ -49,4 +49,4 @@ Viszont egész sok hasznos és számomra új dolgot sikerült ebben implementál
 
 ---
 ### Kód:
-Frontend + Backend monorepo: [katt ide](https://github.com/KinPeter/Mongo-Nest-Angular-Auth)
+Frontend + Backend monorepo: [katt ide](https://github.com/KinPeter/Old-Code/tree/master/Mongo-Nest-Angular-Auth)
