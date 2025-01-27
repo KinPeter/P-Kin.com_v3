@@ -62,6 +62,7 @@ import { routerLinks } from '~/app/constants/routerLinks';
         background: var(--background-color);
         color: var(--text-color-light);
         transition: all 0.3s ease;
+        z-index: 9;
       }
 
       @media (min-width: 912px) {

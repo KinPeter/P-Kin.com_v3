@@ -1,10 +1,17 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import { PortfolioItem } from '~/app/types/content/PortfolioItem';
 
 @Component({
   selector: 'pk-portfolio-card',
   template: `
-    <div class="portfolio-card">
+    <div
+      class="portfolio-card"
+      tabindex="0"
+      #card
+      (focus)="onFocus()"
+      (blur)="onBlur()"
+      (keyup.enter)="onOpen()"
+    >
       <div
         class="portfolio-card-background"
         [ngStyle]="{ backgroundImage: 'url(' + item?.image + ')' }"
@@ -14,7 +21,7 @@ import { PortfolioItem } from '~/app/types/content/PortfolioItem';
         <div class="portfolio-card-overlay__badges">
           <div *ngFor="let badge of item?.badges" class="portfolio-badge">{{ badge }}</div>
         </div>
-        <button class="portfolio-card-overlay__button" (click)="onOpen()">
+        <button class="portfolio-card-overlay__button" (click)="onOpen()" tabindex="-1">
           {{ 'c.portfolio-card.show-more' | translate }}
         </button>
       </div>
@@ -127,24 +134,29 @@ import { PortfolioItem } from '~/app/types/content/PortfolioItem';
         height: 100%;
       }
 
-      .portfolio-card:hover .portfolio-card-overlay {
+      .portfolio-card:hover .portfolio-card-overlay,
+      .portfolio-card.hover-effect .portfolio-card-overlay {
         height: 100%;
       }
 
-      .portfolio-card:hover .portfolio-card-overlay__badges {
+      .portfolio-card:hover .portfolio-card-overlay__badges,
+      .portfolio-card.hover-effect .portfolio-card-overlay__badges {
         display: flex;
       }
 
-      .portfolio-card:hover .portfolio-badge {
+      .portfolio-card:hover .portfolio-badge,
+      .portfolio-card.hover-effect .portfolio-badge {
         animation: blurUpAndFade 0.2s 0.2s ease forwards;
       }
 
-      .portfolio-card:hover .portfolio-card-overlay__button {
+      .portfolio-card:hover .portfolio-card-overlay__button,
+      .portfolio-card.hover-effect .portfolio-card-overlay__button {
         display: block;
         animation: blurUpAndFade 0.2s 0.4s ease forwards;
       }
 
-      .portfolio-card:hover .portfolio-card-background {
+      .portfolio-card:hover .portfolio-card-background,
+      .portfolio-card.hover-effect .portfolio-card-background {
         transform: scale(1.1);
       }
 
@@ -171,12 +183,20 @@ import { PortfolioItem } from '~/app/types/content/PortfolioItem';
 })
 export class PortfolioCardComponent {
   @Input() item: PortfolioItem | undefined;
-
   @Output() openItem: EventEmitter<string> = new EventEmitter<string>();
+  @ViewChild('card') card: ElementRef<HTMLDivElement> | undefined;
 
   constructor() {}
 
   onOpen(): void {
     this.openItem.emit(this.item?.id);
+  }
+
+  onFocus(): void {
+    this.card?.nativeElement.classList.add('hover-effect');
+  }
+
+  onBlur(): void {
+    this.card?.nativeElement.classList.remove('hover-effect');
   }
 }

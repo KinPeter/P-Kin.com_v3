@@ -4,14 +4,14 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   selector: 'pk-filters-desktop',
   template: `
     <div class="filters-desktop">
-      <span
+      <button
         *ngFor="let filter of filters"
         class="filters-desktop__button button-horizontal-animated"
         (click)="onClickFilter(filter)"
       >
         {{ filter === 'All' ? ('c.filters.all' | translate) : filter }}
         <pk-icon-caret-right [size]="20" *ngIf="isActive(filter)"></pk-icon-caret-right>
-      </span>
+      </button>
     </div>
   `,
   styles: [
@@ -33,14 +33,16 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
       }
 
       .filters-desktop__button {
-        padding: 0.25rem 0.8rem;
+        padding: 0.45rem 0.8rem;
         font-weight: 300;
+        font-size: 1rem;
+        text-align: left;
         position: relative;
       }
 
       pk-icon-caret-right {
         position: absolute;
-        top: 4px;
+        top: 6px;
         color: var(--color-accent);
         margin-left: 0.5rem;
       }

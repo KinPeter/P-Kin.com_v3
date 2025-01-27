@@ -17,6 +17,11 @@ import { LoadingService } from '~/app/services/ui/loading.service';
       [currentFilter]="currentFilter"
       (applyFilter)="onApplyFilter($event)"
     ></pk-filters-mobile>
+    <pk-portfolio-modal
+      *ngIf="!(isLoading | async) && isModalOpen"
+      [item]="loadedItem"
+      (closeModal)="onCloseModal()"
+    ></pk-portfolio-modal>
     <div class="portfolio">
       <div class="portfolio__cards">
         <pk-not-found *ngIf="!items.length"></pk-not-found>
@@ -28,11 +33,6 @@ import { LoadingService } from '~/app/services/ui/loading.service';
         ></pk-portfolio-card>
       </div>
     </div>
-    <pk-portfolio-modal
-      *ngIf="!(isLoading | async) && isModalOpen"
-      [item]="loadedItem"
-      (closeModal)="onCloseModal()"
-    ></pk-portfolio-modal>
   `,
   styles: [
     `

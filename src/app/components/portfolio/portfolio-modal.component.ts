@@ -1,10 +1,24 @@
-import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import {
+  AfterViewChecked,
+  AfterViewInit,
+  Component,
+  ElementRef,
+  EventEmitter,
+  Input,
+  Output,
+  ViewChild,
+} from '@angular/core';
 import { LoadedItem } from '~/app/types/content/LoadedItem';
 
 @Component({
   selector: 'pk-portfolio-modal',
   template: `
-    <div class="portfolio-modal-overlay" (click)="onOverlayClick($event)">
+    <div
+      class="portfolio-modal-overlay"
+      (click)="onOverlayClick($event)"
+      (keydown)="trapFocus($event)"
+      #wrapper
+    >
       <div class="portfolio-modal" (scroll)="onScroll()" #modal>
         <h1 class="portfolio-modal__title">{{ item?.name }}</h1>
         <div class="portfolio-modal__badges">
@@ -14,15 +28,17 @@ import { LoadedItem } from '~/app/types/content/LoadedItem';
           class="portfolio-modal-content markdown-text"
           linksTargetBlank
           [innerHTML]="item.description | marked"
+          #content
         ></div>
       </div>
-      <div
+      <button
         class="portfolio-modal__close-button"
         [class.portfolio-modal__close-button_scrolled]="scrolled"
         (click)="onClose()"
+        #closeButton
       >
         <pk-icon-close [size]="45"></pk-icon-close>
-      </div>
+      </button>
     </div>
   `,
   styles: [
@@ -125,7 +141,7 @@ import { LoadedItem } from '~/app/types/content/LoadedItem';
     `,
   ],
 })
-export class PortfolioModalComponent {
+export class PortfolioModalComponent implements AfterViewInit, AfterViewChecked {
   @Input() item: LoadedItem = {
     name: '',
     badges: [],
@@ -134,11 +150,35 @@ export class PortfolioModalComponent {
 
   @Output() closeModal: EventEmitter<void> = new EventEmitter<void>();
 
+  @ViewChild('wrapper') wrapper: ElementRef<HTMLDivElement> | undefined;
   @ViewChild('modal') modal: ElementRef<HTMLDivElement> | undefined;
+  @ViewChild('content') content: ElementRef<HTMLDivElement> | undefined;
+  @ViewChild('closeButton') closeButton: ElementRef<HTMLButtonElement> | undefined;
 
   scrolled = false;
 
+  private focusableElements: HTMLElement[] = [];
+
   constructor() {}
+
+  ngAfterViewInit(): void {
+    this.updateFocusableElements();
+    this.closeButton?.nativeElement.focus();
+  }
+
+  ngAfterViewChecked() {
+    this.updateFocusableElements();
+  }
+
+  updateFocusableElements(): void {
+    if (this.wrapper) {
+      this.focusableElements = Array.from(
+        this.wrapper.nativeElement.querySelectorAll(
+          'a, button, textarea, input, select, [tabindex]:not([tabindex="-1"])'
+        )
+      ) as HTMLElement[];
+    }
+  }
 
   onOverlayClick(event: MouseEvent): void {
     if (
@@ -158,6 +198,27 @@ export class PortfolioModalComponent {
   onScroll(): void {
     if (this.modal) {
       this.scrolled = this.modal.nativeElement.scrollTop !== 0;
+    }
+  }
+
+  trapFocus(event: KeyboardEvent): void {
+    if (event.key !== 'Tab') {
+      return;
+    }
+
+    const firstElement = this.focusableElements[0];
+    const lastElement = this.focusableElements[this.focusableElements.length - 1];
+
+    if (event.shiftKey) {
+      if (document.activeElement === firstElement) {
+        lastElement.focus();
+        event.preventDefault();
+      }
+    } else {
+      if (document.activeElement === lastElement) {
+        firstElement.focus();
+        event.preventDefault();
+      }
     }
   }
 }

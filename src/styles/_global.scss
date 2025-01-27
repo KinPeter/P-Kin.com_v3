@@ -46,3 +46,10 @@ hr {
   border-color: var(--text-color-light);
   margin: 1.5rem 0;
 }
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+}

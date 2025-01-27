@@ -3,9 +3,9 @@ import { Component, Renderer2 } from '@angular/core';
 @Component({
   selector: 'pk-theme-switch',
   template: `
-    <div class="theme-switch button-vertical-animated" (click)="onThemeSwitch()">
+    <button class="theme-switch button-vertical-animated" (click)="onThemeSwitch()">
       <pk-icon-themes></pk-icon-themes>
-    </div>
+    </button>
   `,
   styles: [
     `

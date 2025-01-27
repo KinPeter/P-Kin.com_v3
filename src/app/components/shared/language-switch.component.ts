@@ -5,22 +5,23 @@ import { TranslateService } from '@ngx-translate/core';
   selector: 'pk-language-switch',
   template: `
     <div class="language-switch">
-      <div
+      <button
         class="language-switch__button"
         [class.button-vertical-animated]="isEnabled('en')"
         (click)="translate.use('en')"
       >
         {{ 'languages.en' | translate }}
         <span *ngIf="!isEnabled('en')" class="language-switch__active"></span>
-      </div>
-      <div
+      </button>
+      <button
         class="language-switch__button"
+        role="button"
         [class.button-vertical-animated]="isEnabled('hu')"
         (click)="translate.use('hu')"
       >
         {{ 'languages.hu' | translate }}
         <span *ngIf="!isEnabled('hu')" class="language-switch__active"></span>
-      </div>
+      </button>
     </div>
   `,
   styles: [
@@ -32,7 +33,8 @@ import { TranslateService } from '@ngx-translate/core';
       .language-switch__button {
         font-family: var(--font-sans-serif), sans-serif;
         font-weight: 300;
-        padding: 2px 5px;
+        font-size: 1rem;
+        padding: 4px 5px;
         position: relative;
       }
 
@@ -42,7 +44,7 @@ import { TranslateService } from '@ngx-translate/core';
 
       .language-switch__active {
         position: absolute;
-        bottom: 4px;
+        bottom: 3px;
         left: 6px;
         width: calc(100% - 12px);
         border-bottom: 1px solid var(--color-accent);

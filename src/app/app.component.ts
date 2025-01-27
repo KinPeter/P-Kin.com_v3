@@ -9,9 +9,9 @@ import { RoutePath } from '~/app/types/enums/RoutePath';
 @Component({
   selector: 'pk-root',
   template: `
+    <pk-app-bar></pk-app-bar>
     <router-outlet></router-outlet>
     <pk-footer></pk-footer>
-    <pk-app-bar></pk-app-bar>
     <pk-side-drawer></pk-side-drawer>
     <pk-loading *ngIf="loading.getStatus() | async"></pk-loading>
   `,
