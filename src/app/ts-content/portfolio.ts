@@ -2,6 +2,12 @@ import { PortfolioItem } from '~/app/types/content/PortfolioItem';
 
 export const portfolio: PortfolioItem[] = [
   {
+    id: 'start-v4',
+    name: 'Start v4',
+    badges: ['Angular', 'TypeScript', 'Vue', 'Microfrontend'],
+    image: 'https://stuff.p-kin.com/pf-thumbs/startv4.jpg',
+  },
+  {
     id: 'tripz',
     name: 'Tripz',
     badges: ['React', 'TypeScript', 'Leaflet Map', 'Mantine UI'],
