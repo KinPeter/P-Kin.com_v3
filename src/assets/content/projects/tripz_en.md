@@ -18,7 +18,7 @@ Mobile friendly web application to store and visualize the data of all my trips.
 * Mantine forms
 * Github actions
 
-The API is provided by my [PK-Central](https://github.com/KinPeter/pk-central) project.
+The API is provided by my [PK-Central v2](https://github.com/KinPeter/pk-central-v2) project.
 
 --- 
 You can find the code repository [here](https://github.com/KinPeter/tripz).

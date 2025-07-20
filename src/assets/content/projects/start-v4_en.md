@@ -5,9 +5,10 @@ Personal dashboard application to manage some everyday things, built with all th
 ### Features:
 * Access to notes, personal documents data and a collection of shortcuts in widgets or with search
 * Weather information and location data
-* Birthday calendar synced with Google Sheets
+* Birthday calendar
 * Cycling and walking activity tracking synced with Strava
 * Multi-language translator with DeepL API
+* Upcoming flights widget
 * Full data backup service
 
 ### Technologies used:
@@ -17,7 +18,7 @@ Personal dashboard application to manage some everyday things, built with all th
 * Microfrontend architecture - Weather widget made in Vue 3
 * ESLint, Prettier, Husky for code quality
 
-The API is provided by my [PK-Central](https://github.com/KinPeter/pk-central) project.
+The API is provided by my [PK-Central v2](https://github.com/KinPeter/pk-central-v2) project.
 
 --- 
 You can find the code repository [here](https://github.com/KinPeter/start-v4).

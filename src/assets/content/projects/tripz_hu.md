@@ -18,7 +18,7 @@ Mobilról is könnyen használható webes alkalmazás az eddigi utazásaim adata
 * Mantine forms
 * Github actions
 
-Az API-t a [PK-Central](https://github.com/KinPeter/pk-central) projektem biztosítja.
+Az API-t a [PK-Central v2](https://github.com/KinPeter/pk-central-v2) projektem biztosítja.
 
 --- 
 A kódot megtalálod [itt](https://github.com/KinPeter/tripz).

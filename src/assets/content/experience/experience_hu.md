@@ -9,7 +9,7 @@ A világ vezető felhő alapú ügyfélszolgálati platformja több száz válla
 Frontend fókuszú fejlesztőként első sorban Angulart és Reactet használok mikrofrontendeken egy megfelelően agilis, nemzetközi csapatban és környezetben. 
 Emellett a feature-ök tervezésében, előkészítésében; alapos, automatizált E2E, unit és API tesztelésben  veszek részt, technikai dokumentációkat kezelek a release folyamatok részeként, illetve mentorálom a csapat gyakornokait.
 
-::ts:: ::angular:: ::react::
+::ts:: ::angular:: ::react:: ::python::
 
 - Egyéb technológiák: Java, Python, AWS Lambdas, Jenkins CI/CD
 - Projekten töltött idő: **2+ év, jelenleg is**

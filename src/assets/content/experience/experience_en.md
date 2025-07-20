@@ -9,7 +9,7 @@ The world's leading cloud based customer service platform serving hundreds of co
 As a Frontend focused development engineer I mainly use Angular and React working on microfrontends in a well maintained agile way as a part of a multinational team and environment. 
 I am also taking part in planning and refinement of features, thorough automated E2E, unit and API acceptance testing, managing technical documentation through the release processes and mentoring and leading interns in the team.
 
-::ts:: ::angular:: ::react::
+::ts:: ::angular:: ::react:: ::python::
 
 - Other technologies: Java, Python, AWS Lambdas, Jenkins CI/CD
 - Time spent on project: **2+ years and counting...**

@@ -6,9 +6,10 @@ Személyes irányítópult alkalmazás, amely a mindennapi dolgok kezelésére s
 ### Funkciók:
 * Jegyzetekhez, személyes dokumentumokhoz és egy linkgyűjteményhez való hozzáférés widgetekben vagy kereséssel
 * Időjárás információk és helyadatok
-* Születésnapi naptár a Google Sheets-ből
+* Születésnapi naptár
 * Kerékpározási és gyaloglási tevékenységek nyomon követése a Strava-val szinkronizálva
 * Többnyelvű fordító a DeepL API-val
+* Közelgő járatok widget
 * Teljes adatmentési szolgáltatás
 
 ### Használt technológiák:
@@ -18,7 +19,7 @@ Személyes irányítópult alkalmazás, amely a mindennapi dolgok kezelésére s
 * Mikrofrontend architektúra - Időjárás widget Vue 3-ban készült
 * ESLint, Prettier, Husky a kódminőség érdekében
 
-Az API-t a [PK-Central](https://github.com/KinPeter/pk-central) projektem biztosítja.
+Az API-t a [PK-Central v2](https://github.com/KinPeter/pk-central-v2) projektem biztosítja.
 
 ---
 A kódot megtalálod [itt](https://github.com/KinPeter/start-v4).

@@ -5,6 +5,7 @@ export const filters = [
   'Vue',
   'Node.js',
   'TypeScript',
+  'Python',
   'Svelte',
   'Material',
   'Full Stack',
