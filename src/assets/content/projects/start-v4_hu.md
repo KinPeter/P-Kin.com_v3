@@ -4,7 +4,7 @@ Személyes irányítópult alkalmazás, amely a mindennapi dolgok kezelésére s
 ![Start V4 gif](https://stuff.p-kin.com/screentogif/startv4.gif)
 
 ### Funkciók:
-* Jegyzetekhez, személyes dokumentumokhoz és egy linkgyűjteményhez való hozzáférés widgetekben vagy kereséssel
+* Jegyzetekhez, markdown dokumentumokhoz, személyes dokumentumokhoz és egy linkgyűjteményhez való hozzáférés widgetekben vagy kereséssel
 * Időjárás információk és helyadatok
 * Születésnapi naptár
 * Kerékpározási és gyaloglási tevékenységek nyomon követése a Strava-val szinkronizálva

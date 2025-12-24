@@ -2,6 +2,17 @@
 
 A list of the official projects I participated at so far:
 
+## Global Investment Management Web Platform
+
+A leading global investment management firm renowned for its innovative financial solutions. I contribute to the development of a large-scale web application platform that enables users to manage investments, access financial tools, and receive personalized insights. The platform emphasizes security, scalability, and a seamless user experience for millions of clients.
+
+As a member of an agile development team I work primarily with Angular and TypeScript to build and enhance microfrontends or utilize NestJS on the backend side with microservices. My responsibilities include feature development, automated testing, code reviews, and collaborating with cross-functional teams to deliver high-quality software solutions.
+
+::ts:: ::angular:: ::nodejs:: ::nestjs::
+
+- Other technologies: Cucumber, Playwright
+- Time spent on project: **Since October 2025**
+
 ## GENESYS Cloud
 
 The world's leading cloud based customer service platform serving hundreds of companies, millions of agents and customers. My main areas of the product are the new AI powered Agent Copilot and Knowledge Authoring that includes all features related to knowledge bases and articles.
@@ -12,7 +23,7 @@ I am also taking part in planning and refinement of features, thorough automated
 ::ts:: ::angular:: ::react:: ::python::
 
 - Other technologies: Java, Python, AWS Lambdas, Jenkins CI/CD
-- Time spent on project: **2+ years and counting...**
+- Time spent on project: **3 years**
 
 ## "1000 motifs" web application for the Museum of Ethnography
 

@@ -2,6 +2,17 @@
 
 Karrierem során az alábbi hivatalos projekteken vettem részt:
 
+## Globális Befektetéskezelő Web Platform
+
+Egy vezető globális befektetéskezelő cég, amely innovatív pénzügyi megoldásairól ismert. Részt veszek egy nagyszabású webalkalmazás platform fejlesztésében, amely lehetővé teszi a felhasználók számára befektetéseik kezelését, pénzügyi eszközökhöz való hozzáférést és személyre szabott betekintések fogadását. A platform kiemelten kezeli a biztonságot, skálázhatóságot és a zökkenőmentes felhasználói élményt több millió ügyfél számára.
+
+Agilis fejlesztőcsapat tagjaként elsősorban Angulart és TypeScriptet használok mikrofrontendek építésére és fejlesztésére, illetve NestJS-t a backend oldalon mikroservice-ekkel. Feladataim közé tartozik a funkciófejlesztés, automatizált tesztelés, kód review, valamint a különböző funkcionális csapatokkal való együttműködés a magas minőségű szoftvermegoldások szállítása érdekében.
+
+::ts:: ::angular:: ::nodejs:: ::nestjs::
+
+- Egyéb technológiák: Cucumber, Playwright
+- Projekten töltött idő: **2025 októbere óta**
+
 ## GENESYS Cloud
 
 A világ vezető felhő alapú ügyfélszolgálati platformja több száz vállalati ügyféllel és milliós nagyságrendű felhasználóval mind az ügynöki és a vásárlói oldalról. A terméken belül én főleg az új AI alapú Agent Copilot-on, valamint a Knowledge Authoring területén dolgozom, ami tudásbázisokkal és cikkekkel kapcsolatos megoldásokat foglal magában.
@@ -12,7 +23,7 @@ Emellett a feature-ök tervezésében, előkészítésében; alapos, automatizá
 ::ts:: ::angular:: ::react:: ::python::
 
 - Egyéb technológiák: Java, Python, AWS Lambdas, Jenkins CI/CD
-- Projekten töltött idő: **2+ év, jelenleg is**
+- Projekten töltött idő: **3 év**
 
 ## "1000 motívum" webalkalmazás a Néprajzi Múzeum részére
 

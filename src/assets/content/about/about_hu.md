@@ -3,7 +3,7 @@
 
 10+ évet töltöttem a turizmusban, mikor a karrierváltás mellett döntöttem, 2018 óta foglalkozom programozással.
 
-**Senior szoftverfejlesztőként** dolgozom, de az erősebbik oldalam a **frontend**. Modern webes keretrendszereket használok, mint az Angular, React és Vue, TypeScript-ben. A server oldalon a kedvenc technológiáim a **Python** és **NodeJS**. Amikor időm engedi, szeretek mindenféle applikációt készíteni, legyen az egy full-stack web app, CLI tool, vagy épp a Linux rendszerem bütykölése.
+**Senior full stack szoftverfejlesztőként** dolgozom, de az erősebbik oldalam a **frontend**. Modern webes keretrendszereket használok, mint az Angular, React és Vue, TypeScript-ben. A server oldalon a kedvenc technológiáim a **Python** és **NodeJS**. Amikor időm engedi, szeretek mindenféle applikációt készíteni, legyen az egy full-stack web app, CLI tool, vagy épp a Linux rendszerem bütykölése.
 
 ## A munkámban ezeket élvezem leginkább
 - **Angular**-ral vagy **React**-el, **TypeScript**-ben dolgozni
