@@ -2,6 +2,18 @@ import { PortfolioItem } from '~/app/types/content/PortfolioItem';
 
 export const portfolio: PortfolioItem[] = [
   {
+    id: 'review-agents',
+    name: 'Review Agents CLI',
+    badges: ['AI Powered', 'Node.js', 'CLI'],
+    image: 'https://stuff.p-kin.com/pf-thumbs/review-agents-cli.jpg',
+  },
+  {
+    id: 'pk-central-mcp',
+    name: 'PK-Central MCP',
+    badges: ['AI Powered', 'TypeScript', 'Node.js'],
+    image: 'https://stuff.p-kin.com/pf-thumbs/central-mcp.jpg',
+  },
+  {
     id: 'start-v4',
     name: 'Start v4',
     badges: ['Angular', 'TypeScript', 'Vue', 'Microfrontend'],

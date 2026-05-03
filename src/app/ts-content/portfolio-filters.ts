@@ -1,5 +1,6 @@
 export const filters = [
   'All',
+  'AI Powered',
   'Angular',
   'React',
   'Vue',
